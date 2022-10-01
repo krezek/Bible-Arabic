@@ -6,3 +6,13 @@
 /Bible-Arabic/x64
 *.user
 /x64
+/Bible-Arabic/Debug
+/Bible-Arabic/Release
+/Debug
+/Release
+/shell/Debug
+/shell/Release
+/shell/x64
+/sqlite/Debug
+/sqlite/Release
+/sqlite/x64
