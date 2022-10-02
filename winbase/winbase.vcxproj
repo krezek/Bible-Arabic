@@ -28,6 +28,7 @@
     <ClInclude Include="include\list_view.h" />
     <ClInclude Include="include\statusbar.h" />
     <ClInclude Include="include\text_edit.h" />
+    <ClInclude Include="include\tree_view.h" />
     <ClInclude Include="src\platform.h" />
   </ItemGroup>
   <ItemGroup>
@@ -40,6 +41,7 @@
     <ClCompile Include="src\list_view.c" />
     <ClCompile Include="src\statusbar.c" />
     <ClCompile Include="src\text_edit.c" />
+    <ClCompile Include="src\tree_view.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

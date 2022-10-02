@@ -6,7 +6,6 @@
 static TCHAR szWindowClass[] = _T("DesktopApp");
 static TCHAR szTitle[] = _T("Holy Bible");
 
-static void AfterCreate(BaseWindow* _this);
 static LRESULT HandleMessage(BaseWindow* _this, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 ATOM MainWindow_RegisterClass()
@@ -45,8 +44,6 @@ BOOL Create(BaseWindow* _this)
 
     _this->_hWnd = hWnd;
 
-    AfterCreate(_this);
-
     return _this->_hWnd ? TRUE : FALSE;
 }
 
@@ -62,11 +59,14 @@ MainWindow* MainWindow_init()
     mw->_baseWindow._HandleMessageFunc = HandleMessage;
     mw->_baseWindow._CreateFunc = Create;
 
+    mw->_treeView = TreeView_init();
+
     return mw;
 }
 
 void MainWindow_free(MainWindow* mw)
 {
+    TreeView_free(mw->_treeView);
     free(mw);
 }
 
@@ -77,17 +77,41 @@ static void OnCreate(MainWindow* mw)
 
     mw->_client_width = rc.right - rc.left;
     mw->_client_height = rc.bottom - rc.top;
+
+    mw->_treeView->_baseWindow._SetParentFunc((BaseWindow*)mw->_treeView, mw->_baseWindow._hWnd);
+    mw->_treeView->_baseWindow._SetIdFunc((BaseWindow*)mw->_treeView, (HMENU)ID_TREEVIEW); 
+    
+    if (!mw->_treeView->_baseWindow._CreateFunc((BaseWindow*)mw->_treeView))
+    {
+        ShowError(L"Unable to create tree view!");
+        return;
+    }
+
+    mw->_treeView->_baseWindow._MoveWindowFunc((BaseWindow*)mw->_treeView, 0, 0, mw->_client_width / 2, mw->_client_height, TRUE);
+
+    HTREEITEM hItem;
+    TVINSERTSTRUCTA insertStruct = { 0 };
+    TVITEMA* pItem = &insertStruct.item;
+    insertStruct.hParent = NULL;
+    insertStruct.hInsertAfter = TVI_ROOT;
+
+    pItem->mask = TVIF_TEXT;
+    pItem->pszText = "My Item";
+    hItem = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEMA, 0, (LPARAM)&insertStruct);
+
+    if (hItem)
+    {
+        insertStruct.hParent = hItem;
+        pItem->pszText = "A Child";
+        hItem = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEMA, 0, (LPARAM)&insertStruct);
+        if (hItem) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem);
+    }
 }
 
 static void OnSize(MainWindow* mw, int width, int height)
 {
     if (!IsWindowVisible(mw->_baseWindow._hWnd))
         return;
-}
-
-void AfterCreate(BaseWindow* _this)
-{
-    MainWindow* mw = (MainWindow*)_this;
 }
 
 static void OnPaint(MainWindow* mw)

@@ -45,6 +45,9 @@
     <ClInclude Include="src\platform.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="include\tree_view.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\base_wnd.c">
@@ -72,6 +75,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="src\text_edit.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tree_view.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

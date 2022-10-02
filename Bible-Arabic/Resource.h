@@ -2,6 +2,7 @@
 // Von Microsoft Visual C++ generierte Includedatei.
 // Verwendet von Bible-Arabic.rc
 
+#define ID_TREEVIEW				1010
 #define IDS_APP_TITLE			103
 
 #define IDR_MAINFRAME			128
