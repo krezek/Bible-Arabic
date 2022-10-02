@@ -16,3 +16,6 @@
 /sqlite/Debug
 /sqlite/Release
 /sqlite/x64
+/winbase/Debug
+/winbase/Release
+/winbase/x64

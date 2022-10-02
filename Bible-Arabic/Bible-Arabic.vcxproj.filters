@@ -15,23 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Bible-Arabic.h">
+    <ClInclude Include="main_wnd.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Bible-Arabic.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
+    <ClInclude Include="platform.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Bible-Arabic.rc">
@@ -45,5 +37,13 @@
     <Image Include="Bible-Arabic.ico">
       <Filter>Ressourcendateien</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="main_wnd.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
