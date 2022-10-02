@@ -29,11 +29,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
     if (!MainWindow_RegisterClass())
     {
-        MessageBox(NULL,
-            _T("Call to RegisterClassEx failed!"),
-            _T("Formula Renderer"),
-            0);
-
+        ShowError(L"Call to RegisterClassEx failed!");
         return -1;
     }
 
@@ -41,11 +37,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
     if (!mainWindow->_CreateFunc(mainWindow))
     {
-        MessageBox(NULL,
-            _T("Call to CreateWindow failed!"),
-            _T("Formula Renderer"),
-            0);
-
+        ShowError(L"Call to CreateWindow failed!");
         return -1;
     }
 

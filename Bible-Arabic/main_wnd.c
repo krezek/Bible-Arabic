@@ -102,6 +102,7 @@ static void OnPaint(MainWindow* mw)
 
 static void OnDestroy(MainWindow* mw)
 {
+    PostQuitMessage(0);
 }
 
 static LRESULT HandleMessage(BaseWindow* _this, UINT uMsg, WPARAM wParam, LPARAM lParam)

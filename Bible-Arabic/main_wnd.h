@@ -1,7 +1,7 @@
 #ifndef _MAIN_WND_H_
 #define _MAIN_WND_H_
 
-#include "base_wnd.h"
+#include <base_wnd.h>
 
 typedef struct
 {
