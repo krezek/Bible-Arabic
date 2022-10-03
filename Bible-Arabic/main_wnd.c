@@ -59,6 +59,7 @@ MainWindow* MainWindow_init()
     mw->_baseWindow._HandleMessageFunc = HandleMessage;
     mw->_baseWindow._CreateFunc = Create;
 
+    mw->_statusBar = StatusBar_init();
     mw->_treeView = TreeView_init();
     mw->_tabControl = TabControl_init();
 
@@ -69,6 +70,7 @@ void MainWindow_free(MainWindow* mw)
 {
     TabControl_free(mw->_tabControl);
     TreeView_free(mw->_treeView);
+    StatusBar_free(mw->_statusBar);
     free(mw);
 }
 
@@ -80,6 +82,17 @@ static void OnCreate(MainWindow* mw)
     mw->_client_width = rc.right - rc.left;
     mw->_client_height = rc.bottom - rc.top;
 
+    mw->_statusBar->_baseWindow._SetParentFunc((BaseWindow*)mw->_statusBar, mw->_baseWindow._hWnd);
+    mw->_statusBar->_baseWindow._SetIdFunc((BaseWindow*)mw->_statusBar, (HMENU)ID_STATUSBAR);
+
+    if (!mw->_statusBar->_baseWindow._CreateFunc((BaseWindow*)mw->_statusBar))
+    {
+        ShowError(L"Unable to create status bar!");
+        return;
+    }
+
+    mw->_statusBar->_baseWindow._MoveWindowFunc((BaseWindow*)mw->_statusBar, 0, mw->_client_height - 25, mw->_client_width, 25, TRUE);
+    
     mw->_treeView->_baseWindow._SetParentFunc((BaseWindow*)mw->_treeView, mw->_baseWindow._hWnd);
     mw->_treeView->_baseWindow._SetIdFunc((BaseWindow*)mw->_treeView, (HMENU)ID_TREEVIEW); 
     
@@ -89,7 +102,7 @@ static void OnCreate(MainWindow* mw)
         return;
     }
 
-    mw->_treeView->_baseWindow._MoveWindowFunc((BaseWindow*)mw->_treeView, 0, 0, mw->_client_width / 2, mw->_client_height, TRUE);
+    mw->_treeView->_baseWindow._MoveWindowFunc((BaseWindow*)mw->_treeView, 0, 0, mw->_client_width / 2, mw->_client_height - 25, TRUE);
 
     mw->_tabControl->_baseWindow._SetParentFunc((BaseWindow*)mw->_tabControl, mw->_baseWindow._hWnd);
     mw->_tabControl->_baseWindow._SetIdFunc((BaseWindow*)mw->_tabControl, (HMENU)ID_TABCONTROL);
@@ -100,7 +113,7 @@ static void OnCreate(MainWindow* mw)
         return;
     }
 
-    mw->_tabControl->_baseWindow._MoveWindowFunc((BaseWindow*)mw->_tabControl, mw->_client_width / 2, 0, mw->_client_width / 2, mw->_client_height, TRUE);
+    mw->_tabControl->_baseWindow._MoveWindowFunc((BaseWindow*)mw->_tabControl, mw->_client_width / 2, 0, mw->_client_width / 2, mw->_client_height - 25, TRUE);
 
     HTREEITEM hItem;
     TVINSERTSTRUCT insertStruct = { 0 };
