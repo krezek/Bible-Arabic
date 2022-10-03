@@ -65,16 +65,62 @@ MainWindow* MainWindow_init()
     mw->_statusBar = StatusBar_init();
     mw->_treeView = TreeView_init();
     mw->_tabControl = TabControl_init();
+    mw->_richEdit = RichEdit_init();
 
     return mw;
 }
 
 void MainWindow_free(MainWindow* mw)
 {
+    RichEdit_free(mw->_richEdit);
     TabControl_free(mw->_tabControl);
     TreeView_free(mw->_treeView);
     StatusBar_free(mw->_statusBar);
     free(mw);
+}
+
+static void OnCreate_TreeView(MainWindow* mw)
+{
+    HTREEITEM hItem;
+    TVINSERTSTRUCT insertStruct = { 0 };
+    TVITEM* pItem = &insertStruct.item;
+    insertStruct.hParent = NULL;
+    insertStruct.hInsertAfter = TVI_ROOT;
+
+    pItem->mask = TVIF_TEXT;
+    pItem->pszText = L"العهد الجديد";
+    hItem = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
+
+    if (hItem)
+    {
+        insertStruct.hParent = hItem;
+        pItem->pszText = L"متى";
+        hItem = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
+        if (hItem) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem);
+    }
+}
+
+static void OnCreate_TabControl(MainWindow* mw)
+{
+    TCITEM tie;
+
+    tie.mask = TCIF_TEXT | TCIF_IMAGE;
+    tie.iImage = -1;
+    tie.pszText = L"متى";
+    TabCtrl_InsertItem(mw->_tabControl->_baseWindow._hWnd, 0, &tie);
+    TabCtrl_InsertItem(mw->_tabControl->_baseWindow._hWnd, 1, &tie);
+    
+    
+    mw->_richEdit->_baseWindow._SetParentFunc((BaseWindow*)mw->_richEdit, mw->_tabControl->_baseWindow._hWnd);
+    mw->_richEdit->_baseWindow._SetIdFunc((BaseWindow*)mw->_richEdit, (HMENU)ID_RICHEDIT);
+
+    if (!mw->_richEdit->_baseWindow._CreateFunc((BaseWindow*)mw->_richEdit))
+    {
+        ShowError(L"Unable to create rich edit!");
+        return;
+    }
+
+    MoveWindow(mw->_richEdit->_baseWindow._hWnd, 10, 50, 200, 300, TRUE);
 }
 
 static void OnCreate(MainWindow* mw)
@@ -117,33 +163,8 @@ static void OnCreate(MainWindow* mw)
         return;
     }
 
-    HTREEITEM hItem;
-    TVINSERTSTRUCT insertStruct = { 0 };
-    TVITEM* pItem = &insertStruct.item;
-    insertStruct.hParent = NULL;
-    insertStruct.hInsertAfter = TVI_ROOT;
-
-    pItem->mask = TVIF_TEXT;
-    pItem->pszText = L"العهد الجديد";
-    hItem = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
-
-    if (hItem)
-    {
-        insertStruct.hParent = hItem;
-        pItem->pszText = L"متى";
-        hItem = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
-        if (hItem) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem);
-    }
-    
-    TCITEM tie;
-    
-    tie.mask = TCIF_TEXT | TCIF_IMAGE;
-    tie.iImage = -1;
-    tie.pszText = L"متى";
-    TabCtrl_InsertItem(mw->_tabControl->_baseWindow._hWnd, 0, &tie);
-    TabCtrl_InsertItem(mw->_tabControl->_baseWindow._hWnd, 1, &tie);
-
-    
+    OnCreate_TreeView(mw);
+    OnCreate_TabControl(mw);
 }
 
 static void OnSize(MainWindow* mw, int width, int height)
@@ -159,7 +180,29 @@ static void OnSize(MainWindow* mw, int width, int height)
     mw->_tabControl->_baseWindow._MoveWindowFunc((BaseWindow*)mw->_tabControl, 200 + g_margin, g_margin,
         width - 200 - 2 * g_margin, height - 2 * g_margin - g_statusbar_height, TRUE);
 
+    RECT rc;
+    TabCtrl_GetItemRect(mw->_tabControl->_baseWindow._hWnd, 0, &rc);
 
+    int iHeight = rc.bottom - rc.top;
+    GetClientRect(mw->_tabControl->_baseWindow._hWnd, &rc);
+
+    MoveWindow(mw->_richEdit->_baseWindow._hWnd, rc.left + g_margin, rc.top + iHeight + g_margin, 
+        rc.right - rc.left - 2 * g_margin, rc.bottom - rc.top - iHeight * 2 - 2 * g_margin, TRUE);
+}
+
+static void OnNotify(MainWindow* mw, WPARAM wParam, LPARAM lParam)
+{
+    switch (((LPNMHDR)lParam)->code)
+    {
+    case TCN_SELCHANGE:
+    {
+        int iPage = TabCtrl_GetCurSel(mw->_tabControl->_baseWindow._hWnd);
+        if (iPage == 0)
+            ShowWindow(mw->_richEdit->_baseWindow._hWnd, SW_SHOW);
+        else
+            ShowWindow(mw->_richEdit->_baseWindow._hWnd, SW_HIDE);
+    }
+    }
 }
 
 static void OnPaint(MainWindow* mw)
@@ -196,6 +239,10 @@ static LRESULT HandleMessage(BaseWindow* _this, UINT uMsg, WPARAM wParam, LPARAM
 
     case WM_SIZE:
         OnSize(mw, LOWORD(lParam), HIWORD(lParam));
+        return 0;
+
+    case WM_NOTIFY:
+        OnNotify(mw, wParam, lParam);
         return 0;
 
     case WM_DESTROY:

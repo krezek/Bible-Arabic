@@ -21,6 +21,12 @@ int WINAPI WinMain(HINSTANCE hInstance,
 #endif
 
     SetProcessDefaultLayout(LAYOUT_RTL);
+    
+    if (!LoadLibrary(L"msftedit.dll"))
+    {
+        ShowError(L"Unable to load library msftedit!");
+        return;
+    }
 
     HRESULT hr = CoInitialize(NULL);
     if (FAILED(hr))

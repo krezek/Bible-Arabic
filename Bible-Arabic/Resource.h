@@ -15,6 +15,7 @@
 #define ID_STATUSBAR                    1000
 #define ID_TREEVIEW                     1010
 #define ID_TABCONTROL                   1011
+#define ID_RICHEDIT						1012
 #define IDC_STATIC                      -1
 
 // Next default values for new objects

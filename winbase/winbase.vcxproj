@@ -26,6 +26,7 @@
     <ClInclude Include="include\label.h" />
     <ClInclude Include="include\layout_mgr.h" />
     <ClInclude Include="include\list_view.h" />
+    <ClInclude Include="include\rich_edit.h" />
     <ClInclude Include="include\statusbar.h" />
     <ClInclude Include="include\tab_control.h" />
     <ClInclude Include="include\text_edit.h" />
@@ -40,6 +41,7 @@
     <ClCompile Include="src\label.c" />
     <ClCompile Include="src\layout_mgr.c" />
     <ClCompile Include="src\list_view.c" />
+    <ClCompile Include="src\rich_edit.c" />
     <ClCompile Include="src\statusbar.c" />
     <ClCompile Include="src\tab_control.c" />
     <ClCompile Include="src\text_edit.c" />

@@ -5,6 +5,7 @@
 #include <statusbar.h>
 #include <tree_view.h>
 #include <tab_control.h>
+#include <rich_edit.h>
 
 typedef struct
 {
@@ -15,6 +16,7 @@ typedef struct
 	StatusBar* _statusBar;
 	TreeView* _treeView;
 	TabControl* _tabControl;
+	RichEdit* _richEdit;
 } MainWindow;
 
 ATOM MainWindow_RegisterClass();

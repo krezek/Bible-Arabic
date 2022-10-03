@@ -51,6 +51,9 @@
     <ClInclude Include="include\tab_control.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="include\rich_edit.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\base_wnd.c">
@@ -84,6 +87,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="src\tab_control.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rich_edit.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
