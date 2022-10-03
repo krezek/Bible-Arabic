@@ -158,6 +158,9 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="main_wnd.c" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="rt_manif.bin" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
