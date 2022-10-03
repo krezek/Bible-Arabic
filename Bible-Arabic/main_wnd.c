@@ -1,10 +1,10 @@
-#include "platform.h"
+﻿#include "platform.h"
 
 #include "main_wnd.h"
 #include "resource.h"
 
 static TCHAR szWindowClass[] = _T("DesktopApp");
-static TCHAR szTitle[] = _T("Holy Bible");
+static TCHAR szTitle[] = _T("الكتاب المقدس");
 
 static LRESULT HandleMessage(BaseWindow* _this, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
@@ -90,20 +90,20 @@ static void OnCreate(MainWindow* mw)
     mw->_treeView->_baseWindow._MoveWindowFunc((BaseWindow*)mw->_treeView, 0, 0, mw->_client_width / 2, mw->_client_height, TRUE);
 
     HTREEITEM hItem;
-    TVINSERTSTRUCTA insertStruct = { 0 };
-    TVITEMA* pItem = &insertStruct.item;
+    TVINSERTSTRUCT insertStruct = { 0 };
+    TVITEM* pItem = &insertStruct.item;
     insertStruct.hParent = NULL;
     insertStruct.hInsertAfter = TVI_ROOT;
 
     pItem->mask = TVIF_TEXT;
-    pItem->pszText = "My Item";
-    hItem = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEMA, 0, (LPARAM)&insertStruct);
+    pItem->pszText = L"العهد الجديد";
+    hItem = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
 
     if (hItem)
     {
         insertStruct.hParent = hItem;
-        pItem->pszText = "A Child";
-        hItem = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEMA, 0, (LPARAM)&insertStruct);
+        pItem->pszText = L"متى";
+        hItem = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
         if (hItem) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem);
     }
 }

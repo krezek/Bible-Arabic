@@ -20,6 +20,8 @@ int WINAPI WinMain(HINSTANCE hInstance,
     RedirectIOToConsole();
 #endif
 
+    SetProcessDefaultLayout(LAYOUT_RTL);
+
     HRESULT hr = CoInitialize(NULL);
     if (FAILED(hr))
     {
