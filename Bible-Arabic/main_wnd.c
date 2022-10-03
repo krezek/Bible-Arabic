@@ -60,12 +60,14 @@ MainWindow* MainWindow_init()
     mw->_baseWindow._CreateFunc = Create;
 
     mw->_treeView = TreeView_init();
+    mw->_tabControl = TabControl_init();
 
     return mw;
 }
 
 void MainWindow_free(MainWindow* mw)
 {
+    TabControl_free(mw->_tabControl);
     TreeView_free(mw->_treeView);
     free(mw);
 }
@@ -89,6 +91,17 @@ static void OnCreate(MainWindow* mw)
 
     mw->_treeView->_baseWindow._MoveWindowFunc((BaseWindow*)mw->_treeView, 0, 0, mw->_client_width / 2, mw->_client_height, TRUE);
 
+    mw->_tabControl->_baseWindow._SetParentFunc((BaseWindow*)mw->_tabControl, mw->_baseWindow._hWnd);
+    mw->_tabControl->_baseWindow._SetIdFunc((BaseWindow*)mw->_tabControl, (HMENU)ID_TABCONTROL);
+
+    if (!mw->_tabControl->_baseWindow._CreateFunc((BaseWindow*)mw->_tabControl))
+    {
+        ShowError(L"Unable to create tab control!");
+        return;
+    }
+
+    mw->_tabControl->_baseWindow._MoveWindowFunc((BaseWindow*)mw->_tabControl, mw->_client_width / 2, 0, mw->_client_width / 2, mw->_client_height, TRUE);
+
     HTREEITEM hItem;
     TVINSERTSTRUCT insertStruct = { 0 };
     TVITEM* pItem = &insertStruct.item;
@@ -106,6 +119,14 @@ static void OnCreate(MainWindow* mw)
         hItem = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
         if (hItem) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem);
     }
+    
+    TCITEM tie;
+    
+    tie.mask = TCIF_TEXT | TCIF_IMAGE;
+    tie.iImage = -1;
+    tie.pszText = L"متى";
+    TabCtrl_InsertItem(mw->_tabControl->_baseWindow._hWnd, 0, &tie);
+    TabCtrl_InsertItem(mw->_tabControl->_baseWindow._hWnd, 1, &tie);
 }
 
 static void OnSize(MainWindow* mw, int width, int height)

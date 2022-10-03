@@ -3,6 +3,7 @@
 // Verwendet von Bible-Arabic.rc
 
 #define ID_TREEVIEW				1010
+#define ID_TABCONTROL			1011
 #define IDS_APP_TITLE			103
 
 #define IDR_MAINFRAME			128
