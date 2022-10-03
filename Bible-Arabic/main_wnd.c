@@ -8,6 +8,9 @@ static TCHAR szTitle[] = _T("الكتاب المقدس");
 
 static LRESULT HandleMessage(BaseWindow* _this, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
+static int g_statusbar_height;
+static const int g_margin = 5;
+
 ATOM MainWindow_RegisterClass()
 {
     WNDCLASSEX wcex;
@@ -91,18 +94,19 @@ static void OnCreate(MainWindow* mw)
         return;
     }
 
-    mw->_statusBar->_baseWindow._MoveWindowFunc((BaseWindow*)mw->_statusBar, 0, mw->_client_height - 25, mw->_client_width, 25, TRUE);
-    
+    RECT sBarRc;
+    GetWindowRect(mw->_statusBar->_baseWindow._hWnd, &sBarRc);
+    g_statusbar_height = sBarRc.bottom - sBarRc.top;
+
     mw->_treeView->_baseWindow._SetParentFunc((BaseWindow*)mw->_treeView, mw->_baseWindow._hWnd);
     mw->_treeView->_baseWindow._SetIdFunc((BaseWindow*)mw->_treeView, (HMENU)ID_TREEVIEW); 
+    mw->_treeView->_baseWindow._cmp._SetSizeFunc((Component*)mw->_treeView, 50, 25);
     
     if (!mw->_treeView->_baseWindow._CreateFunc((BaseWindow*)mw->_treeView))
     {
         ShowError(L"Unable to create tree view!");
         return;
     }
-
-    mw->_treeView->_baseWindow._MoveWindowFunc((BaseWindow*)mw->_treeView, 0, 0, mw->_client_width / 2, mw->_client_height - 25, TRUE);
 
     mw->_tabControl->_baseWindow._SetParentFunc((BaseWindow*)mw->_tabControl, mw->_baseWindow._hWnd);
     mw->_tabControl->_baseWindow._SetIdFunc((BaseWindow*)mw->_tabControl, (HMENU)ID_TABCONTROL);
@@ -112,8 +116,6 @@ static void OnCreate(MainWindow* mw)
         ShowError(L"Unable to create tab control!");
         return;
     }
-
-    mw->_tabControl->_baseWindow._MoveWindowFunc((BaseWindow*)mw->_tabControl, mw->_client_width / 2, 0, mw->_client_width / 2, mw->_client_height - 25, TRUE);
 
     HTREEITEM hItem;
     TVINSERTSTRUCT insertStruct = { 0 };
@@ -140,12 +142,24 @@ static void OnCreate(MainWindow* mw)
     tie.pszText = L"متى";
     TabCtrl_InsertItem(mw->_tabControl->_baseWindow._hWnd, 0, &tie);
     TabCtrl_InsertItem(mw->_tabControl->_baseWindow._hWnd, 1, &tie);
+
+    
 }
 
 static void OnSize(MainWindow* mw, int width, int height)
 {
-    if (!IsWindowVisible(mw->_baseWindow._hWnd))
-        return;
+    mw->_client_width = width;
+    mw->_client_height = height;
+
+    MoveWindow(mw->_statusBar->_baseWindow._hWnd, 0, height - g_statusbar_height, width, g_statusbar_height, TRUE);
+
+    mw->_treeView->_baseWindow._MoveWindowFunc((BaseWindow*)mw->_treeView, g_margin, g_margin,
+        200 - 2 * g_margin, height - 2 * g_margin - g_statusbar_height, TRUE);
+
+    mw->_tabControl->_baseWindow._MoveWindowFunc((BaseWindow*)mw->_tabControl, 200 + g_margin, g_margin,
+        width - 200 - 2 * g_margin, height - 2 * g_margin - g_statusbar_height, TRUE);
+
+
 }
 
 static void OnPaint(MainWindow* mw)

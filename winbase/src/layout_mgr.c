@@ -288,7 +288,7 @@ static void DoLayout(LayoutManager* _this, int x0, int y0, int width, int height
 					cmpRC.right = cmpRC.left + cmp->_width;
 					cmpRC.bottom = cmpRC.top + cmp->_height;
 
-					if (IntersectRect(&resultRC, &rc, &cmpRC))
+					//if (IntersectRect(&resultRC, &rc, &cmpRC))
 					{
 						MoveWindow(bw->_hWnd, cmp->_x, cmp->_y, cmp->_width, cmp->_height, repiant);
 					}
