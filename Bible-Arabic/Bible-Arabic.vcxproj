@@ -157,6 +157,7 @@
   <ItemGroup>
     <ClCompile Include="main.c" />
     <ClCompile Include="main_wnd.c" />
+    <ClCompile Include="main_wnd_ext.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="rt_manif.bin" />

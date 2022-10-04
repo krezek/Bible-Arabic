@@ -11,6 +11,8 @@ static LRESULT HandleMessage(BaseWindow* _this, UINT uMsg, WPARAM wParam, LPARAM
 static int g_statusbar_height;
 static const int g_margin = 5;
 
+void OnDBClick_treeView(MainWindow* mw, WPARAM wParam, LPARAM lParam);
+
 ATOM MainWindow_RegisterClass()
 {
     WNDCLASSEX wcex;
@@ -296,6 +298,10 @@ static void OnNotify(MainWindow* mw, WPARAM wParam, LPARAM lParam)
             ShowWindow(mw->_lv_result->_baseWindow._hWnd, SW_SHOW);
         }
     }
+
+    case NM_DBLCLK:
+        OnDBClick_treeView(mw, wParam, lParam);
+        break;
     }
 }
 
