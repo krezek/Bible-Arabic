@@ -16,6 +16,9 @@
 #define ID_TREEVIEW                     1010
 #define ID_TABCONTROL                   1011
 #define ID_RICHEDIT						1012
+#define ID_LABELCHAPTER					1013
+#define ID_LABELCHAPTER_COUNT1			1014
+#define ID_LABELCHAPTER_COUNT2			1015
 #define IDC_STATIC                      -1
 
 // Next default values for new objects
