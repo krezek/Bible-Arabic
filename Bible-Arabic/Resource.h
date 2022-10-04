@@ -19,6 +19,8 @@
 #define ID_LABELCHAPTER					1013
 #define ID_LABELCHAPTER_COUNT1			1014
 #define ID_LABELCHAPTER_COUNT2			1015
+#define ID_TEXTEDIT_SEARCH				1016
+#define ID_LISTVIW_RESULT				1017
 #define IDC_STATIC                      -1
 
 // Next default values for new objects

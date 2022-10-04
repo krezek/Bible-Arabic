@@ -69,11 +69,16 @@ MainWindow* MainWindow_init()
     mw->_lb_chapter = Label_init();
     mw->_lb_chapter_count1 = Label_init();
     mw->_lb_chapter_count2 = Label_init();
+    mw->_tx_search = TextEdit_init();
+    mw->_lv_result = ListView_init();
+
     return mw;
 }
 
 void MainWindow_free(MainWindow* mw)
 {
+    ListView_free(mw->_lv_result);
+    TextEdit_free(mw->_tx_search);
     Label_free(mw->_lb_chapter_count2);
     Label_free(mw->_lb_chapter_count1);
     Label_free(mw->_lb_chapter);
@@ -157,6 +162,24 @@ static void OnCreate_TabControl(MainWindow* mw)
         ShowError(L"Unable to create chapter count 2!");
         return;
     }
+
+    mw->_tx_search->_baseWindow._SetParentFunc((BaseWindow*)mw->_tx_search, mw->_tabControl->_baseWindow._hWnd);
+    mw->_tx_search->_baseWindow._SetIdFunc((BaseWindow*)mw->_tx_search, (HMENU)ID_TEXTEDIT_SEARCH);
+
+    if (!mw->_tx_search->_baseWindow._CreateFunc((BaseWindow*)mw->_tx_search))
+    {
+        ShowError(L"Unable to create search text edit!");
+        return;
+    }
+
+    mw->_lv_result->_baseWindow._SetParentFunc((BaseWindow*)mw->_lv_result, mw->_tabControl->_baseWindow._hWnd);
+    mw->_lv_result->_baseWindow._SetIdFunc((BaseWindow*)mw->_lv_result, (HMENU)ID_LISTVIW_RESULT);
+
+    if (!mw->_lv_result->_baseWindow._CreateFunc((BaseWindow*)mw->_lv_result))
+    {
+        ShowError(L"Unable to create search list view!");
+        return;
+    }
 }
 
 static void OnCreate(MainWindow* mw)
@@ -222,6 +245,7 @@ static void OnSize(MainWindow* mw, int width, int height)
     int iHeight = rc.bottom - rc.top;
     GetClientRect(mw->_tabControl->_baseWindow._hWnd, &rc);
 
+    // TAB 1
     MoveWindow(mw->_richEdit->_baseWindow._hWnd, rc.left + g_margin, rc.top + iHeight + g_margin, 
         rc.right - rc.left - 2 * g_margin, rc.bottom - rc.top - iHeight * 3 - 2 * g_margin, TRUE);
 
@@ -233,6 +257,14 @@ static void OnSize(MainWindow* mw, int width, int height)
 
     MoveWindow(mw->_lb_chapter_count2->_baseWindow._hWnd, rc.left + g_margin + 125 + 2 * g_margin, rc.bottom - rc.top - iHeight * 3 / 2 - 2 * g_margin,
         50, iHeight, TRUE);
+
+    // TAB 2
+    MoveWindow(mw->_tx_search->_baseWindow._hWnd, rc.left + g_margin, rc.top + iHeight + g_margin,
+        rc.right - rc.left - 2 * g_margin, rc.top + iHeight + g_margin, TRUE);
+
+    MoveWindow(mw->_lv_result->_baseWindow._hWnd, rc.left + g_margin, rc.top + iHeight * 2 + g_margin * 3,
+        rc.right - rc.left - 2 * g_margin, rc.bottom - rc.top - iHeight * 3 - 2 * g_margin, TRUE);
+
 }
 
 static void OnNotify(MainWindow* mw, WPARAM wParam, LPARAM lParam)
@@ -249,6 +281,9 @@ static void OnNotify(MainWindow* mw, WPARAM wParam, LPARAM lParam)
             ShowWindow(mw->_lb_chapter->_baseWindow._hWnd, SW_SHOW);
             ShowWindow(mw->_lb_chapter_count1->_baseWindow._hWnd, SW_SHOW);
             ShowWindow(mw->_lb_chapter_count2->_baseWindow._hWnd, SW_SHOW);
+
+            ShowWindow(mw->_tx_search->_baseWindow._hWnd, SW_HIDE);
+            ShowWindow(mw->_lv_result->_baseWindow._hWnd, SW_HIDE);
         }
         else
         {
@@ -256,6 +291,9 @@ static void OnNotify(MainWindow* mw, WPARAM wParam, LPARAM lParam)
             ShowWindow(mw->_lb_chapter->_baseWindow._hWnd, SW_HIDE);
             ShowWindow(mw->_lb_chapter_count1->_baseWindow._hWnd, SW_HIDE);
             ShowWindow(mw->_lb_chapter_count2->_baseWindow._hWnd, SW_HIDE);
+
+            ShowWindow(mw->_tx_search->_baseWindow._hWnd, SW_SHOW);
+            ShowWindow(mw->_lv_result->_baseWindow._hWnd, SW_SHOW);
         }
     }
     }

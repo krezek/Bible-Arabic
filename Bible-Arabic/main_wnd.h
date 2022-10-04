@@ -7,6 +7,8 @@
 #include <tab_control.h>
 #include <rich_edit.h>
 #include <label.h>
+#include <text_edit.h>
+#include <list_view.h>
 
 typedef struct
 {
@@ -21,6 +23,8 @@ typedef struct
 	Label* _lb_chapter;
 	Label* _lb_chapter_count1;
 	Label* _lb_chapter_count2;
+	TextEdit* _tx_search;
+	ListView* _lv_result;
 } MainWindow;
 
 ATOM MainWindow_RegisterClass();
