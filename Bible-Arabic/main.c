@@ -25,7 +25,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
     if (!LoadLibrary(L"msftedit.dll"))
     {
         ShowError(L"Unable to load library msftedit!");
-        return;
+        return -1;
     }
 
     HRESULT hr = CoInitialize(NULL);
