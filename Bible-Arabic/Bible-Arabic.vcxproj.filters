@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="data">
+      <UniqueIdentifier>{c3c9c5fc-0284-423d-9b2d-861f6037e12c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -52,6 +55,9 @@
   <ItemGroup>
     <None Include="rt_manif.bin">
       <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="..\data\matthew.sql">
+      <Filter>data</Filter>
     </None>
   </ItemGroup>
 </Project>

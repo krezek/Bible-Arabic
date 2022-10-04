@@ -29,7 +29,7 @@ static BOOL Create(BaseWindow* _this)
         0,
         MSFTEDIT_CLASS,
         (PCTSTR)NULL,
-        WS_CHILD | WS_VISIBLE | WS_BORDER | WS_CLIPSIBLINGS | ES_MULTILINE | WS_TABSTOP | WS_VSCROLL | WS_HSCROLL,
+        WS_CHILD | WS_VISIBLE | WS_BORDER | WS_CLIPSIBLINGS | ES_MULTILINE | WS_TABSTOP | WS_VSCROLL,
         0, 0, 0, 0,
         _this->_hWndParent,
         _this->_id,
