@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\base_wnd.h" />
+    <ClInclude Include="include\button.h" />
     <ClInclude Include="include\checkbox.h" />
     <ClInclude Include="include\cmp.h" />
     <ClInclude Include="include\config.h" />
@@ -35,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\base_wnd.c" />
+    <ClCompile Include="src\button.c" />
     <ClCompile Include="src\checkbox.c" />
     <ClCompile Include="src\cmp.c" />
     <ClCompile Include="src\config.c" />

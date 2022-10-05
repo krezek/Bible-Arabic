@@ -73,12 +73,18 @@ MainWindow* MainWindow_init()
     mw->_lb_chapter_count2 = Label_init();
     mw->_tx_search = TextEdit_init();
     mw->_lv_result = ListView_init();
+    mw->_bt_next_chapter = Button_init();
+    mw->_bt_prev_chapter = Button_init();
+    mw->_bt_search = Button_init();
 
     return mw;
 }
 
 void MainWindow_free(MainWindow* mw)
 {
+    Button_free(mw->_bt_search);
+    Button_free(mw->_bt_prev_chapter);
+    Button_free(mw->_bt_next_chapter);
     ListView_free(mw->_lv_result);
     TextEdit_free(mw->_tx_search);
     Label_free(mw->_lb_chapter_count2);
@@ -165,6 +171,28 @@ static void OnCreate_TabControl(MainWindow* mw)
         return;
     }
 
+    mw->_bt_prev_chapter->_baseWindow._SetParentFunc((BaseWindow*)mw->_bt_prev_chapter, mw->_tabControl->_baseWindow._hWnd);
+    mw->_bt_prev_chapter->_baseWindow._SetIdFunc((BaseWindow*)mw->_bt_prev_chapter, (HMENU)ID_BUTTON_PREV_CHAPTER);
+
+    if (!mw->_bt_prev_chapter->_baseWindow._CreateFunc((BaseWindow*)mw->_bt_prev_chapter))
+    {
+        ShowError(L"Unable to create prev chapter button");
+        return;
+    }
+
+    SetWindowText(mw->_bt_prev_chapter->_baseWindow._hWnd, L"السابق");
+
+    mw->_bt_next_chapter->_baseWindow._SetParentFunc((BaseWindow*)mw->_bt_next_chapter, mw->_tabControl->_baseWindow._hWnd);
+    mw->_bt_next_chapter->_baseWindow._SetIdFunc((BaseWindow*)mw->_bt_next_chapter, (HMENU)ID_BUTTON_NEXT_CHAPTER);
+
+    if (!mw->_bt_next_chapter->_baseWindow._CreateFunc((BaseWindow*)mw->_bt_next_chapter))
+    {
+        ShowError(L"Unable to create next chapter button");
+        return;
+    }
+
+    SetWindowText(mw->_bt_next_chapter->_baseWindow._hWnd, L"التالي");
+
     mw->_tx_search->_baseWindow._SetParentFunc((BaseWindow*)mw->_tx_search, mw->_tabControl->_baseWindow._hWnd);
     mw->_tx_search->_baseWindow._SetIdFunc((BaseWindow*)mw->_tx_search, (HMENU)ID_TEXTEDIT_SEARCH);
 
@@ -174,6 +202,17 @@ static void OnCreate_TabControl(MainWindow* mw)
         return;
     }
 
+    mw->_bt_search->_baseWindow._SetParentFunc((BaseWindow*)mw->_bt_search, mw->_tabControl->_baseWindow._hWnd);
+    mw->_bt_search->_baseWindow._SetIdFunc((BaseWindow*)mw->_bt_search, (HMENU)ID_BUTTON_SEARCH);
+
+    if (!mw->_bt_search->_baseWindow._CreateFunc((BaseWindow*)mw->_bt_search))
+    {
+        ShowError(L"Unable to create search button");
+        return;
+    }
+
+    SetWindowText(mw->_bt_search->_baseWindow._hWnd, L"بحث");
+
     mw->_lv_result->_baseWindow._SetParentFunc((BaseWindow*)mw->_lv_result, mw->_tabControl->_baseWindow._hWnd);
     mw->_lv_result->_baseWindow._SetIdFunc((BaseWindow*)mw->_lv_result, (HMENU)ID_LISTVIW_RESULT);
 
@@ -182,6 +221,9 @@ static void OnCreate_TabControl(MainWindow* mw)
         ShowError(L"Unable to create search list view!");
         return;
     }
+
+    ShowWindow(mw->_tx_search->_baseWindow._hWnd, SW_HIDE);
+    ShowWindow(mw->_lv_result->_baseWindow._hWnd, SW_HIDE);
 }
 
 static void OnCreate(MainWindow* mw)
@@ -249,24 +291,51 @@ static void OnSize(MainWindow* mw, int width, int height)
 
     // TAB 1
     MoveWindow(mw->_richEdit->_baseWindow._hWnd, rc.left + g_margin, rc.top + iHeight + g_margin, 
-        rc.right - rc.left - 2 * g_margin, rc.bottom - rc.top - iHeight * 3 - 2 * g_margin, TRUE);
+        rc.right - rc.left - 2 * g_margin, rc.bottom - rc.top - iHeight * 4 - 2 * g_margin, TRUE);
 
-    MoveWindow(mw->_lb_chapter->_baseWindow._hWnd, rc.left + g_margin, rc.bottom - rc.top - iHeight * 3 / 2 - 2 * g_margin,
+    int x0 = rc.left + 2 * g_margin;
+    int y0 = rc.bottom - rc.top - iHeight * 2 - 2 * g_margin;
+    
+    MoveWindow(mw->_lb_chapter->_baseWindow._hWnd, x0, y0,
         75, iHeight, TRUE);
 
-    MoveWindow(mw->_lb_chapter_count1->_baseWindow._hWnd, rc.left + g_margin + 75 + g_margin, rc.bottom - rc.top - iHeight * 3 / 2 - 2 * g_margin,
+    x0 += 75 + g_margin;
+
+    MoveWindow(mw->_lb_chapter_count1->_baseWindow._hWnd, x0, y0,
         50, iHeight, TRUE);
 
-    MoveWindow(mw->_lb_chapter_count2->_baseWindow._hWnd, rc.left + g_margin + 125 + 2 * g_margin, rc.bottom - rc.top - iHeight * 3 / 2 - 2 * g_margin,
+    x0 += 50 + g_margin;
+
+    MoveWindow(mw->_lb_chapter_count2->_baseWindow._hWnd, x0, y0,
         50, iHeight, TRUE);
 
+    x0 += 50 + g_margin;
+
+    MoveWindow(mw->_bt_prev_chapter->_baseWindow._hWnd, x0, y0,
+        50, iHeight, TRUE);
+
+    x0 += 50 + g_margin;
+    
+    MoveWindow(mw->_bt_next_chapter->_baseWindow._hWnd, x0, y0,
+        50, iHeight, TRUE);
+    
     // TAB 2
-    MoveWindow(mw->_tx_search->_baseWindow._hWnd, rc.left + g_margin, rc.top + iHeight + g_margin,
+
+    x0 = rc.left + g_margin;
+    y0 = rc.top + iHeight + g_margin;
+
+    MoveWindow(mw->_tx_search->_baseWindow._hWnd, x0, y0,
         rc.right - rc.left - 2 * g_margin, rc.top + iHeight + g_margin, TRUE);
 
-    MoveWindow(mw->_lv_result->_baseWindow._hWnd, rc.left + g_margin, rc.top + iHeight * 2 + g_margin * 3,
-        rc.right - rc.left - 2 * g_margin, rc.bottom - rc.top - iHeight * 3 - 2 * g_margin, TRUE);
+    y0 += iHeight + 3 * g_margin;
+    
+    MoveWindow(mw->_bt_search->_baseWindow._hWnd, x0, y0,
+        75, iHeight, TRUE);
 
+    y0 += iHeight + 2 * g_margin;
+
+    MoveWindow(mw->_lv_result->_baseWindow._hWnd, x0, y0,
+        rc.right - rc.left - 2 * g_margin, rc.bottom - rc.top - iHeight * 4 - 2 * g_margin, TRUE);
 }
 
 static void OnNotify(MainWindow* mw, WPARAM wParam, LPARAM lParam)
@@ -283,16 +352,20 @@ static void OnNotify(MainWindow* mw, WPARAM wParam, LPARAM lParam)
             ShowWindow(mw->_lb_chapter->_baseWindow._hWnd, SW_SHOW);
             ShowWindow(mw->_lb_chapter_count1->_baseWindow._hWnd, SW_SHOW);
             ShowWindow(mw->_lb_chapter_count2->_baseWindow._hWnd, SW_SHOW);
+            ShowWindow(mw->_bt_next_chapter->_baseWindow._hWnd, SW_SHOW);
+            ShowWindow(mw->_bt_prev_chapter->_baseWindow._hWnd, SW_SHOW);
 
             ShowWindow(mw->_tx_search->_baseWindow._hWnd, SW_HIDE);
             ShowWindow(mw->_lv_result->_baseWindow._hWnd, SW_HIDE);
         }
-        else
+        else if(iPage == 1)
         {
             ShowWindow(mw->_richEdit->_baseWindow._hWnd, SW_HIDE);
             ShowWindow(mw->_lb_chapter->_baseWindow._hWnd, SW_HIDE);
             ShowWindow(mw->_lb_chapter_count1->_baseWindow._hWnd, SW_HIDE);
             ShowWindow(mw->_lb_chapter_count2->_baseWindow._hWnd, SW_HIDE);
+            ShowWindow(mw->_bt_next_chapter->_baseWindow._hWnd, SW_HIDE);
+            ShowWindow(mw->_bt_prev_chapter->_baseWindow._hWnd, SW_HIDE);
 
             ShowWindow(mw->_tx_search->_baseWindow._hWnd, SW_SHOW);
             ShowWindow(mw->_lv_result->_baseWindow._hWnd, SW_SHOW);

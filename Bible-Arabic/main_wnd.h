@@ -9,6 +9,7 @@
 #include <label.h>
 #include <text_edit.h>
 #include <list_view.h>
+#include <button.h>
 
 typedef struct
 {
@@ -25,6 +26,9 @@ typedef struct
 	Label* _lb_chapter_count2;
 	TextEdit* _tx_search;
 	ListView* _lv_result;
+	Button* _bt_next_chapter;
+	Button* _bt_prev_chapter;
+	Button* _bt_search;
 } MainWindow;
 
 ATOM MainWindow_RegisterClass();

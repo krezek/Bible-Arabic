@@ -54,6 +54,9 @@
     <ClInclude Include="include\rich_edit.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="include\button.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\base_wnd.c">
@@ -90,6 +93,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="src\rich_edit.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\button.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
