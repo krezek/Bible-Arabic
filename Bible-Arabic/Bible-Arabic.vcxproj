@@ -160,6 +160,9 @@
     <ClCompile Include="main_wnd_ext.c" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\data\all.sql" />
+    <None Include="..\data\genesis.sql" />
+    <None Include="..\data\mark.sql" />
     <None Include="..\data\matthew.sql" />
     <None Include="rt_manif.bin" />
   </ItemGroup>

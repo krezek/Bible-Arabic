@@ -59,5 +59,14 @@
     <None Include="..\data\matthew.sql">
       <Filter>data</Filter>
     </None>
+    <None Include="..\data\mark.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\genesis.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\all.sql">
+      <Filter>data</Filter>
+    </None>
   </ItemGroup>
 </Project>
