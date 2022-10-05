@@ -223,6 +223,7 @@ static void OnCreate_TabControl(MainWindow* mw)
     }
 
     ShowWindow(mw->_tx_search->_baseWindow._hWnd, SW_HIDE);
+    ShowWindow(mw->_bt_search->_baseWindow._hWnd, SW_HIDE);
     ShowWindow(mw->_lv_result->_baseWindow._hWnd, SW_HIDE);
 }
 
@@ -356,6 +357,7 @@ static void OnNotify(MainWindow* mw, WPARAM wParam, LPARAM lParam)
             ShowWindow(mw->_bt_prev_chapter->_baseWindow._hWnd, SW_SHOW);
 
             ShowWindow(mw->_tx_search->_baseWindow._hWnd, SW_HIDE);
+            ShowWindow(mw->_bt_search->_baseWindow._hWnd, SW_HIDE);
             ShowWindow(mw->_lv_result->_baseWindow._hWnd, SW_HIDE);
         }
         else if(iPage == 1)
@@ -368,6 +370,7 @@ static void OnNotify(MainWindow* mw, WPARAM wParam, LPARAM lParam)
             ShowWindow(mw->_bt_prev_chapter->_baseWindow._hWnd, SW_HIDE);
 
             ShowWindow(mw->_tx_search->_baseWindow._hWnd, SW_SHOW);
+            ShowWindow(mw->_bt_search->_baseWindow._hWnd, SW_SHOW);
             ShowWindow(mw->_lv_result->_baseWindow._hWnd, SW_SHOW);
         }
         break;
