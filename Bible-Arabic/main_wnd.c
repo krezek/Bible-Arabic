@@ -422,6 +422,9 @@ static LRESULT HandleMessage(BaseWindow* _this, UINT uMsg, WPARAM wParam, LPARAM
         OnNotify(mw, wParam, lParam);
         return 0;
 
+    case WM_COMMAND:
+        return 0;
+
     case WM_DESTROY:
         OnDestroy(mw);
         return 0;

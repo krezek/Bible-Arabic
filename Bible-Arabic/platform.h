@@ -1,6 +1,8 @@
 #ifndef _PLATFORM_H_
 #define _PLATFORM_H_
 
+#define _CRT_SECURE_NO_WARNINGS
+
 #ifdef _DEBUG
 #define _CRTDBG_MAP_ALLOC
 #endif
