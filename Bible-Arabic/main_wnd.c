@@ -297,6 +297,7 @@ static void OnNotify(MainWindow* mw, WPARAM wParam, LPARAM lParam)
             ShowWindow(mw->_tx_search->_baseWindow._hWnd, SW_SHOW);
             ShowWindow(mw->_lv_result->_baseWindow._hWnd, SW_SHOW);
         }
+        break;
     }
 
     case NM_DBLCLK:
