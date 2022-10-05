@@ -157,3 +157,8 @@ void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 
 	sqlite3_finalize(res);
 }
+
+void OnNotify_next_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
+{
+	printf("%d %d\n", wParam, ((LPNMHDR)lParam)->code);
+}

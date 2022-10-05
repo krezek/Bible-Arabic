@@ -12,6 +12,7 @@ static int g_statusbar_height;
 static const int g_margin = 5;
 
 void OnDBClick_treeView(MainWindow* mw, WPARAM wParam, LPARAM lParam);
+void OnNotify_next_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam);
 
 ATOM MainWindow_RegisterClass()
 {
@@ -339,16 +340,16 @@ static void OnSize(MainWindow* mw, int width, int height)
         rc.right - rc.left - 2 * g_margin, rc.bottom - rc.top - iHeight * 4 - 2 * g_margin, TRUE);
 }
 
-static void OnNotify(MainWindow* mw, WPARAM wParam, LPARAM lParam)
+static void OnNotify_tabControl(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 {
     switch (((LPNMHDR)lParam)->code)
     {
     case TCN_SELCHANGE:
     {
         int iPage = TabCtrl_GetCurSel(mw->_tabControl->_baseWindow._hWnd);
-        if (iPage == 0) 
+        if (iPage == 0)
         {
-            
+
             ShowWindow(mw->_richEdit->_baseWindow._hWnd, SW_SHOW);
             ShowWindow(mw->_lb_chapter->_baseWindow._hWnd, SW_SHOW);
             ShowWindow(mw->_lb_chapter_count1->_baseWindow._hWnd, SW_SHOW);
@@ -360,7 +361,7 @@ static void OnNotify(MainWindow* mw, WPARAM wParam, LPARAM lParam)
             ShowWindow(mw->_bt_search->_baseWindow._hWnd, SW_HIDE);
             ShowWindow(mw->_lv_result->_baseWindow._hWnd, SW_HIDE);
         }
-        else if(iPage == 1)
+        else if (iPage == 1)
         {
             ShowWindow(mw->_richEdit->_baseWindow._hWnd, SW_HIDE);
             ShowWindow(mw->_lb_chapter->_baseWindow._hWnd, SW_HIDE);
@@ -375,7 +376,13 @@ static void OnNotify(MainWindow* mw, WPARAM wParam, LPARAM lParam)
         }
         break;
     }
+    }
+}
 
+static void OnNotify_treeView(MainWindow* mw, WPARAM wParam, LPARAM lParam)
+{
+    switch (((LPNMHDR)lParam)->code)
+    {
     case NM_DBLCLK:
         OnDBClick_treeView(mw, wParam, lParam);
         break;
@@ -419,7 +426,12 @@ static LRESULT HandleMessage(BaseWindow* _this, UINT uMsg, WPARAM wParam, LPARAM
         return 0;
 
     case WM_NOTIFY:
-        OnNotify(mw, wParam, lParam);
+        if (((LPNMHDR)lParam)->hwndFrom == mw->_treeView->_baseWindow._hWnd)
+            OnNotify_treeView(mw, wParam, lParam);
+        else if (((LPNMHDR)lParam)->hwndFrom == mw->_tabControl->_baseWindow._hWnd)
+            OnNotify_tabControl(mw, wParam, lParam);
+        else if (((LPNMHDR)lParam)->hwndFrom == mw->_bt_next_chapter->_baseWindow._hWnd)
+            OnNotify_next_chapter(mw, wParam, lParam);
         return 0;
 
     case WM_COMMAND:
