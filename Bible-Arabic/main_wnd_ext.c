@@ -233,28 +233,26 @@ void OnBtnClicked_prev_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 	}
 }
 
-void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam)
+wchar_t* get_table_arabic_name(const char* table)
+{
+	if (strcmp(table, "genesis") == 0)
+		return L"تكوين";
+	else if (strcmp(table, "matthew") == 0)
+		return L"متى";
+	else if (strcmp(table, "mark") == 0)
+		return L"مرقس";
+	else
+		return L"";
+}
+
+void search(MainWindow* mw, WPARAM wParam, LPARAM lParam, const char* table, const char* text)
 {
 	sqlite3* bible_db;
-	wchar_t wtext[100];
-	char text[200];
 	char* err_msg = 0;
 	sqlite3_stmt* res;
 	int rc;
 	char sql[255];
-	_locale_t loc;
-	const char* table = "matthew";
 	
-	ListView_DeleteAllItems(mw->_lv_result->_baseWindow._hWnd);
-	GetWindowText(mw->_tx_search->_baseWindow._hWnd, wtext, 100);
-	
-	if (wcslen(wtext) <= 0)
-		return;
-
-	loc = _wcreate_locale(LC_ALL, L"ar_SY.utf8"); 
-	_wcstombs_l(text, wtext, 100, loc);
-	_free_locale(loc);
-
 	strcpy(sql, "SELECT * FROM ");
 	strcat(sql, table);
 	strcat(sql, " WHERE ");
@@ -283,7 +281,15 @@ void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 
 	while (sqlite3_step(res) == SQLITE_ROW)
 	{
+		wchar_t buff[100];
 		LV_ITEM lvI;
+
+		wcscpy(buff, get_table_arabic_name(table));
+		wcscat(buff, L" ");
+		wcscat(buff, sqlite3_column_text16(res, 0));
+		wcscat(buff, L"/");
+		wcscat(buff, sqlite3_column_text16(res, 1));
+
 
 		lvI.mask = LVIF_TEXT;
 		lvI.state = 0;
@@ -299,7 +305,7 @@ void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 		ListView_SetItemText(mw->_lv_result->_baseWindow._hWnd,
 			0,
 			0,
-			L"");
+			HindiNumbers(buff));
 
 		ListView_SetItemText(mw->_lv_result->_baseWindow._hWnd,
 			0,
@@ -309,4 +315,27 @@ void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 
 	sqlite3_finalize(res);
 	sqlite3_close(bible_db);
+}
+
+void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam)
+{
+	_locale_t loc;
+	wchar_t wtext[100];
+	char text[200];
+	//const char* table = "matthew";
+
+	ListView_DeleteAllItems(mw->_lv_result->_baseWindow._hWnd);
+	GetWindowText(mw->_tx_search->_baseWindow._hWnd, wtext, 100);
+
+	if (wcslen(wtext) <= 0)
+		return;
+
+	loc = _wcreate_locale(LC_ALL, L"ar_SY.utf8");
+	_wcstombs_l(text, wtext, 100, loc);
+	_free_locale(loc);
+
+	search(mw, wParam, lParam, "genesis", text);
+	search(mw, wParam, lParam, "matthew", text);
+	search(mw, wParam, lParam, "mark", text);
+
 }
