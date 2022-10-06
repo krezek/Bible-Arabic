@@ -89,11 +89,7 @@ void LoadPart(MainWindow* mw, const char* part_name)
 
 	rc = sqlite3_prepare_v2(bible_db, sql, -1, &res, 0);
 
-	if (rc == SQLITE_OK)
-	{
-		sqlite3_bind_int(res, 1, 3);
-	}
-	else
+	if (rc != SQLITE_OK)
 	{
 		ShowError(L"Unable to select max chapter!");
 		sqlite3_finalize(res);
@@ -148,11 +144,7 @@ void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 
 	rc = sqlite3_prepare_v2(bible_db, sql, -1, &res, 0);
 
-	if (rc == SQLITE_OK)
-	{
-		sqlite3_bind_int(res, 1, 3);
-	}
-	else
+	if (rc != SQLITE_OK)
 	{
 		ShowError(L"Unable to select data!");
 		sqlite3_finalize(res);
@@ -240,8 +232,59 @@ void OnBtnClicked_prev_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 		LoadChapter(mw, g_part_name, g_chapter_idx);
 	}
 }
-
+#include <locale.h>
 void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 {
-	printf("search\n");
+	sqlite3* bible_db;
+	wchar_t wtext[100];
+	char text[200];
+	char* err_msg = 0;
+	sqlite3_stmt* res;
+	int rc;
+	char sql[255];
+	_locale_t loc;
+	const char* table = "matthew";
+	
+	GetWindowText(mw->_tx_search->_baseWindow._hWnd, wtext, 100);
+	
+	if (wcslen(wtext) <= 0)
+		return;
+
+	loc = _wcreate_locale(LC_ALL, L"ar_SY.utf8"); 
+	_wcstombs_l(text, wtext, 100, loc);
+	_free_locale(loc);
+
+	strcpy(sql, "SELECT * FROM ");
+	strcat(sql, table);
+	strcat(sql, " WHERE ");
+	strcat(sql, table);
+	strcat(sql, " MATCH \"");
+	strcat(sql, text);
+	strcat(sql, "\"");
+
+	rc = sqlite3_open_v2(DB_URL, &bible_db, SQLITE_OPEN_READONLY, NULL);
+
+	if (rc != SQLITE_OK) {
+		ShowError(L"Can't open database file!");
+		sqlite3_close(bible_db);
+		return;
+	}
+
+	rc = sqlite3_prepare_v2(bible_db, sql, -1, &res, 0);
+
+	if (rc != SQLITE_OK)
+	{
+		ShowError(L"Unable to select data!");
+		sqlite3_finalize(res);
+		sqlite3_close(bible_db);
+		return;
+	}
+
+	while (sqlite3_step(res) == SQLITE_ROW)
+	{
+		MessageBox(NULL, sqlite3_column_text16(res, 4), L"Hi", MB_OK);
+	}
+
+	sqlite3_finalize(res);
+	sqlite3_close(bible_db);
 }
