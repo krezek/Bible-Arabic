@@ -6,13 +6,18 @@
 static TCHAR szWindowClass[] = _T("DesktopApp");
 static TCHAR szTitle[] = _T("الكتاب المقدس");
 
+WNDPROC lpTabControlWndProc;
+
 static LRESULT HandleMessage(BaseWindow* _this, UINT uMsg, WPARAM wParam, LPARAM lParam);
+LRESULT TabControlCallBckProcedure(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 static int g_statusbar_height;
 static const int g_margin = 5;
 
 void OnDBClick_treeView(MainWindow* mw, WPARAM wParam, LPARAM lParam);
-void OnNotify_next_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam);
+void OnBtnClicked_next_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam);
+void OnBtnClicked_prev_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam);
+void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam);
 
 ATOM MainWindow_RegisterClass()
 {
@@ -151,6 +156,20 @@ static void OnCreate_TabControl(MainWindow* mw)
         ShowError(L"Unable to create label chapter!");
         return;
     }
+
+#ifdef _WIN64
+    lpTabControlWndProc = (WNDPROC)SetWindowLongPtr(mw->_tabControl->_baseWindow._hWnd,
+        GWLP_WNDPROC, (LONG_PTR)&TabControlCallBckProcedure);
+    SetWindowLongPtr(mw->_tabControl->_baseWindow._hWnd,
+        GWLP_USERDATA, (LONG_PTR)mw);
+#else
+    lpTabControlWndProc = (WNDPROC)SetWindowLongPtr(mw->_tabControl->_baseWindow._hWnd, 
+        GWL_WNDPROC, (LONG_PTR)&TabControlCallBckProcedure);
+    SetWindowLongPtr(mw->_tabControl->_baseWindow._hWnd,
+        GWL_USERDATA, (LONG_PTR)mw);
+#endif
+
+
 
     SetWindowText(mw->_lb_chapter->_baseWindow._hWnd, L"الاصحاح");
 
@@ -430,11 +449,6 @@ static LRESULT HandleMessage(BaseWindow* _this, UINT uMsg, WPARAM wParam, LPARAM
             OnNotify_treeView(mw, wParam, lParam);
         else if (((LPNMHDR)lParam)->hwndFrom == mw->_tabControl->_baseWindow._hWnd)
             OnNotify_tabControl(mw, wParam, lParam);
-        else if (((LPNMHDR)lParam)->hwndFrom == mw->_bt_next_chapter->_baseWindow._hWnd)
-            OnNotify_next_chapter(mw, wParam, lParam);
-        return 0;
-
-    case WM_COMMAND:
         return 0;
 
     case WM_DESTROY:
@@ -444,4 +458,39 @@ static LRESULT HandleMessage(BaseWindow* _this, UINT uMsg, WPARAM wParam, LPARAM
     default:
         return DefWindowProc(_this->_hWnd, uMsg, wParam, lParam);
     }
+}
+
+LRESULT TabControlCallBckProcedure(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+#ifdef _WIN64
+    MainWindow* mw = (MainWindow*)GetWindowLongPtr(hWnd, GWLP_USERDATA);
+#else
+    MainWindow* mw = (MainWindow*)GetWindowLongPtr(hWnd, GWL_USERDATA);
+#endif
+
+    switch (uMsg)
+    {
+    case WM_COMMAND:
+        switch (LOWORD(wParam))
+        {
+        case ID_BUTTON_NEXT_CHAPTER:
+            OnBtnClicked_next_chapter(mw, wParam, lParam);
+            break;
+
+        case ID_BUTTON_PREV_CHAPTER:
+            OnBtnClicked_prev_chapter(mw, wParam, lParam);
+            break;
+        
+        case ID_BUTTON_SEARCH:
+            OnBtnClicked_search(mw, wParam, lParam);
+            break;
+        
+        default:
+            break;
+        }
+        break;
+    default:
+        break;
+    }
+    return CallWindowProc(lpTabControlWndProc, hWnd, uMsg, wParam, lParam);
 }

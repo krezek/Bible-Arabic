@@ -5,10 +5,10 @@
 
 #include "main_wnd.h"
 
-sqlite3* g_bible_db;
+#define DB_URL "../data/bible.db"
 char g_part_name[100];
-int g_chapter_idx;
-int g_chapter_count;
+int g_chapter_idx = 0;
+int g_chapter_count = 0;
 
 void LoadPart(MainWindow* mw, const char* part_name);
 void LoadChapter(MainWindow* mw, const char* part_name, int idx);
@@ -53,6 +53,7 @@ void OnDBClick_treeView(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 
 void LoadPart(MainWindow* mw, const char* part_name)
 {
+	sqlite3* bible_db;
 	char* err_msg = 0;
 	sqlite3_stmt* res;
 	int rc;
@@ -71,18 +72,18 @@ void LoadPart(MainWindow* mw, const char* part_name)
 	_itow(g_chapter_count, nmbr, 10);
 	SetWindowText(mw->_lb_chapter_count2->_baseWindow._hWnd, HindiNumbers(nmbr));
 
-	rc = sqlite3_open_v2("../data/bible.db", &g_bible_db, SQLITE_OPEN_READONLY, NULL);
+	rc = sqlite3_open_v2(DB_URL, &bible_db, SQLITE_OPEN_READONLY, NULL);
 
 	if (rc != SQLITE_OK) {
 		ShowError(L"Can't open database file!");
-		sqlite3_close(g_bible_db);
+		sqlite3_close(bible_db);
 		return;
 	}
 
 	strcpy(sql, "SELECT max(chapter) FROM ");
 	strcat(sql, part_name);
 
-	rc = sqlite3_prepare_v2(g_bible_db, sql, -1, &res, 0);
+	rc = sqlite3_prepare_v2(bible_db, sql, -1, &res, 0);
 
 	if (rc == SQLITE_OK)
 	{
@@ -92,7 +93,7 @@ void LoadPart(MainWindow* mw, const char* part_name)
 	{
 		ShowError(L"Unable to select max chapter!");
 		sqlite3_finalize(res);
-		sqlite3_close(g_bible_db);
+		sqlite3_close(bible_db);
 		return;
 	}
 
@@ -112,14 +113,15 @@ void LoadPart(MainWindow* mw, const char* part_name)
 	SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
 	SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"");
 
-	LoadChapter(mw, g_part_name, g_chapter_idx);
+	sqlite3_close(bible_db);
 
-	sqlite3_close(g_bible_db);
+	LoadChapter(mw, g_part_name, g_chapter_idx);
 }
 
 void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 {
 	HWND richTextHWND = mw->_richEdit->_baseWindow._hWnd;
+	sqlite3* bible_db;
 	char buff[20];
 	char* err_msg = 0;
 	sqlite3_stmt* res;
@@ -132,7 +134,15 @@ void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 	strcat(sql, " WHERE chapter = ");
 	strcat(sql, _itoa(g_chapter_idx, buff, 10));
 
-	rc = sqlite3_prepare_v2(g_bible_db, sql, -1, &res, 0);
+	rc = sqlite3_open_v2(DB_URL, &bible_db, SQLITE_OPEN_READONLY, NULL);
+
+	if (rc != SQLITE_OK) {
+		ShowError(L"Can't open database file!");
+		sqlite3_close(bible_db);
+		return;
+	}
+
+	rc = sqlite3_prepare_v2(bible_db, sql, -1, &res, 0);
 
 	if (rc == SQLITE_OK)
 	{
@@ -142,7 +152,7 @@ void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 	{
 		ShowError(L"Unable to select data!");
 		sqlite3_finalize(res);
-		sqlite3_close(g_bible_db);
+		sqlite3_close(bible_db);
 		return;
 	}
 
@@ -156,9 +166,52 @@ void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 	}
 
 	sqlite3_finalize(res);
+	sqlite3_close(bible_db);
 }
 
-void OnNotify_next_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
+void OnBtnClicked_next_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 {
-	printf("%d %d\n", wParam, ((LPNMHDR)lParam)->code);
+	if (g_chapter_idx < g_chapter_count)
+	{
+		HWND richTextHWND = mw->_richEdit->_baseWindow._hWnd; 
+		CHARRANGE cr;
+		wchar_t nmbr[20];
+
+		cr.cpMin = 0;
+		cr.cpMax = -1;
+
+		SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
+		SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"");
+
+		_itow(++g_chapter_idx, nmbr, 10);
+		SetWindowText(mw->_lb_chapter_count1->_baseWindow._hWnd, HindiNumbers(nmbr));
+
+		LoadChapter(mw, g_part_name, g_chapter_idx);
+	}
+}
+
+void OnBtnClicked_prev_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
+{
+	if (g_chapter_idx > 1)
+	{
+		HWND richTextHWND = mw->_richEdit->_baseWindow._hWnd;
+		CHARRANGE cr;
+		wchar_t nmbr[20];
+
+		cr.cpMin = 0;
+		cr.cpMax = -1;
+
+		SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
+		SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"");
+
+		_itow(--g_chapter_idx, nmbr, 10);
+		SetWindowText(mw->_lb_chapter_count1->_baseWindow._hWnd, HindiNumbers(nmbr));
+
+		LoadChapter(mw, g_part_name, g_chapter_idx);
+	}
+}
+
+void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam)
+{
+	printf("search\n");
 }
