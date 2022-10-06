@@ -158,11 +158,37 @@ void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 
 	while (sqlite3_step(res) == SQLITE_ROW)
 	{
+		const wchar_t* prefix = sqlite3_column_text16(res, 2);
+		const wchar_t* suffix = sqlite3_column_text16(res, 3);
+		const wchar_t* verse = sqlite3_column_text16(res, 1);
+		const wchar_t* body = sqlite3_column_text16(res, 4);
+		wchar_t number[20];
+
+		wcscpy(number, verse);
+		
 		cr.cpMin = -1;
 		cr.cpMax = -1;
 
+		if (prefix)
+		{
+			SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
+			SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)prefix);
+		}
+
 		SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
-		SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)sqlite3_column_text16(res, 4));
+		SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)HindiNumbers(number));
+
+		SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
+		SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L" ");
+
+		SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
+		SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)body);
+
+		if (suffix)
+		{
+			SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
+			SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)suffix);
+		}
 	}
 
 	sqlite3_finalize(res);
