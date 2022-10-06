@@ -310,7 +310,7 @@ void search(MainWindow* mw, WPARAM wParam, LPARAM lParam, const char* table, con
 		ListView_SetItemText(mw->_lv_result->_baseWindow._hWnd,
 			0,
 			1,
-			sqlite3_column_text16(res, 4));
+			(wchar_t*)sqlite3_column_text16(res, 4));
 	}
 
 	sqlite3_finalize(res);
