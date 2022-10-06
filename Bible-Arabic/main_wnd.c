@@ -112,15 +112,38 @@ static void OnCreate_TreeView(MainWindow* mw)
     insertStruct.hInsertAfter = TVI_ROOT;
 
     pItem->mask = TVIF_TEXT;
+    pItem->pszText = L"العهد القديم";
+    hItem = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
+
+    if (hItem)
+    {
+        HTREEITEM hItem_sub;
+
+        insertStruct.hParent = hItem;
+        pItem->pszText = L"تكوين";
+        hItem_sub = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
+        if (hItem_sub) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem_sub);
+    }
+
+    insertStruct.hParent = NULL;
+
+    pItem->mask = TVIF_TEXT;
     pItem->pszText = L"العهد الجديد";
     hItem = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
 
     if (hItem)
     {
+        HTREEITEM hItem_sub;
+
         insertStruct.hParent = hItem;
         pItem->pszText = L"متى";
-        hItem = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
-        if (hItem) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem);
+        hItem_sub = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
+        if (hItem_sub) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem_sub);
+
+        insertStruct.hParent = hItem;
+        pItem->pszText = L"مرقس";
+        hItem_sub = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
+        if (hItem_sub) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem_sub);
     }
 }
 

@@ -46,8 +46,12 @@ void OnDBClick_treeView(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 	item.pszText = buffer;
 	if (TreeView_GetItem(treeViewHWND, &item))
 	{
-		if (wcscmp(item.pszText, L"متى") == 0)
+		if (wcscmp(item.pszText, L"تكوين") == 0)
+			LoadPart(mw, "genesis"); 
+		else if (wcscmp(item.pszText, L"متى") == 0)
 			LoadPart(mw, "matthew");
+		else if (wcscmp(item.pszText, L"مرقس") == 0)
+			LoadPart(mw, "mark");
 	}
 }
 
