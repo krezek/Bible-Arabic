@@ -265,6 +265,18 @@ static void OnCreate_TabControl(MainWindow* mw)
         return;
     }
 
+    LV_COLUMN lvC;
+    lvC.mask = LVCF_FMT | LVCF_WIDTH | LVCF_TEXT | LVCF_SUBITEM;
+    lvC.fmt = LVCFMT_LEFT;
+    lvC.cx = 100;
+
+    lvC.pszText = L"مكان";
+    ListView_InsertColumn(mw->_lv_result->_baseWindow._hWnd, 0, &lvC);
+    
+    lvC.cx = 300; 
+    lvC.pszText = L"النص";
+    ListView_InsertColumn(mw->_lv_result->_baseWindow._hWnd, 1, &lvC);
+
     ShowWindow(mw->_tx_search->_baseWindow._hWnd, SW_HIDE);
     ShowWindow(mw->_bt_search->_baseWindow._hWnd, SW_HIDE);
     ShowWindow(mw->_lv_result->_baseWindow._hWnd, SW_HIDE);

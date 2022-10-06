@@ -232,7 +232,7 @@ void OnBtnClicked_prev_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 		LoadChapter(mw, g_part_name, g_chapter_idx);
 	}
 }
-#include <locale.h>
+
 void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 {
 	sqlite3* bible_db;
@@ -245,6 +245,7 @@ void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 	_locale_t loc;
 	const char* table = "matthew";
 	
+	ListView_DeleteAllItems(mw->_lv_result->_baseWindow._hWnd);
 	GetWindowText(mw->_tx_search->_baseWindow._hWnd, wtext, 100);
 	
 	if (wcslen(wtext) <= 0)
@@ -282,7 +283,28 @@ void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 
 	while (sqlite3_step(res) == SQLITE_ROW)
 	{
-		MessageBox(NULL, sqlite3_column_text16(res, 4), L"Hi", MB_OK);
+		LV_ITEM lvI;
+
+		lvI.mask = LVIF_TEXT;
+		lvI.state = 0;
+		lvI.stateMask = 0;
+
+		lvI.iItem = 0;
+		lvI.iSubItem = 0;
+		lvI.pszText = LPSTR_TEXTCALLBACK;
+		lvI.cchTextMax = 200;
+
+		ListView_InsertItem(mw->_lv_result->_baseWindow._hWnd, &lvI);
+
+		ListView_SetItemText(mw->_lv_result->_baseWindow._hWnd,
+			0,
+			0,
+			L"");
+
+		ListView_SetItemText(mw->_lv_result->_baseWindow._hWnd,
+			0,
+			1,
+			sqlite3_column_text16(res, 4));
 	}
 
 	sqlite3_finalize(res);

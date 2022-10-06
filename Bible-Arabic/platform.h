@@ -19,6 +19,7 @@
 #include <string.h>
 #include <assert.h>
 #include <ctype.h>
+#include <locale.h>
 
 
 #ifdef _DEBUG
