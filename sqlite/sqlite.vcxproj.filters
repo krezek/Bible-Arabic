@@ -18,6 +18,9 @@
     <ClCompile Include="sqlite3.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="functions.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sqlite3.h">

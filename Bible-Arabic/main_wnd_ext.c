@@ -13,6 +13,8 @@ int g_chapter_count = 0;
 void LoadPart(MainWindow* mw, const char* part_name);
 void LoadChapter(MainWindow* mw, const char* part_name, int idx);
 
+void remove_marks(sqlite3_context* context, int argc, sqlite3_value** argv);
+
 wchar_t* HindiNumbers(wchar_t* str)
 {
 	size_t len = wcslen(str);
@@ -255,11 +257,9 @@ void search(MainWindow* mw, WPARAM wParam, LPARAM lParam, const char* table, con
 	
 	strcpy(sql, "SELECT * FROM ");
 	strcat(sql, table);
-	strcat(sql, " WHERE ");
-	strcat(sql, table);
-	strcat(sql, " MATCH \"");
+	strcat(sql, " WHERE remove_marks(body) like remove_marks(\'%");
 	strcat(sql, text);
-	strcat(sql, "\"");
+	strcat(sql, "%\')");
 
 	rc = sqlite3_open_v2(DB_URL, &bible_db, SQLITE_OPEN_READONLY, NULL);
 
@@ -267,6 +267,12 @@ void search(MainWindow* mw, WPARAM wParam, LPARAM lParam, const char* table, con
 		ShowError(L"Can't open database file!");
 		sqlite3_close(bible_db);
 		return;
+	}
+
+	if (sqlite3_create_function(bible_db, "remove_marks", 1, SQLITE_UTF8, NULL, &remove_marks, NULL, NULL) != SQLITE_OK)
+	{
+		ShowError(L"Unable to create db function remove_marks!");
+		sqlite3_close(bible_db);
 	}
 
 	rc = sqlite3_prepare_v2(bible_db, sql, -1, &res, 0);
