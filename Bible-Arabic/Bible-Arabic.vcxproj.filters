@@ -16,6 +16,9 @@
     <Filter Include="data">
       <UniqueIdentifier>{c3c9c5fc-0284-423d-9b2d-861f6037e12c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\genesis">
+      <UniqueIdentifier>{9e876aa1-4007-4eb0-a04c-804cc422dd1e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -67,6 +70,156 @@
     </None>
     <None Include="..\data\all.sql">
       <Filter>data</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_1.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_2.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_3.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_4.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_5.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_6.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_7.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_8.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_9.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_10.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_11.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_12.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_13.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_14.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_15.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_16.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_17.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_18.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_19.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_20.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_21.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_22.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_23.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_24.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_25.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_26.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_27.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_28.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_29.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_30.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_31.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_32.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_33.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_34.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_35.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_36.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_37.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_38.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_39.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_40.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_41.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_42.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_43.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_44.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_45.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_46.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_47.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_48.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_49.sql">
+      <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\genesis\genesis_50.sql">
+      <Filter>data\genesis</Filter>
     </None>
   </ItemGroup>
 </Project>
