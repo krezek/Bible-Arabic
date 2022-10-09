@@ -128,6 +128,11 @@ static void OnCreate_TreeView(MainWindow* mw)
         pItem->pszText = L"الخروج";
         hItem_sub = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
         if (hItem_sub) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem_sub);
+
+        insertStruct.hParent = hItem;
+        pItem->pszText = L"اللاويين";
+        hItem_sub = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
+        if (hItem_sub) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem_sub);
     }
 
     insertStruct.hParent = NULL;
