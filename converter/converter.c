@@ -5,10 +5,10 @@
 #include <locale.h>
 #include <string.h>
 
-const char* source = "C:\\Users\\Kinaz Rezek\\Test\\ar_new\\01\\50.htm";
+const char* source = "C:\\Users\\Kinaz Rezek\\Test\\ar_new\\02\\40.htm";
 const char* dist = "generated.sql";
 
-#define chapter 50
+#define chapter 40
 
 #define BUFF_LENGTH 1024
 char buffer[BUFF_LENGTH];
@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
 
 			buffer[idx] = 0;
 
-			fprintf(pDist, "INSERT INTO genesis (chapter, verse, prefix, suffix, body)\nVALUES (%d, %d, NULL, NULL, \"%s\");\n", chapter, line, strchr(buffer, ';') + 1);
+			fprintf(pDist, "INSERT INTO exodus (chapter, verse, prefix, suffix, body)\nVALUES (%d, %d, NULL, NULL, \"%s\");\n", chapter, line, strchr(buffer, ';') + 1);
 			
 			++line;
 			idx = 0;

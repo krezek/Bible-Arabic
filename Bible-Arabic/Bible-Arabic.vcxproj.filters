@@ -19,6 +19,9 @@
     <Filter Include="data\genesis">
       <UniqueIdentifier>{9e876aa1-4007-4eb0-a04c-804cc422dd1e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\exodus">
+      <UniqueIdentifier>{ea2e05ec-b9c5-464c-a5e9-db93d3a8c5a3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -220,6 +223,129 @@
     </None>
     <None Include="..\data\genesis\genesis_50.sql">
       <Filter>data\genesis</Filter>
+    </None>
+    <None Include="..\data\exodus.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_1.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_2.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_3.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_4.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_5.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_6.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_7.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_8.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_9.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_10.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_11.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_12.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_13.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_14.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_15.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_16.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_17.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_18.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_19.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_20.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_21.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_22.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_23.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_24.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_25.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_26.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_27.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_28.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_29.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_30.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_31.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_32.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_33.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_34.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_35.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_36.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_37.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_38.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_39.sql">
+      <Filter>data\exodus</Filter>
+    </None>
+    <None Include="..\data\exodus\exodus_40.sql">
+      <Filter>data\exodus</Filter>
     </None>
   </ItemGroup>
 </Project>

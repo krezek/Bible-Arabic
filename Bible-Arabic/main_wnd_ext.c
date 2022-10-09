@@ -48,8 +48,10 @@ void OnDBClick_treeView(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 	item.pszText = buffer;
 	if (TreeView_GetItem(treeViewHWND, &item))
 	{
-		if (wcscmp(item.pszText, L"تكوين") == 0)
+		if (wcscmp(item.pszText, L"التكوين") == 0)
 			LoadPart(mw, "genesis"); 
+		else if (wcscmp(item.pszText, L"الخروج") == 0)
+			LoadPart(mw, "exodus");
 		else if (wcscmp(item.pszText, L"متى") == 0)
 			LoadPart(mw, "matthew");
 		else if (wcscmp(item.pszText, L"مرقس") == 0)
@@ -238,7 +240,9 @@ void OnBtnClicked_prev_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 wchar_t* get_table_arabic_name(const char* table)
 {
 	if (strcmp(table, "genesis") == 0)
-		return L"تكوين";
+		return L"التكوين";
+	else if (strcmp(table, "exodus") == 0)
+		return L"الخروج";
 	else if (strcmp(table, "matthew") == 0)
 		return L"متى";
 	else if (strcmp(table, "mark") == 0)
@@ -341,6 +345,7 @@ void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 	_free_locale(loc);
 
 	search(mw, wParam, lParam, "genesis", text);
+	search(mw, wParam, lParam, "exodus", text);
 	search(mw, wParam, lParam, "matthew", text);
 	search(mw, wParam, lParam, "mark", text);
 
