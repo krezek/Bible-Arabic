@@ -86,9 +86,6 @@
     <ClCompile Include="src\text_edit.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="src\tree_view.c">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="src\tab_control.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
@@ -96,6 +93,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="src\button.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tree_view.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

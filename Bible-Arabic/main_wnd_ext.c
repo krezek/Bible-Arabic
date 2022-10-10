@@ -25,7 +25,7 @@ struct Testament NewTestament[] =
 	{ "mark", L"مرقس" }
 };
 
-#define DB_URL "../data/bible.db"
+#define DB_URL "bible.db"
 char g_part_name[100];
 int g_chapter_idx = 0;
 int g_chapter_count = 0;
