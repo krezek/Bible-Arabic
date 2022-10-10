@@ -18,7 +18,8 @@ struct Testament OldTestament[] =
 	{ "leviticus", L"اللاويين" },
 	{ "numbers", L"العدد" },
 	{ "deuteronomy", L"التثنية" },
-	{ "joshua", L"يشوع" }
+	{ "joshua", L"يشوع" } ,
+	{ "judges", L"القضاة"}
 };
 
 struct Testament NewTestament[] =
@@ -370,7 +371,6 @@ void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 	_locale_t loc;
 	wchar_t wtext[100];
 	char text[200];
-	//const char* table = "matthew";
 
 	ListView_DeleteAllItems(mw->_lv_result->_baseWindow._hWnd);
 	GetWindowText(mw->_tx_search->_baseWindow._hWnd, wtext, 100);

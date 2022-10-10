@@ -9,7 +9,7 @@ struct Testament
     wchar_t* table_arabic;
 }; 
 
-extern struct Testament OldTestament[6];
+extern struct Testament OldTestament[7];
 extern struct Testament NewTestament[2];
 
 static TCHAR szWindowClass[] = _T("DesktopApp");

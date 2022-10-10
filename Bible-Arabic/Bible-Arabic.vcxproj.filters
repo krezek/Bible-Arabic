@@ -34,6 +34,9 @@
     <Filter Include="data\joshua">
       <UniqueIdentifier>{eb5ba381-549a-42f6-8222-646bca261408}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\judges">
+      <UniqueIdentifier>{81cd0ce3-27f0-4b2e-bd1a-8f45b5c7638e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -631,6 +634,72 @@
     </None>
     <None Include="..\data\joshua\joshua_24.sql">
       <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\judges.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\judges\judges_1.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_2.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_3.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_4.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_5.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_6.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_7.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_8.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_9.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_10.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_11.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_12.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_13.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_14.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_15.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_16.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_17.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_18.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_19.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_20.sql">
+      <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\judges\judges_21.sql">
+      <Filter>data\judges</Filter>
     </None>
   </ItemGroup>
 </Project>
