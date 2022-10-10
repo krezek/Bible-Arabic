@@ -28,6 +28,9 @@
     <Filter Include="data\numbers">
       <UniqueIdentifier>{87bba1f0-d9b5-4ffd-94e1-2cebd4d0c7c9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\deuteronomy">
+      <UniqueIdentifier>{5231dddd-68a1-4928-9fd4-bd843b03afeb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -547,6 +550,9 @@
     </None>
     <None Include="..\data\numbers\numbers_36.sql">
       <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\deuteronomy.sql">
+      <Filter>data</Filter>
     </None>
   </ItemGroup>
 </Project>

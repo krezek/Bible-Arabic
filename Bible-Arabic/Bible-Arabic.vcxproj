@@ -161,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\data\all.sql" />
+    <None Include="..\data\deuteronomy.sql" />
     <None Include="..\data\exodus.sql" />
     <None Include="..\data\exodus\exodus_1.sql" />
     <None Include="..\data\exodus\exodus_10.sql" />
