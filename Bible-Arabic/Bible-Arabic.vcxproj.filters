@@ -31,6 +31,9 @@
     <Filter Include="data\deuteronomy">
       <UniqueIdentifier>{5231dddd-68a1-4928-9fd4-bd843b03afeb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\joshua">
+      <UniqueIdentifier>{eb5ba381-549a-42f6-8222-646bca261408}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -553,6 +556,81 @@
     </None>
     <None Include="..\data\deuteronomy.sql">
       <Filter>data</Filter>
+    </None>
+    <None Include="..\data\joshua.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_1.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_2.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_3.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_4.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_5.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_6.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_7.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_8.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_9.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_10.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_11.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_12.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_13.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_14.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_15.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_16.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_17.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_18.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_19.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_20.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_21.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_22.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_23.sql">
+      <Filter>data\joshua</Filter>
+    </None>
+    <None Include="..\data\joshua\joshua_24.sql">
+      <Filter>data\joshua</Filter>
     </None>
   </ItemGroup>
 </Project>

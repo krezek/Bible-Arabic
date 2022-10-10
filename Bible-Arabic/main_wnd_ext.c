@@ -58,6 +58,8 @@ void OnDBClick_treeView(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 			LoadPart(mw, "numbers");
 		else if (wcscmp(item.pszText, L"التثنية") == 0)
 			LoadPart(mw, "deuteronomy");
+		else if (wcscmp(item.pszText, L"يشوع") == 0)
+			LoadPart(mw, "joshua");
 		else if (wcscmp(item.pszText, L"متى") == 0)
 			LoadPart(mw, "matthew");
 		else if (wcscmp(item.pszText, L"مرقس") == 0)
@@ -255,6 +257,8 @@ wchar_t* get_table_arabic_name(const char* table)
 		return L"العدد";
 	else if (strcmp(table, "deuteronomy") == 0)
 		return L"التثنية";
+	else if (strcmp(table, "joshua") == 0)
+		return L"يشوع";
 	else if (strcmp(table, "matthew") == 0)
 		return L"متى";
 	else if (strcmp(table, "mark") == 0)
@@ -361,6 +365,8 @@ void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 	search(mw, wParam, lParam, "leviticus", text);
 	search(mw, wParam, lParam, "numbers", text);
 	search(mw, wParam, lParam, "deuteronomy", text);
+	search(mw, wParam, lParam, "joshua", text);
+
 	search(mw, wParam, lParam, "matthew", text);
 	search(mw, wParam, lParam, "mark", text);
 
