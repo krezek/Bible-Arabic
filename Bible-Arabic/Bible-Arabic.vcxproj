@@ -368,6 +368,11 @@
     <None Include="..\data\numbers\numbers_7.sql" />
     <None Include="..\data\numbers\numbers_8.sql" />
     <None Include="..\data\numbers\numbers_9.sql" />
+    <None Include="..\data\ruth.sql" />
+    <None Include="..\data\ruth\ruth_1.sql" />
+    <None Include="..\data\ruth\ruth_2.sql" />
+    <None Include="..\data\ruth\ruth_3.sql" />
+    <None Include="..\data\ruth\ruth_4.sql" />
     <None Include="rt_manif.bin" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

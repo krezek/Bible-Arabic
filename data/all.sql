@@ -5,6 +5,7 @@
 .read deuteronomy.sql
 .read joshua.sql
 .read judges.sql
+.read ruth.sql
 
 .read matthew.sql
 .read mark.sql

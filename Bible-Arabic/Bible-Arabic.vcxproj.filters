@@ -37,6 +37,9 @@
     <Filter Include="data\judges">
       <UniqueIdentifier>{81cd0ce3-27f0-4b2e-bd1a-8f45b5c7638e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\ruth">
+      <UniqueIdentifier>{8b2a1b62-61dd-4060-9cea-f8d6d9f589c6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -700,6 +703,21 @@
     </None>
     <None Include="..\data\judges\judges_21.sql">
       <Filter>data\judges</Filter>
+    </None>
+    <None Include="..\data\ruth.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\ruth\ruth_1.sql">
+      <Filter>data\ruth</Filter>
+    </None>
+    <None Include="..\data\ruth\ruth_2.sql">
+      <Filter>data\ruth</Filter>
+    </None>
+    <None Include="..\data\ruth\ruth_3.sql">
+      <Filter>data\ruth</Filter>
+    </None>
+    <None Include="..\data\ruth\ruth_4.sql">
+      <Filter>data\ruth</Filter>
     </None>
   </ItemGroup>
 </Project>

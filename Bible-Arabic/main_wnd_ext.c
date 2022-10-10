@@ -18,8 +18,9 @@ struct Testament OldTestament[] =
 	{ "leviticus", L"اللاويين" },
 	{ "numbers", L"العدد" },
 	{ "deuteronomy", L"التثنية" },
-	{ "joshua", L"يشوع" } ,
-	{ "judges", L"القضاة"}
+	{ "joshua", L"يشوع" },
+	{ "judges", L"القضاة"},
+	{ "ruth", L"راعوث" }
 };
 
 struct Testament NewTestament[] =
