@@ -6,6 +6,7 @@
 .read joshua.sql
 .read judges.sql
 .read ruth.sql
+.read samuel_1.sql
 
 .read matthew.sql
 .read mark.sql

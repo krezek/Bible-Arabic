@@ -5,12 +5,6 @@
 
 #include "main_wnd.h"
 
-struct Testament
-{
-	char* table_english;
-	wchar_t* table_arabic;
-};
-
 struct Testament OldTestament[] =
 {
 	{ "genesis", L"التكوين" },
@@ -20,7 +14,8 @@ struct Testament OldTestament[] =
 	{ "deuteronomy", L"التثنية" },
 	{ "joshua", L"يشوع" },
 	{ "judges", L"القضاة"},
-	{ "ruth", L"راعوث" }
+	{ "ruth", L"راعوث" },
+	{ "samuel_1", L"صموئيل الأول" }
 };
 
 struct Testament NewTestament[] =

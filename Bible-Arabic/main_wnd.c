@@ -3,15 +3,6 @@
 #include "main_wnd.h"
 #include "resource.h"
 
-struct Testament
-{
-    char* table_english;
-    wchar_t* table_arabic;
-}; 
-
-extern struct Testament OldTestament[8];
-extern struct Testament NewTestament[2];
-
 static TCHAR szWindowClass[] = _T("DesktopApp");
 static TCHAR szTitle[] = _T("الكتاب المقدس");
 

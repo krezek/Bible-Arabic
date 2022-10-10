@@ -40,6 +40,9 @@
     <Filter Include="data\ruth">
       <UniqueIdentifier>{8b2a1b62-61dd-4060-9cea-f8d6d9f589c6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\samuel_1">
+      <UniqueIdentifier>{e298ab9b-9a15-4838-89f2-5a5b2e59557e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -718,6 +721,102 @@
     </None>
     <None Include="..\data\ruth\ruth_4.sql">
       <Filter>data\ruth</Filter>
+    </None>
+    <None Include="..\data\samuel_1.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_1.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_2.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_3.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_4.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_5.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_6.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_7.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_8.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_9.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_10.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_11.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_12.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_13.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_14.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_15.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_16.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_17.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_18.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_19.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_20.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_21.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_22.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_23.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_24.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_25.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_26.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_27.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_28.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_29.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_30.sql">
+      <Filter>data\samuel_1</Filter>
+    </None>
+    <None Include="..\data\samuel_1\samuel_1_31.sql">
+      <Filter>data\samuel_1</Filter>
     </None>
   </ItemGroup>
 </Project>

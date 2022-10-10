@@ -31,6 +31,15 @@ typedef struct
 	Button* _bt_search;
 } MainWindow;
 
+struct Testament
+{
+	char* table_english;
+	wchar_t* table_arabic;
+};
+
+extern struct Testament OldTestament[9];
+extern struct Testament NewTestament[2];
+
 ATOM MainWindow_RegisterClass();
 
 MainWindow* MainWindow_init();
