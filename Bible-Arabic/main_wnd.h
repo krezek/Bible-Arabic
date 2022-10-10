@@ -37,7 +37,7 @@ struct Testament
 	wchar_t* table_arabic;
 };
 
-extern struct Testament OldTestament[9];
+extern struct Testament OldTestament[10];
 extern struct Testament NewTestament[2];
 
 ATOM MainWindow_RegisterClass();
