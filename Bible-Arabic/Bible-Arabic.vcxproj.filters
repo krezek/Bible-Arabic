@@ -25,6 +25,9 @@
     <Filter Include="data\leviticus">
       <UniqueIdentifier>{9494ed35-8011-481a-a329-f9b3bf25ae27}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\numbers">
+      <UniqueIdentifier>{87bba1f0-d9b5-4ffd-94e1-2cebd4d0c7c9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -433,6 +436,117 @@
     </None>
     <None Include="..\data\leviticus\leviticus_27.sql">
       <Filter>data\leviticus</Filter>
+    </None>
+    <None Include="..\data\numbers.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_1.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_2.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_3.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_4.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_5.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_6.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_7.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_8.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_9.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_10.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_11.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_12.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_13.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_14.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_15.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_16.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_17.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_18.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_19.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_20.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_21.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_22.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_23.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_24.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_25.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_26.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_27.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_28.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_29.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_30.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_31.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_32.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_33.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_34.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_35.sql">
+      <Filter>data\numbers</Filter>
+    </None>
+    <None Include="..\data\numbers\numbers_36.sql">
+      <Filter>data\numbers</Filter>
     </None>
   </ItemGroup>
 </Project>

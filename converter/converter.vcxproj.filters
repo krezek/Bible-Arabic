@@ -19,7 +19,4 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="generated.sql" />
-  </ItemGroup>
 </Project>

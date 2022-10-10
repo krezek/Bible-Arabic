@@ -129,9 +129,6 @@
   <ItemGroup>
     <ClCompile Include="converter.c" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="generated.sql" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
