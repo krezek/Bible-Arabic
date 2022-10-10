@@ -5,6 +5,28 @@
 
 #include "main_wnd.h"
 
+struct Testament
+{
+	char* table_english;
+	wchar_t* table_arabic;
+};
+
+struct Testament OldTestament[] =
+{
+	{ "genesis", L"التكوين" },
+	{ "exodus", L"الخروج" },
+	{ "leviticus", L"اللاويين" },
+	{ "numbers", L"العدد" },
+	{ "deuteronomy", L"التثنية" },
+	{ "joshua", L"يشوع" }
+};
+
+struct Testament NewTestament[] =
+{
+	{ "matthew", L"متى" },
+	{ "mark", L"مرقس" }
+};
+
 #define DB_URL "../data/bible.db"
 char g_part_name[100];
 int g_chapter_idx = 0;
@@ -48,22 +70,23 @@ void OnDBClick_treeView(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 	item.pszText = buffer;
 	if (TreeView_GetItem(treeViewHWND, &item))
 	{
-		if (wcscmp(item.pszText, L"التكوين") == 0)
-			LoadPart(mw, "genesis"); 
-		else if (wcscmp(item.pszText, L"الخروج") == 0)
-			LoadPart(mw, "exodus");
-		else if (wcscmp(item.pszText, L"اللاويين") == 0)
-			LoadPart(mw, "leviticus");
-		else if (wcscmp(item.pszText, L"العدد") == 0)
-			LoadPart(mw, "numbers");
-		else if (wcscmp(item.pszText, L"التثنية") == 0)
-			LoadPart(mw, "deuteronomy");
-		else if (wcscmp(item.pszText, L"يشوع") == 0)
-			LoadPart(mw, "joshua");
-		else if (wcscmp(item.pszText, L"متى") == 0)
-			LoadPart(mw, "matthew");
-		else if (wcscmp(item.pszText, L"مرقس") == 0)
-			LoadPart(mw, "mark");
+		for (int ix = 0; ix < sizeof(OldTestament) / sizeof(OldTestament[0]); ++ix)
+		{
+			if (wcscmp(item.pszText, OldTestament[ix].table_arabic) == 0)
+			{
+				LoadPart(mw, OldTestament[ix].table_english);
+				return;
+			}
+		}
+
+		for (int ix = 0; ix < sizeof(NewTestament) / sizeof(NewTestament[0]); ++ix)
+		{
+			if (wcscmp(item.pszText, NewTestament[ix].table_arabic) == 0)
+			{
+				LoadPart(mw, NewTestament[ix].table_english);
+				return;
+			}
+		}
 	}
 }
 
@@ -247,24 +270,23 @@ void OnBtnClicked_prev_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 
 wchar_t* get_table_arabic_name(const char* table)
 {
-	if (strcmp(table, "genesis") == 0)
-		return L"التكوين";
-	else if (strcmp(table, "exodus") == 0)
-		return L"الخروج";
-	else if (strcmp(table, "leviticus") == 0)
-		return L"اللاويين";
-	else if (strcmp(table, "numbers") == 0)
-		return L"العدد";
-	else if (strcmp(table, "deuteronomy") == 0)
-		return L"التثنية";
-	else if (strcmp(table, "joshua") == 0)
-		return L"يشوع";
-	else if (strcmp(table, "matthew") == 0)
-		return L"متى";
-	else if (strcmp(table, "mark") == 0)
-		return L"مرقس";
-	else
-		return L"";
+	for (int ix = 0; ix < sizeof(OldTestament) / sizeof(OldTestament[0]); ++ix)
+	{
+		if (strcmp(table ,OldTestament[ix].table_english) == 0)
+		{
+			return OldTestament[ix].table_arabic;
+		}
+	}
+
+	for (int ix = 0; ix < sizeof(NewTestament) / sizeof(NewTestament[0]); ++ix)
+	{
+		if (strcmp(table, NewTestament[ix].table_english) == 0)
+		{
+			return NewTestament[ix].table_arabic;
+		}
+	}
+	
+	return L"";
 }
 
 void search(MainWindow* mw, WPARAM wParam, LPARAM lParam, const char* table, const char* text)
@@ -360,14 +382,14 @@ void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 	_wcstombs_l(text, wtext, 100, loc);
 	_free_locale(loc);
 
-	search(mw, wParam, lParam, "genesis", text);
-	search(mw, wParam, lParam, "exodus", text);
-	search(mw, wParam, lParam, "leviticus", text);
-	search(mw, wParam, lParam, "numbers", text);
-	search(mw, wParam, lParam, "deuteronomy", text);
-	search(mw, wParam, lParam, "joshua", text);
+	for (int ix = 0; ix < sizeof(OldTestament) / sizeof(OldTestament[0]); ++ix)
+	{
+		search(mw, wParam, lParam, OldTestament[ix].table_english, text);
+	}
 
-	search(mw, wParam, lParam, "matthew", text);
-	search(mw, wParam, lParam, "mark", text);
+	for (int ix = 0; ix < sizeof(NewTestament) / sizeof(NewTestament[0]); ++ix)
+	{
+		search(mw, wParam, lParam, NewTestament[ix].table_english, text);
+	}
 
 }

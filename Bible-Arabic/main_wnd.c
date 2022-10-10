@@ -3,6 +3,15 @@
 #include "main_wnd.h"
 #include "resource.h"
 
+struct Testament
+{
+    char* table_english;
+    wchar_t* table_arabic;
+}; 
+
+extern struct Testament OldTestament[6];
+extern struct Testament NewTestament[2];
+
 static TCHAR szWindowClass[] = _T("DesktopApp");
 static TCHAR szTitle[] = _T("الكتاب المقدس");
 
@@ -119,35 +128,13 @@ static void OnCreate_TreeView(MainWindow* mw)
     {
         HTREEITEM hItem_sub;
 
-        insertStruct.hParent = hItem;
-        pItem->pszText = L"التكوين";
-        hItem_sub = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
-        if (hItem_sub) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem_sub);
-
-        insertStruct.hParent = hItem;
-        pItem->pszText = L"الخروج";
-        hItem_sub = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
-        if (hItem_sub) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem_sub);
-
-        insertStruct.hParent = hItem;
-        pItem->pszText = L"اللاويين";
-        hItem_sub = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
-        if (hItem_sub) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem_sub);
-
-        insertStruct.hParent = hItem;
-        pItem->pszText = L"العدد";
-        hItem_sub = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
-        if (hItem_sub) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem_sub);
-
-        insertStruct.hParent = hItem;
-        pItem->pszText = L"التثنية";
-        hItem_sub = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
-        if (hItem_sub) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem_sub);
-
-        insertStruct.hParent = hItem;
-        pItem->pszText = L"يشوع";
-        hItem_sub = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
-        if (hItem_sub) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem_sub);
+        for (int ix = 0; ix < sizeof(OldTestament) / sizeof(OldTestament[0]); ++ix)
+        {
+            insertStruct.hParent = hItem;
+            pItem->pszText = OldTestament[ix].table_arabic;
+            hItem_sub = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
+            if (hItem_sub) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem_sub);
+        }
     }
 
     insertStruct.hParent = NULL;
@@ -160,15 +147,13 @@ static void OnCreate_TreeView(MainWindow* mw)
     {
         HTREEITEM hItem_sub;
 
-        insertStruct.hParent = hItem;
-        pItem->pszText = L"متى";
-        hItem_sub = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
-        if (hItem_sub) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem_sub);
-
-        insertStruct.hParent = hItem;
-        pItem->pszText = L"مرقس";
-        hItem_sub = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
-        if (hItem_sub) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem_sub);
+        for (int ix = 0; ix < sizeof(NewTestament) / sizeof(NewTestament[0]); ++ix)
+        {
+            insertStruct.hParent = hItem;
+            pItem->pszText = NewTestament[ix].table_arabic;
+            hItem_sub = (HTREEITEM)SendMessageA(mw->_treeView->_baseWindow._hWnd, TVM_INSERTITEM, 0, (LPARAM)&insertStruct);
+            if (hItem_sub) SendMessage(mw->_treeView->_baseWindow._hWnd, TVM_ENSUREVISIBLE, 0, (LPARAM)hItem_sub);
+        }
     }
 }
 
