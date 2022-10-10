@@ -49,6 +49,9 @@
     <Filter Include="data\matthew">
       <UniqueIdentifier>{e8a28f44-eb39-41bb-8eec-242706262b3a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\mark">
+      <UniqueIdentifier>{75ea293c-fbaf-48ac-a657-1de8b697cd4c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -982,6 +985,54 @@
     </None>
     <None Include="..\data\matthew\matthew_28.sql">
       <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\mark\mark_1.sql">
+      <Filter>data\mark</Filter>
+    </None>
+    <None Include="..\data\mark\mark_2.sql">
+      <Filter>data\mark</Filter>
+    </None>
+    <None Include="..\data\mark\mark_3.sql">
+      <Filter>data\mark</Filter>
+    </None>
+    <None Include="..\data\mark\mark_4.sql">
+      <Filter>data\mark</Filter>
+    </None>
+    <None Include="..\data\mark\mark_5.sql">
+      <Filter>data\mark</Filter>
+    </None>
+    <None Include="..\data\mark\mark_6.sql">
+      <Filter>data\mark</Filter>
+    </None>
+    <None Include="..\data\mark\mark_7.sql">
+      <Filter>data\mark</Filter>
+    </None>
+    <None Include="..\data\mark\mark_8.sql">
+      <Filter>data\mark</Filter>
+    </None>
+    <None Include="..\data\mark\mark_9.sql">
+      <Filter>data\mark</Filter>
+    </None>
+    <None Include="..\data\mark\mark_10.sql">
+      <Filter>data\mark</Filter>
+    </None>
+    <None Include="..\data\mark\mark_11.sql">
+      <Filter>data\mark</Filter>
+    </None>
+    <None Include="..\data\mark\mark_12.sql">
+      <Filter>data\mark</Filter>
+    </None>
+    <None Include="..\data\mark\mark_13.sql">
+      <Filter>data\mark</Filter>
+    </None>
+    <None Include="..\data\mark\mark_14.sql">
+      <Filter>data\mark</Filter>
+    </None>
+    <None Include="..\data\mark\mark_15.sql">
+      <Filter>data\mark</Filter>
+    </None>
+    <None Include="..\data\mark\mark_16.sql">
+      <Filter>data\mark</Filter>
     </None>
   </ItemGroup>
 </Project>
