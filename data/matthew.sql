@@ -1,23 +1,31 @@
 DROP TABLE IF EXISTS matthew;
 CREATE VIRTUAL TABLE matthew USING FTS5(chapter, verse, prefix, suffix, body);
 
-
-INSERT INTO matthew (chapter, verse, prefix, suffix, body)
-VALUES (1, 1, NULL, NULL, "كِتَابُ مِيلاَدِ يَسُوعَ الْمَسِيحِ ابْنِ دَاوُدَ ابْنِ إِبْراهِيمَ:");
-
-INSERT INTO matthew (chapter, verse, prefix, suffix, body)
-VALUES (1, 2, NULL, char(10) || char(10), "إِبْراهِيمُ وَلَدَ إِسْحاقَ. وَإِسْحاقُ وَلَدَ يَعْقُوبَ. وَيَعْقُوبُ وَلَدَ يَهُوذَا وَإِخْوَتَهُ.");
-
-INSERT INTO matthew (chapter, verse, prefix, suffix, body)
-VALUES (1, 3, NULL, NULL, "وَيَهُوذَا وَلَدَ فَارِصَ وَزَارَحَ مِنْ ثَامَارَ. وَفَارِصُ وَلَدَ حَصْرُونَ. وَحَصْرُونُ وَلَدَ أَرَامَ.");
-
-
-
-INSERT INTO matthew (chapter, verse, prefix, suffix, body)
-VALUES (2, 1, NULL, NULL, "وَلَمَّا وُلِدَ يَسُوعُ فِي بَيْتِ لَحْمِ الْيَهُودِيَّةِ، فِي أَيَّامِ هِيرُودُسَ الْمَلِكِ، إِذَا مَجُوسٌ مِنَ الْمَشْرِقِ قَدْ جَاءُوا إِلَى أُورُشَلِيمَ");
-
-INSERT INTO matthew (chapter, verse, prefix, suffix, body)
-VALUES (2, 2, NULL, NULL, "قَائِلِينَ: «أَيْنَ هُوَ الْمَوْلُودُ مَلِكُ الْيَهُودِ؟ فَإِنَّنَا رَأَيْنَا نَجْمَهُ فِي الْمَشْرِقِ وَأَتَيْنَا لِنَسْجُدَ لَهُ».");
-
-INSERT INTO matthew (chapter, verse, prefix, suffix, body)
-VALUES (2, 3, NULL, NULL, "فَلَمَّا سَمِعَ هِيرُودُسُ الْمَلِكُ اضْطَرَبَ وَجَمِيعُ أُورُشَلِيمَ مَعَهُ.");
+.read matthew/matthew_1.sql
+.read matthew/matthew_2.sql
+.read matthew/matthew_3.sql
+.read matthew/matthew_4.sql
+.read matthew/matthew_5.sql
+.read matthew/matthew_6.sql
+.read matthew/matthew_7.sql
+.read matthew/matthew_8.sql
+.read matthew/matthew_9.sql
+.read matthew/matthew_10.sql
+.read matthew/matthew_11.sql
+.read matthew/matthew_12.sql
+.read matthew/matthew_13.sql
+.read matthew/matthew_14.sql
+.read matthew/matthew_15.sql
+.read matthew/matthew_16.sql
+.read matthew/matthew_17.sql
+.read matthew/matthew_18.sql
+.read matthew/matthew_19.sql
+.read matthew/matthew_20.sql
+.read matthew/matthew_21.sql
+.read matthew/matthew_22.sql
+.read matthew/matthew_23.sql
+.read matthew/matthew_24.sql
+.read matthew/matthew_25.sql
+.read matthew/matthew_26.sql
+.read matthew/matthew_27.sql
+.read matthew/matthew_28.sql

@@ -46,6 +46,9 @@
     <Filter Include="data\samuel_2">
       <UniqueIdentifier>{9d352590-9d7f-40ee-a34d-bcbd208abc91}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\matthew">
+      <UniqueIdentifier>{e8a28f44-eb39-41bb-8eec-242706262b3a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -895,6 +898,90 @@
     </None>
     <None Include="..\data\samuel_2\samuel_2_24.sql">
       <Filter>data\samuel_2</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_1.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_2.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_3.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_4.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_5.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_6.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_7.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_8.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_9.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_10.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_11.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_12.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_13.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_14.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_15.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_16.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_17.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_18.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_19.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_20.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_21.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_22.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_23.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_24.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_25.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_26.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_27.sql">
+      <Filter>data\matthew</Filter>
+    </None>
+    <None Include="..\data\matthew\matthew_28.sql">
+      <Filter>data\matthew</Filter>
     </None>
   </ItemGroup>
 </Project>
