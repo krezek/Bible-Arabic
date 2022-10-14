@@ -17,6 +17,11 @@ typedef struct
 
 	int _client_width, _client_height;
 	
+	LayoutManager* _lm_main;
+	LayoutManager* _lm_tab_bible;
+	LayoutManager* _lm_tab_bible_bottom;
+	LayoutManager* _lm_tab_search;
+
 	StatusBar* _statusBar;
 	TreeView* _treeView;
 	TabControl* _tabControl;

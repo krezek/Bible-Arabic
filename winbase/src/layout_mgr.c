@@ -10,10 +10,10 @@
 static void Init(LayoutManager* _this, int rows, int columns);
 static void SetRowsHeight(LayoutManager* _this, ...);
 static void SetColumnsWidth(LayoutManager* _this, ...);
-static void SetCmp(LayoutManager* _this, int i, int j, Component* cmp, STYLE style);
+static void SetCmp(LayoutManager* _this, int i, int j, Component* cmp, STYLE style, Margin margin);
 static int GetMinWidth(LayoutManager* _this);
 static int GetMinHeight(LayoutManager* _this);
-static void DoLayout(LayoutManager* _this, int x0, int y0, int width, int height, BOOL repiant, RECT rc, HDC hdc);
+static void DoLayout(LayoutManager* _this, int x0, int y0, int width, int height, BOOL repiant, HDC hdc);
 
 
 LayoutManager* LayoutManager_init()
@@ -29,6 +29,7 @@ LayoutManager* LayoutManager_init()
 	lm->_columnsWidth = NULL;
 	lm->_components = NULL;
 	lm->_style = NULL;
+	lm->_margin = NULL;
 
 	lm->_InitFunc = Init;
 	lm->_SetRowsHeightFunc = SetRowsHeight;
@@ -43,6 +44,9 @@ LayoutManager* LayoutManager_init()
 
 void LayoutManager_free(LayoutManager* lm)
 {
+	if (lm->_margin)
+		free(lm->_margin);
+
 	if (lm->_style)
 		free(lm->_style);
 
@@ -82,6 +86,11 @@ static void Init(LayoutManager* _this, int rows, int columns)
 	assert(_this->_style != NULL);
 
 	memset(_this->_style, 0, _this->_rows * _this->_columns * sizeof(STYLE));
+
+	_this->_margin = (Margin*)malloc(_this->_rows * _this->_columns * sizeof(Margin));
+	assert(_this->_margin != NULL);
+
+	memset(_this->_margin, 0, _this->_rows * _this->_columns * sizeof(Margin));
 }
 
 static void SetRowsHeight(LayoutManager* _this, ...)
@@ -106,10 +115,11 @@ static void SetColumnsWidth(LayoutManager* _this, ...)
 	va_end(valist);
 }
 
-static void SetCmp(LayoutManager* _this, int i, int j, Component* cmp, STYLE style)
+static void SetCmp(LayoutManager* _this, int i, int j, Component* cmp, STYLE style, Margin margin)
 {
 	_this->_components[i * _this->_columns + j] = cmp;
 	_this->_style[i * _this->_columns + j] = style;
+	_this->_margin[i * _this->_columns + j] = margin;
 }
 
 static int GetMinWidth(LayoutManager* _this)
@@ -184,7 +194,7 @@ static int GetMinHeight(LayoutManager* _this)
 	return minHeight;
 }
 
-static void DoLayout(LayoutManager* _this, int x0, int y0, int width, int height, BOOL repiant, RECT rc, HDC hdc)
+static void DoLayout(LayoutManager* _this, int x0, int y0, int width, int height, BOOL repiant, HDC hdc)
 {
 	_this->_x = x0;
 	_this->_y = y0;
@@ -241,6 +251,7 @@ static void DoLayout(LayoutManager* _this, int x0, int y0, int width, int height
 		{
 			Component* cmp = _this->_components[iy * _this->_columns + ix];
 			STYLE style = _this->_style[iy * _this->_columns + ix];
+			Margin margin = _this->_margin[iy * _this->_columns + ix];
 
 			if (cmp)
 			{
@@ -250,6 +261,8 @@ static void DoLayout(LayoutManager* _this, int x0, int y0, int width, int height
 
 					int nx = x;
 					int ny = y;
+					int nw = cmp->_width;
+					int nh = cmp->_height;
 #ifdef _SHOWGRID
 					if (hdc)
 					{
@@ -260,38 +273,45 @@ static void DoLayout(LayoutManager* _this, int x0, int y0, int width, int height
 						LineTo(hdc, x, y);
 					}
 #endif
-					if (style & LM_H_CENTER)
+
+					if (style & LM_H_EXPAND)
 					{
-						nx += (int)(cw[ix] - cmp->_width) / 2;
+						nx = x;
+						nw = (int)cw[ix];
+					}
+					else
+					{
+						if (style & LM_H_CENTER)
+						{
+							nx += (int)(cw[ix] - cmp->_width) / 2;
+						}
+
+						if (style & LM_H_RIGHT)
+						{
+							nx += (int)(cw[ix] - cmp->_width);
+						}
 					}
 
-					if (style & LM_H_RIGHT)
+					if (style & LM_V_EXPAND)
 					{
-						nx += (int)(cw[ix] - cmp->_width);
+						ny = y;
+						nh = (int)rh[iy];
+					}
+					else
+					{
+						if (style & LM_V_CENTER)
+						{
+							ny += (int)(rh[iy] - cmp->_height) / 2;
+						}
+
+						if (style & LM_V_BOTOM)
+						{
+							ny += (int)(rh[iy] - cmp->_height);
+						}
 					}
 
-					if (style & LM_V_CENTER)
-					{
-						ny += (int)(rh[iy] - cmp->_height) / 2;
-					}
-
-					if (style & LM_V_BOTOM)
-					{
-						ny += (int)(rh[iy] - cmp->_height);
-					}
-
-					cmp->_SetPosFunc(cmp, nx, ny);
-
-					RECT cmpRC, resultRC;
-					cmpRC.left = cmp->_x;
-					cmpRC.top = cmp->_y;
-					cmpRC.right = cmpRC.left + cmp->_width;
-					cmpRC.bottom = cmpRC.top + cmp->_height;
-
-					//if (IntersectRect(&resultRC, &rc, &cmpRC))
-					{
-						MoveWindow(bw->_hWnd, cmp->_x, cmp->_y, cmp->_width, cmp->_height, repiant);
-					}
+					MoveWindow(bw->_hWnd, nx + margin._left, ny + margin._top,
+						nw - margin._right - margin._left, nh - margin._top - margin._buttom, repiant);
 				}
 				else if (cmp->_type == CMP_LAYOUT)
 				{
@@ -307,7 +327,7 @@ static void DoLayout(LayoutManager* _this, int x0, int y0, int width, int height
 					}
 #endif
 					
-					lm->_DoLayoutFunc(lm, x, y, (int)cw[ix], (int)rh[iy], repiant, rc, hdc);
+					lm->_DoLayoutFunc(lm, x, y, (int)cw[ix], (int)rh[iy], repiant, hdc);
 				}
 			}
 		}

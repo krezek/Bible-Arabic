@@ -70,6 +70,11 @@ MainWindow* MainWindow_init()
     mw->_baseWindow._HandleMessageFunc = HandleMessage;
     mw->_baseWindow._CreateFunc = Create;
 
+    mw->_lm_main = LayoutManager_init();
+    mw->_lm_tab_bible = LayoutManager_init();
+    mw->_lm_tab_bible_bottom = LayoutManager_init();
+    mw->_lm_tab_search = LayoutManager_init();
+
     mw->_statusBar = StatusBar_init();
     mw->_treeView = TreeView_init();
     mw->_tabControl = TabControl_init();
@@ -100,11 +105,26 @@ void MainWindow_free(MainWindow* mw)
     TabControl_free(mw->_tabControl);
     TreeView_free(mw->_treeView);
     StatusBar_free(mw->_statusBar);
+
+    LayoutManager_free(mw->_lm_tab_search);
+    LayoutManager_free(mw->_lm_tab_bible_bottom);
+    LayoutManager_free(mw->_lm_tab_bible);
+    LayoutManager_free(mw->_lm_main);
+
     free(mw);
 }
 
 static void OnCreate_TreeView(MainWindow* mw)
 {
+    mw->_treeView->_baseWindow._SetParentFunc((BaseWindow*)mw->_treeView, mw->_baseWindow._hWnd);
+    mw->_treeView->_baseWindow._SetIdFunc((BaseWindow*)mw->_treeView, (HMENU)ID_TREEVIEW);
+
+    if (!mw->_treeView->_baseWindow._CreateFunc((BaseWindow*)mw->_treeView))
+    {
+        ShowError(L"Unable to create tree view!");
+        return;
+    }
+
     HTREEITEM hItem;
     TVINSERTSTRUCT insertStruct = { 0 };
     TVITEM* pItem = &insertStruct.item;
@@ -150,6 +170,15 @@ static void OnCreate_TreeView(MainWindow* mw)
 
 static void OnCreate_TabControl(MainWindow* mw)
 {
+    mw->_tabControl->_baseWindow._SetParentFunc((BaseWindow*)mw->_tabControl, mw->_baseWindow._hWnd);
+    mw->_tabControl->_baseWindow._SetIdFunc((BaseWindow*)mw->_tabControl, (HMENU)ID_TABCONTROL);
+
+    if (!mw->_tabControl->_baseWindow._CreateFunc((BaseWindow*)mw->_tabControl))
+    {
+        ShowError(L"Unable to create tab control!");
+        return;
+    }
+
     TCITEM tie;
 
     tie.mask = TCIF_TEXT;
@@ -302,26 +331,43 @@ static void OnCreate(MainWindow* mw)
 
     RECT sBarRc;
     GetWindowRect(mw->_statusBar->_baseWindow._hWnd, &sBarRc);
-    g_statusbar_height = sBarRc.bottom - sBarRc.top;
+    g_statusbar_height = sBarRc.bottom - sBarRc.top + 1;
 
-    mw->_treeView->_baseWindow._SetParentFunc((BaseWindow*)mw->_treeView, mw->_baseWindow._hWnd);
-    mw->_treeView->_baseWindow._SetIdFunc((BaseWindow*)mw->_treeView, (HMENU)ID_TREEVIEW); 
-    mw->_treeView->_baseWindow._cmp._SetSizeFunc((Component*)mw->_treeView, 50, 25);
-    
-    if (!mw->_treeView->_baseWindow._CreateFunc((BaseWindow*)mw->_treeView))
-    {
-        ShowError(L"Unable to create tree view!");
-        return;
-    }
+    mw->_lm_main->_InitFunc(mw->_lm_main, 1, 2);
+    mw->_lm_main->_SetRowsHeightFunc(mw->_lm_main, 1.0);
+    mw->_lm_main->_SetColumnWidthFunc(mw->_lm_main, 0.2, 0.8);
 
-    mw->_tabControl->_baseWindow._SetParentFunc((BaseWindow*)mw->_tabControl, mw->_baseWindow._hWnd);
-    mw->_tabControl->_baseWindow._SetIdFunc((BaseWindow*)mw->_tabControl, (HMENU)ID_TABCONTROL);
+    Margin m1 = { 2, 2, 5, 2 } , m2 = { 5, 2, 2, 2 };
+    mw->_lm_main->_SetCmpFunc(mw->_lm_main, 0, 0, (Component*)mw->_treeView, LM_H_EXPAND | LM_V_EXPAND, m1);
+    mw->_lm_main->_SetCmpFunc(mw->_lm_main, 0, 1, (Component*)mw->_tabControl, LM_H_EXPAND | LM_V_EXPAND, m2);
 
-    if (!mw->_tabControl->_baseWindow._CreateFunc((BaseWindow*)mw->_tabControl))
-    {
-        ShowError(L"Unable to create tab control!");
-        return;
-    }
+    mw->_lm_tab_bible->_InitFunc(mw->_lm_tab_bible, 2, 1);
+    mw->_lm_tab_bible->_SetRowsHeightFunc(mw->_lm_tab_bible, 1.0, 37.0);
+    mw->_lm_tab_bible->_SetColumnWidthFunc(mw->_lm_tab_bible, 1.0);
+
+    Margin m3 = { 5, 5, 5, 0 };
+    mw->_lm_tab_bible->_SetCmpFunc(mw->_lm_tab_bible, 0, 0, (Component*)mw->_richEdit, LM_H_EXPAND | LM_V_EXPAND, m3);
+    mw->_lm_tab_bible->_SetCmpFunc(mw->_lm_tab_bible, 1, 0, (Component*)mw->_lm_tab_bible_bottom, LM_H_EXPAND | LM_V_EXPAND, m3);
+
+    mw->_lm_tab_bible_bottom->_InitFunc(mw->_lm_tab_bible_bottom, 1, 5);
+    mw->_lm_tab_bible_bottom->_SetRowsHeightFunc(mw->_lm_tab_bible_bottom, 1.0);
+    mw->_lm_tab_bible_bottom->_SetColumnWidthFunc(mw->_lm_tab_bible_bottom, 100.0, 70.0, 70.0, 90.0, 90.0);
+
+    Margin m4 = { 5, 5, 5, 5 };
+    mw->_lm_tab_bible_bottom->_SetCmpFunc(mw->_lm_tab_bible_bottom, 0, 0, (Component*)mw->_lb_chapter, LM_H_EXPAND | LM_V_EXPAND, m4);
+    mw->_lm_tab_bible_bottom->_SetCmpFunc(mw->_lm_tab_bible_bottom, 0, 1, (Component*)mw->_lb_chapter_count1, LM_H_EXPAND | LM_V_EXPAND, m4);
+    mw->_lm_tab_bible_bottom->_SetCmpFunc(mw->_lm_tab_bible_bottom, 0, 2, (Component*)mw->_lb_chapter_count2, LM_H_EXPAND | LM_V_EXPAND, m4);
+    mw->_lm_tab_bible_bottom->_SetCmpFunc(mw->_lm_tab_bible_bottom, 0, 3, (Component*)mw->_bt_prev_chapter, LM_H_EXPAND | LM_V_EXPAND, m4);
+    mw->_lm_tab_bible_bottom->_SetCmpFunc(mw->_lm_tab_bible_bottom, 0, 4, (Component*)mw->_bt_next_chapter, LM_H_EXPAND | LM_V_EXPAND, m4);
+
+    mw->_lm_tab_search->_InitFunc(mw->_lm_tab_search, 3, 1);
+    mw->_lm_tab_search->_SetRowsHeightFunc(mw->_lm_tab_search, 40.0, 40.0, 1.0);
+    mw->_lm_tab_search->_SetColumnWidthFunc(mw->_lm_tab_search, 1.0);
+
+    Margin m5 = { 5, 5, 5, 5 };
+    mw->_lm_tab_search->_SetCmpFunc(mw->_lm_tab_search, 0, 0, (Component*)mw->_tx_search, LM_H_EXPAND | LM_V_EXPAND, m5);
+    mw->_lm_tab_search->_SetCmpFunc(mw->_lm_tab_search, 0, 1, (Component*)mw->_bt_search, LM_H_EXPAND | LM_V_EXPAND, m5);
+    mw->_lm_tab_search->_SetCmpFunc(mw->_lm_tab_search, 0, 2, (Component*)mw->_lv_result, LM_H_EXPAND | LM_V_EXPAND, m5);
 
     OnCreate_TreeView(mw);
     OnCreate_TabControl(mw);
@@ -334,11 +380,7 @@ static void OnSize(MainWindow* mw, int width, int height)
 
     MoveWindow(mw->_statusBar->_baseWindow._hWnd, 0, height - g_statusbar_height, width, g_statusbar_height, TRUE);
 
-    mw->_treeView->_baseWindow._MoveWindowFunc((BaseWindow*)mw->_treeView, g_margin, g_margin,
-        200 - 2 * g_margin, height - 2 * g_margin - g_statusbar_height, TRUE);
-
-    mw->_tabControl->_baseWindow._MoveWindowFunc((BaseWindow*)mw->_tabControl, 200 + g_margin, g_margin,
-        width - 200 - 2 * g_margin, height - 2 * g_margin - g_statusbar_height, TRUE);
+    mw->_lm_main->_DoLayoutFunc(mw->_lm_main, 0, 0, width, height - g_statusbar_height, TRUE, NULL);
 
     RECT rc;
     TabCtrl_GetItemRect(mw->_tabControl->_baseWindow._hWnd, 0, &rc);
@@ -346,53 +388,11 @@ static void OnSize(MainWindow* mw, int width, int height)
     int iHeight = rc.bottom - rc.top;
     GetClientRect(mw->_tabControl->_baseWindow._hWnd, &rc);
 
-    // TAB 1
-    MoveWindow(mw->_richEdit->_baseWindow._hWnd, rc.left + g_margin, rc.top + iHeight + g_margin, 
-        rc.right - rc.left - 2 * g_margin, rc.bottom - rc.top - iHeight * 4 - 2 * g_margin, TRUE);
+    mw->_lm_tab_bible->_DoLayoutFunc(mw->_lm_tab_bible, rc.left, rc.top + iHeight, 
+        rc.right - rc.left, rc.bottom - rc.top - iHeight, TRUE, NULL);
 
-    int x0 = rc.left + 2 * g_margin;
-    int y0 = rc.bottom - rc.top - iHeight * 2 - 2 * g_margin;
-    
-    MoveWindow(mw->_lb_chapter->_baseWindow._hWnd, x0, y0,
-        75, iHeight, TRUE);
-
-    x0 += 75 + g_margin;
-
-    MoveWindow(mw->_lb_chapter_count1->_baseWindow._hWnd, x0, y0,
-        50, iHeight, TRUE);
-
-    x0 += 50 + g_margin;
-
-    MoveWindow(mw->_lb_chapter_count2->_baseWindow._hWnd, x0, y0,
-        50, iHeight, TRUE);
-
-    x0 += 50 + g_margin;
-
-    MoveWindow(mw->_bt_prev_chapter->_baseWindow._hWnd, x0, y0,
-        50, iHeight, TRUE);
-
-    x0 += 50 + g_margin;
-    
-    MoveWindow(mw->_bt_next_chapter->_baseWindow._hWnd, x0, y0,
-        50, iHeight, TRUE);
-    
-    // TAB 2
-
-    x0 = rc.left + g_margin;
-    y0 = rc.top + iHeight + g_margin;
-
-    MoveWindow(mw->_tx_search->_baseWindow._hWnd, x0, y0,
-        rc.right - rc.left - 2 * g_margin, rc.top + iHeight + g_margin, TRUE);
-
-    y0 += iHeight + 3 * g_margin;
-    
-    MoveWindow(mw->_bt_search->_baseWindow._hWnd, x0, y0,
-        75, iHeight, TRUE);
-
-    y0 += iHeight + 2 * g_margin;
-
-    MoveWindow(mw->_lv_result->_baseWindow._hWnd, x0, y0,
-        rc.right - rc.left - 2 * g_margin, rc.bottom - rc.top - iHeight * 4 - 2 * g_margin, TRUE);
+    mw->_lm_tab_search->_DoLayoutFunc(mw->_lm_tab_search, rc.left, rc.top + iHeight,
+        rc.right - rc.left, rc.bottom - rc.top - iHeight, TRUE, NULL);
 }
 
 static void OnNotify_tabControl(MainWindow* mw, WPARAM wParam, LPARAM lParam)
@@ -449,7 +449,7 @@ static void OnPaint(MainWindow* mw)
     PAINTSTRUCT ps;
     HDC hdc = BeginPaint(mw->_baseWindow._hWnd, &ps);
 
-    FillRect(hdc, &ps.rcPaint, (HBRUSH)(COLOR_WINDOWFRAME));
+    //FillRect(hdc, &ps.rcPaint, (HBRUSH)(COLOR_WINDOWFRAME));
 
     EndPaint(mw->_baseWindow._hWnd, &ps);
 }
