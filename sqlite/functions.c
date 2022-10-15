@@ -19,6 +19,10 @@ void remove_marks(sqlite3_context* context, int argc, sqlite3_value** argv)
                 {
 
                 }
+                else if (c == 0x0622 || c == 0x0623 || c == 0x0625)
+                {
+                    result[iy++] = 0x0627;
+                }
                 else
                 {
                     result[iy++] = text[ix];
