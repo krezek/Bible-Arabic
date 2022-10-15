@@ -58,6 +58,9 @@
     <Filter Include="data\john">
       <UniqueIdentifier>{e11187bc-16f7-44a5-bd25-43d272f5396b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\acts">
+      <UniqueIdentifier>{b3cda55a-8af0-4310-922a-811a30dda517}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -1180,6 +1183,93 @@
     </None>
     <None Include="..\data\john\john_21.sql">
       <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\acts.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\acts\acts_1.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_2.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_3.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_4.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_5.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_6.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_7.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_8.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_9.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_10.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_11.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_12.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_13.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_14.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_15.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_16.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_17.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_18.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_19.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_20.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_21.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_22.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_23.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_24.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_25.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_26.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_27.sql">
+      <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\acts\acts_28.sql">
+      <Filter>data\acts</Filter>
     </None>
   </ItemGroup>
 </Project>

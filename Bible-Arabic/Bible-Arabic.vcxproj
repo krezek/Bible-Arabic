@@ -160,6 +160,35 @@
     <ClCompile Include="main_wnd_ext.c" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\data\acts.sql" />
+    <None Include="..\data\acts\acts_1.sql" />
+    <None Include="..\data\acts\acts_10.sql" />
+    <None Include="..\data\acts\acts_11.sql" />
+    <None Include="..\data\acts\acts_12.sql" />
+    <None Include="..\data\acts\acts_13.sql" />
+    <None Include="..\data\acts\acts_14.sql" />
+    <None Include="..\data\acts\acts_15.sql" />
+    <None Include="..\data\acts\acts_16.sql" />
+    <None Include="..\data\acts\acts_17.sql" />
+    <None Include="..\data\acts\acts_18.sql" />
+    <None Include="..\data\acts\acts_19.sql" />
+    <None Include="..\data\acts\acts_2.sql" />
+    <None Include="..\data\acts\acts_20.sql" />
+    <None Include="..\data\acts\acts_21.sql" />
+    <None Include="..\data\acts\acts_22.sql" />
+    <None Include="..\data\acts\acts_23.sql" />
+    <None Include="..\data\acts\acts_24.sql" />
+    <None Include="..\data\acts\acts_25.sql" />
+    <None Include="..\data\acts\acts_26.sql" />
+    <None Include="..\data\acts\acts_27.sql" />
+    <None Include="..\data\acts\acts_28.sql" />
+    <None Include="..\data\acts\acts_3.sql" />
+    <None Include="..\data\acts\acts_4.sql" />
+    <None Include="..\data\acts\acts_5.sql" />
+    <None Include="..\data\acts\acts_6.sql" />
+    <None Include="..\data\acts\acts_7.sql" />
+    <None Include="..\data\acts\acts_8.sql" />
+    <None Include="..\data\acts\acts_9.sql" />
     <None Include="..\data\all.sql" />
     <None Include="..\data\deuteronomy.sql" />
     <None Include="..\data\exodus.sql" />
