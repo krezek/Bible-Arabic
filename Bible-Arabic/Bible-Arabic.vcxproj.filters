@@ -55,6 +55,9 @@
     <Filter Include="data\luke">
       <UniqueIdentifier>{3fe77426-4b45-4126-9f9b-cc66398d03c5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\john">
+      <UniqueIdentifier>{e11187bc-16f7-44a5-bd25-43d272f5396b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -1111,6 +1114,72 @@
     </None>
     <None Include="..\data\luke\luke_24.sql">
       <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\john.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\john\john_1.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_2.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_3.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_4.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_5.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_6.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_7.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_8.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_9.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_10.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_11.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_12.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_13.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_14.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_15.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_16.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_17.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_18.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_19.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_20.sql">
+      <Filter>data\john</Filter>
+    </None>
+    <None Include="..\data\john\john_21.sql">
+      <Filter>data\john</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -23,7 +23,8 @@ struct Testament NewTestament[NT_COUNT] =
 {
 	{ "matthew", L"متى" },
 	{ "mark", L"مرقس" },
-	{ "luke", L"لوقا" }
+	{ "luke", L"لوقا" },
+	{ "john", L"يوحنا" }
 };
 
 //#define DB_URL "\\Windows\\System32\\bible.db"

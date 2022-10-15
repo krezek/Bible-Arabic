@@ -12,4 +12,4 @@
 .read matthew.sql
 .read mark.sql
 .read luke.sql
-
+.read john.sql
