@@ -5,7 +5,7 @@
 
 #include "main_wnd.h"
 
-struct Testament OldTestament[] =
+struct Testament OldTestament[OT_COUNT] =
 {
 	{ "genesis", L"التكوين" },
 	{ "exodus", L"الخروج" },
@@ -19,10 +19,11 @@ struct Testament OldTestament[] =
 	{ "samuel_2", L"صموئيل الثاني" }
 };
 
-struct Testament NewTestament[] =
+struct Testament NewTestament[NT_COUNT] =
 {
 	{ "matthew", L"متى" },
-	{ "mark", L"مرقس" }
+	{ "mark", L"مرقس" },
+	{ "luke", L"لوقا" }
 };
 
 //#define DB_URL "\\Windows\\System32\\bible.db"

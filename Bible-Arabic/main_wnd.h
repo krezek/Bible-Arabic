@@ -42,8 +42,11 @@ struct Testament
 	wchar_t* table_arabic;
 };
 
-extern struct Testament OldTestament[10];
-extern struct Testament NewTestament[2];
+#define OT_COUNT 10
+#define NT_COUNT 3
+
+extern struct Testament OldTestament[OT_COUNT];
+extern struct Testament NewTestament[NT_COUNT];
 
 ATOM MainWindow_RegisterClass();
 

@@ -52,6 +52,9 @@
     <Filter Include="data\mark">
       <UniqueIdentifier>{75ea293c-fbaf-48ac-a657-1de8b697cd4c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\luke">
+      <UniqueIdentifier>{3fe77426-4b45-4126-9f9b-cc66398d03c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -1033,6 +1036,81 @@
     </None>
     <None Include="..\data\mark\mark_16.sql">
       <Filter>data\mark</Filter>
+    </None>
+    <None Include="..\data\luke.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\luke\luke_1.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_2.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_3.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_4.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_5.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_6.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_7.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_8.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_9.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_10.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_11.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_12.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_13.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_14.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_15.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_16.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_17.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_18.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_19.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_20.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_21.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_22.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_23.sql">
+      <Filter>data\luke</Filter>
+    </None>
+    <None Include="..\data\luke\luke_24.sql">
+      <Filter>data\luke</Filter>
     </None>
   </ItemGroup>
 </Project>
