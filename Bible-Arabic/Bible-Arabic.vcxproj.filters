@@ -61,6 +61,9 @@
     <Filter Include="data\acts">
       <UniqueIdentifier>{b3cda55a-8af0-4310-922a-811a30dda517}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\romans">
+      <UniqueIdentifier>{b8eb9f9f-8c82-45af-ba16-d9ebdd865cb5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -1270,6 +1273,57 @@
     </None>
     <None Include="..\data\acts\acts_28.sql">
       <Filter>data\acts</Filter>
+    </None>
+    <None Include="..\data\romans.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\romans\romans_1.sql">
+      <Filter>data\romans</Filter>
+    </None>
+    <None Include="..\data\romans\romans_2.sql">
+      <Filter>data\romans</Filter>
+    </None>
+    <None Include="..\data\romans\romans_3.sql">
+      <Filter>data\romans</Filter>
+    </None>
+    <None Include="..\data\romans\romans_4.sql">
+      <Filter>data\romans</Filter>
+    </None>
+    <None Include="..\data\romans\romans_5.sql">
+      <Filter>data\romans</Filter>
+    </None>
+    <None Include="..\data\romans\romans_6.sql">
+      <Filter>data\romans</Filter>
+    </None>
+    <None Include="..\data\romans\romans_7.sql">
+      <Filter>data\romans</Filter>
+    </None>
+    <None Include="..\data\romans\romans_8.sql">
+      <Filter>data\romans</Filter>
+    </None>
+    <None Include="..\data\romans\romans_9.sql">
+      <Filter>data\romans</Filter>
+    </None>
+    <None Include="..\data\romans\romans_10.sql">
+      <Filter>data\romans</Filter>
+    </None>
+    <None Include="..\data\romans\romans_11.sql">
+      <Filter>data\romans</Filter>
+    </None>
+    <None Include="..\data\romans\romans_12.sql">
+      <Filter>data\romans</Filter>
+    </None>
+    <None Include="..\data\romans\romans_13.sql">
+      <Filter>data\romans</Filter>
+    </None>
+    <None Include="..\data\romans\romans_14.sql">
+      <Filter>data\romans</Filter>
+    </None>
+    <None Include="..\data\romans\romans_15.sql">
+      <Filter>data\romans</Filter>
+    </None>
+    <None Include="..\data\romans\romans_16.sql">
+      <Filter>data\romans</Filter>
     </None>
   </ItemGroup>
 </Project>
