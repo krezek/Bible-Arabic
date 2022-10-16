@@ -102,7 +102,6 @@ void LoadPart(MainWindow* mw, const char* part_name)
 	sqlite3_stmt* res;
 	int rc;
 	char sql[255];
-	CHARRANGE cr;
 	wchar_t nmbr[20];
 	HWND richTextHWND = mw->_richEdit->_baseWindow._hWnd;
 
@@ -140,13 +139,6 @@ void LoadPart(MainWindow* mw, const char* part_name)
 	}
 
 	sqlite3_finalize(res);
-
-	cr.cpMin = 0;
-	cr.cpMax = -1;
-
-	SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
-	SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"");
-
 	sqlite3_close(bible_db);
 }
 
@@ -239,13 +231,7 @@ void OnBtnClicked_next_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 {
 	if (g_chapter_idx < g_chapter_count)
 	{
-		HWND richTextHWND = mw->_richEdit->_baseWindow._hWnd; 
-		wchar_t nmbr[20];
-
-		_itow(++g_chapter_idx, nmbr, 10);
-		SetWindowText(mw->_tx_chapter_idx->_baseWindow._hWnd, HindiNumbers(nmbr));
-
-		LoadChapter(mw, g_part_name, g_chapter_idx);
+		LoadChapter(mw, g_part_name, ++g_chapter_idx);
 	}
 }
 
@@ -253,13 +239,7 @@ void OnBtnClicked_prev_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 {
 	if (g_chapter_idx > 1)
 	{
-		HWND richTextHWND = mw->_richEdit->_baseWindow._hWnd;
-		wchar_t nmbr[20];
-
-		_itow(--g_chapter_idx, nmbr, 10);
-		SetWindowText(mw->_tx_chapter_idx->_baseWindow._hWnd, HindiNumbers(nmbr));
-
-		LoadChapter(mw, g_part_name, g_chapter_idx);
+		LoadChapter(mw, g_part_name, --g_chapter_idx);
 	}
 }
 
