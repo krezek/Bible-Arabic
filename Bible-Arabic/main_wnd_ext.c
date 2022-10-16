@@ -44,13 +44,13 @@ wchar_t* HindiNumbers(wchar_t* str)
 {
 	size_t len = wcslen(str);
 
-	for (int ix = 0; ix < len; ++ix)
+	for (size_t ix = 0; ix < len; ++ix)
 	{
 		wchar_t c = str[ix];
 		if (c >= L'0' && c <= L'9')
 		{
 			c -= L'0';
-			c += 0x660;
+			c += 0x0660;
 
 			str[ix] = c;
 		}
@@ -162,6 +162,12 @@ void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 	CHARRANGE cr;
 	wchar_t nmbr[20];
 
+	cr.cpMin = 0;
+	cr.cpMax = -1;
+
+	SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
+	SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"");
+
 	g_chapter_idx = idx;
 
 	_itow(g_chapter_idx, nmbr, 10);
@@ -234,14 +240,7 @@ void OnBtnClicked_next_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 	if (g_chapter_idx < g_chapter_count)
 	{
 		HWND richTextHWND = mw->_richEdit->_baseWindow._hWnd; 
-		CHARRANGE cr;
 		wchar_t nmbr[20];
-
-		cr.cpMin = 0;
-		cr.cpMax = -1;
-
-		SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
-		SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"");
 
 		_itow(++g_chapter_idx, nmbr, 10);
 		SetWindowText(mw->_tx_chapter_idx->_baseWindow._hWnd, HindiNumbers(nmbr));
@@ -255,14 +254,7 @@ void OnBtnClicked_prev_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 	if (g_chapter_idx > 1)
 	{
 		HWND richTextHWND = mw->_richEdit->_baseWindow._hWnd;
-		CHARRANGE cr;
 		wchar_t nmbr[20];
-
-		cr.cpMin = 0;
-		cr.cpMax = -1;
-
-		SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
-		SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"");
 
 		_itow(--g_chapter_idx, nmbr, 10);
 		SetWindowText(mw->_tx_chapter_idx->_baseWindow._hWnd, HindiNumbers(nmbr));
@@ -394,4 +386,29 @@ void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 		search(mw, wParam, lParam, NewTestament[ix].table_english, text);
 	}
 
+}
+
+void OnTXChaper_enter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
+{
+	wchar_t buff[50];
+	GetWindowText(mw->_tx_chapter_idx->_baseWindow._hWnd, buff, 50);
+	size_t len = wcslen(buff);
+
+	for (size_t ix = 0; ix < len; ++ix)
+	{
+		wchar_t c = buff[ix];
+		if (c >= 0x0660 && c <= 0x0669)
+		{
+			c -= 0x0660;
+			c += L'0';
+			buff[ix] = c;
+		}
+	}
+
+	int idx = _wtoi(buff);
+
+	if (g_chapter_count && idx && idx <= g_chapter_count)
+	{
+		LoadChapter(mw, g_part_name, idx);
+	}
 }

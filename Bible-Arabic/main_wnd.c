@@ -7,9 +7,11 @@ static TCHAR szWindowClass[] = _T("DesktopApp");
 static TCHAR szTitle[] = _T("الكتاب المقدس");
 
 WNDPROC lpTabControlWndProc;
+WNDPROC lpTextEditWndProc;
 
 static LRESULT HandleMessage(BaseWindow* _this, UINT uMsg, WPARAM wParam, LPARAM lParam);
 LRESULT TabControlCallBckProcedure(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+LRESULT TextEditCallBckProcedure(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 static int g_statusbar_height;
 static const int g_margin = 5;
@@ -18,6 +20,7 @@ void OnDBClick_treeView(MainWindow* mw, WPARAM wParam, LPARAM lParam);
 void OnBtnClicked_next_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam);
 void OnBtnClicked_prev_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam);
 void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam);
+void OnTXChaper_enter(MainWindow* mw, WPARAM wParam, LPARAM lParam);
 
 ATOM MainWindow_RegisterClass()
 {
@@ -234,6 +237,18 @@ static void OnCreate_TabControl(MainWindow* mw)
         ShowError(L"Unable to create chapter count 1!");
         return;
     }
+
+#ifdef _WIN64
+    lpTextEditWndProc = (WNDPROC)SetWindowLongPtr(mw->_tx_chapter_idx->_baseWindow._hWnd,
+        GWLP_WNDPROC, (LONG_PTR)&TextEditCallBckProcedure);
+    SetWindowLongPtr(mw->_tx_chapter_idx->_baseWindow._hWnd,
+        GWLP_USERDATA, (LONG_PTR)mw);
+#else
+    lpTextEditWndProc = (WNDPROC)SetWindowLongPtr(mw->_tx_chapter_idx->_baseWindow._hWnd,
+        GWL_WNDPROC, (LONG_PTR)&TextEditCallBckProcedure);
+    SetWindowLongPtr(mw->_tx_chapter_idx->_baseWindow._hWnd,
+        GWL_USERDATA, (LONG_PTR)mw);
+#endif
 
     mw->_lb_chapter_count->_baseWindow._SetParentFunc((BaseWindow*)mw->_lb_chapter_count, mw->_tabControl->_baseWindow._hWnd);
     mw->_lb_chapter_count->_baseWindow._SetIdFunc((BaseWindow*)mw->_lb_chapter_count, (HMENU)ID_LABELCHAPTER_COUNT2);
@@ -529,4 +544,39 @@ LRESULT TabControlCallBckProcedure(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM l
         break;
     }
     return CallWindowProc(lpTabControlWndProc, hWnd, uMsg, wParam, lParam);
+}
+
+LRESULT TextEditCallBckProcedure(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+#ifdef _WIN64
+    MainWindow* mw = (MainWindow*)GetWindowLongPtr(hWnd, GWLP_USERDATA);
+#else
+    MainWindow* mw = (MainWindow*)GetWindowLongPtr(hWnd, GWL_USERDATA);
+#endif
+
+    switch (uMsg)
+    {
+    case WM_CHAR:
+    {
+        if (wParam >= L'0' && wParam <= L'9')
+        {
+            wParam -= L'0';
+            wParam += 0x0660;
+        }
+    }
+        break;
+    case WM_KEYDOWN:
+    {
+        switch (wParam)
+        {
+        case VK_RETURN:
+            OnTXChaper_enter(mw, wParam, lParam);
+            return 0;
+        }
+    }
+        break;
+    default:
+        break;
+    }
+    return CallWindowProc(lpTextEditWndProc, hWnd, uMsg, wParam, lParam);
 }
