@@ -270,7 +270,7 @@ void search(MainWindow* mw, WPARAM wParam, LPARAM lParam, const char* table, con
 	char* err_msg = 0;
 	sqlite3_stmt* res;
 	int rc;
-	char sql[255];
+	char sql[2048];
 	
 	strcpy(sql, "SELECT * FROM ");
 	strcat(sql, table);
@@ -309,9 +309,9 @@ void search(MainWindow* mw, WPARAM wParam, LPARAM lParam, const char* table, con
 
 		wcscpy(buff, get_table_arabic_name(table));
 		wcscat(buff, L" ");
-		wcscat(buff, sqlite3_column_text16(res, 0));
-		wcscat(buff, L"/");
 		wcscat(buff, sqlite3_column_text16(res, 1));
+		wcscat(buff, L"/");
+		wcscat(buff, sqlite3_column_text16(res, 0));
 
 
 		lvI.mask = LVIF_TEXT;
@@ -343,17 +343,17 @@ void search(MainWindow* mw, WPARAM wParam, LPARAM lParam, const char* table, con
 void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 {
 	_locale_t loc;
-	wchar_t wtext[100];
-	char text[200];
+	wchar_t wtext[1024];
+	char text[1024];
 
 	ListView_DeleteAllItems(mw->_lv_result->_baseWindow._hWnd);
-	GetWindowText(mw->_tx_search->_baseWindow._hWnd, wtext, 100);
+	GetWindowText(mw->_tx_search->_baseWindow._hWnd, wtext, 1024);
 
 	if (wcslen(wtext) <= 0)
 		return;
 
 	loc = _wcreate_locale(LC_ALL, L"ar_SY.utf8");
-	_wcstombs_l(text, wtext, 100, loc);
+	_wcstombs_l(text, wtext, 1024, loc);
 	_free_locale(loc);
 
 	for (int ix = 0; ix < sizeof(OldTestament) / sizeof(OldTestament[0]); ++ix)
