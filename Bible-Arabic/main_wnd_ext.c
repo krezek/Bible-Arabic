@@ -136,7 +136,7 @@ void LoadPart(MainWindow* mw, const char* part_name)
 		g_chapter_count = sqlite3_column_int(res, 0);
 		
 		_itow(g_chapter_count, nmbr, 10);
-		SetWindowText(mw->_lb_chapter_count2->_baseWindow._hWnd, HindiNumbers(nmbr));
+		SetWindowText(mw->_lb_chapter_count->_baseWindow._hWnd, HindiNumbers(nmbr));
 	}
 
 	sqlite3_finalize(res);
@@ -165,7 +165,7 @@ void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 	g_chapter_idx = idx;
 
 	_itow(g_chapter_idx, nmbr, 10);
-	SetWindowText(mw->_lb_chapter_count1->_baseWindow._hWnd, HindiNumbers(nmbr));
+	SetWindowText(mw->_tx_chapter_idx->_baseWindow._hWnd, HindiNumbers(nmbr));
 
 	strcpy(sql, "SELECT * FROM ");
 	strcat(sql, part_name);
@@ -244,7 +244,7 @@ void OnBtnClicked_next_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 		SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"");
 
 		_itow(++g_chapter_idx, nmbr, 10);
-		SetWindowText(mw->_lb_chapter_count1->_baseWindow._hWnd, HindiNumbers(nmbr));
+		SetWindowText(mw->_tx_chapter_idx->_baseWindow._hWnd, HindiNumbers(nmbr));
 
 		LoadChapter(mw, g_part_name, g_chapter_idx);
 	}
@@ -265,7 +265,7 @@ void OnBtnClicked_prev_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 		SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"");
 
 		_itow(--g_chapter_idx, nmbr, 10);
-		SetWindowText(mw->_lb_chapter_count1->_baseWindow._hWnd, HindiNumbers(nmbr));
+		SetWindowText(mw->_tx_chapter_idx->_baseWindow._hWnd, HindiNumbers(nmbr));
 
 		LoadChapter(mw, g_part_name, g_chapter_idx);
 	}

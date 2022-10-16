@@ -27,8 +27,8 @@ typedef struct
 	TabControl* _tabControl;
 	RichEdit* _richEdit;
 	Label* _lb_chapter;
-	Label* _lb_chapter_count1;
-	Label* _lb_chapter_count2;
+	TextEdit* _tx_chapter_idx;
+	Label* _lb_chapter_count;
 	TextEdit* _tx_search;
 	ListView* _lv_result;
 	Button* _bt_next_chapter;

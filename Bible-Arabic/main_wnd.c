@@ -80,8 +80,8 @@ MainWindow* MainWindow_init()
     mw->_tabControl = TabControl_init();
     mw->_richEdit = RichEdit_init();
     mw->_lb_chapter = Label_init();
-    mw->_lb_chapter_count1 = Label_init();
-    mw->_lb_chapter_count2 = Label_init();
+    mw->_tx_chapter_idx = TextEdit_init();
+    mw->_lb_chapter_count = Label_init();
     mw->_tx_search = TextEdit_init();
     mw->_lv_result = ListView_init();
     mw->_bt_next_chapter = Button_init();
@@ -98,8 +98,8 @@ void MainWindow_free(MainWindow* mw)
     Button_free(mw->_bt_next_chapter);
     ListView_free(mw->_lv_result);
     TextEdit_free(mw->_tx_search);
-    Label_free(mw->_lb_chapter_count2);
-    Label_free(mw->_lb_chapter_count1);
+    Label_free(mw->_lb_chapter_count);
+    TextEdit_free(mw->_tx_chapter_idx);
     Label_free(mw->_lb_chapter);
     RichEdit_free(mw->_richEdit);
     TabControl_free(mw->_tabControl);
@@ -226,19 +226,19 @@ static void OnCreate_TabControl(MainWindow* mw)
 
     SetWindowText(mw->_lb_chapter->_baseWindow._hWnd, L"الاصحاح");
 
-    mw->_lb_chapter_count1->_baseWindow._SetParentFunc((BaseWindow*)mw->_lb_chapter_count1, mw->_tabControl->_baseWindow._hWnd);
-    mw->_lb_chapter_count1->_baseWindow._SetIdFunc((BaseWindow*)mw->_lb_chapter_count1, (HMENU)ID_LABELCHAPTER_COUNT2);
+    mw->_tx_chapter_idx->_baseWindow._SetParentFunc((BaseWindow*)mw->_tx_chapter_idx, mw->_tabControl->_baseWindow._hWnd);
+    mw->_tx_chapter_idx->_baseWindow._SetIdFunc((BaseWindow*)mw->_tx_chapter_idx, (HMENU)ID_LABELCHAPTER_COUNT2);
 
-    if (!mw->_lb_chapter_count1->_baseWindow._CreateFunc((BaseWindow*)mw->_lb_chapter_count1))
+    if (!mw->_tx_chapter_idx->_baseWindow._CreateFunc((BaseWindow*)mw->_tx_chapter_idx))
     {
         ShowError(L"Unable to create chapter count 1!");
         return;
     }
 
-    mw->_lb_chapter_count2->_baseWindow._SetParentFunc((BaseWindow*)mw->_lb_chapter_count2, mw->_tabControl->_baseWindow._hWnd);
-    mw->_lb_chapter_count2->_baseWindow._SetIdFunc((BaseWindow*)mw->_lb_chapter_count2, (HMENU)ID_LABELCHAPTER_COUNT2);
+    mw->_lb_chapter_count->_baseWindow._SetParentFunc((BaseWindow*)mw->_lb_chapter_count, mw->_tabControl->_baseWindow._hWnd);
+    mw->_lb_chapter_count->_baseWindow._SetIdFunc((BaseWindow*)mw->_lb_chapter_count, (HMENU)ID_LABELCHAPTER_COUNT2);
 
-    if (!mw->_lb_chapter_count2->_baseWindow._CreateFunc((BaseWindow*)mw->_lb_chapter_count2))
+    if (!mw->_lb_chapter_count->_baseWindow._CreateFunc((BaseWindow*)mw->_lb_chapter_count))
     {
         ShowError(L"Unable to create chapter count 2!");
         return;
@@ -355,8 +355,8 @@ static void OnCreate(MainWindow* mw)
 
     Margin m4 = { 5, 5, 5, 5 };
     mw->_lm_tab_bible_bottom->_SetCmpFunc(mw->_lm_tab_bible_bottom, 0, 0, (Component*)mw->_lb_chapter, LM_H_EXPAND | LM_V_EXPAND, m4);
-    mw->_lm_tab_bible_bottom->_SetCmpFunc(mw->_lm_tab_bible_bottom, 0, 1, (Component*)mw->_lb_chapter_count1, LM_H_EXPAND | LM_V_EXPAND, m4);
-    mw->_lm_tab_bible_bottom->_SetCmpFunc(mw->_lm_tab_bible_bottom, 0, 2, (Component*)mw->_lb_chapter_count2, LM_H_EXPAND | LM_V_EXPAND, m4);
+    mw->_lm_tab_bible_bottom->_SetCmpFunc(mw->_lm_tab_bible_bottom, 0, 1, (Component*)mw->_tx_chapter_idx, LM_H_EXPAND | LM_V_EXPAND, m4);
+    mw->_lm_tab_bible_bottom->_SetCmpFunc(mw->_lm_tab_bible_bottom, 0, 2, (Component*)mw->_lb_chapter_count, LM_H_EXPAND | LM_V_EXPAND, m4);
     mw->_lm_tab_bible_bottom->_SetCmpFunc(mw->_lm_tab_bible_bottom, 0, 3, (Component*)mw->_bt_prev_chapter, LM_H_EXPAND | LM_V_EXPAND, m4);
     mw->_lm_tab_bible_bottom->_SetCmpFunc(mw->_lm_tab_bible_bottom, 0, 4, (Component*)mw->_bt_next_chapter, LM_H_EXPAND | LM_V_EXPAND, m4);
 
@@ -407,8 +407,8 @@ static void OnNotify_tabControl(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 
             ShowWindow(mw->_richEdit->_baseWindow._hWnd, SW_SHOW);
             ShowWindow(mw->_lb_chapter->_baseWindow._hWnd, SW_SHOW);
-            ShowWindow(mw->_lb_chapter_count1->_baseWindow._hWnd, SW_SHOW);
-            ShowWindow(mw->_lb_chapter_count2->_baseWindow._hWnd, SW_SHOW);
+            ShowWindow(mw->_tx_chapter_idx->_baseWindow._hWnd, SW_SHOW);
+            ShowWindow(mw->_lb_chapter_count->_baseWindow._hWnd, SW_SHOW);
             ShowWindow(mw->_bt_next_chapter->_baseWindow._hWnd, SW_SHOW);
             ShowWindow(mw->_bt_prev_chapter->_baseWindow._hWnd, SW_SHOW);
 
@@ -420,8 +420,8 @@ static void OnNotify_tabControl(MainWindow* mw, WPARAM wParam, LPARAM lParam)
         {
             ShowWindow(mw->_richEdit->_baseWindow._hWnd, SW_HIDE);
             ShowWindow(mw->_lb_chapter->_baseWindow._hWnd, SW_HIDE);
-            ShowWindow(mw->_lb_chapter_count1->_baseWindow._hWnd, SW_HIDE);
-            ShowWindow(mw->_lb_chapter_count2->_baseWindow._hWnd, SW_HIDE);
+            ShowWindow(mw->_tx_chapter_idx->_baseWindow._hWnd, SW_HIDE);
+            ShowWindow(mw->_lb_chapter_count->_baseWindow._hWnd, SW_HIDE);
             ShowWindow(mw->_bt_next_chapter->_baseWindow._hWnd, SW_HIDE);
             ShowWindow(mw->_bt_prev_chapter->_baseWindow._hWnd, SW_HIDE);
 
