@@ -78,6 +78,7 @@ void OnDBClick_treeView(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 			if (wcscmp(item.pszText, OldTestament[ix].table_arabic) == 0)
 			{
 				LoadPart(mw, OldTestament[ix].table_english);
+				LoadChapter(mw, g_part_name, 1);
 				return;
 			}
 		}
@@ -87,6 +88,7 @@ void OnDBClick_treeView(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 			if (wcscmp(item.pszText, NewTestament[ix].table_arabic) == 0)
 			{
 				LoadPart(mw, NewTestament[ix].table_english);
+				LoadChapter(mw, g_part_name, 1);
 				return;
 			}
 		}
@@ -105,14 +107,8 @@ void LoadPart(MainWindow* mw, const char* part_name)
 	HWND richTextHWND = mw->_richEdit->_baseWindow._hWnd;
 
 	strcpy(g_part_name, part_name);
-	g_chapter_idx = 1;
+	g_chapter_idx = 0;
 	g_chapter_count = 0;
-
-	_itow(g_chapter_idx, nmbr, 10);
-	SetWindowText(mw->_lb_chapter_count1->_baseWindow._hWnd, HindiNumbers(nmbr));
-	
-	_itow(g_chapter_count, nmbr, 10);
-	SetWindowText(mw->_lb_chapter_count2->_baseWindow._hWnd, HindiNumbers(nmbr));
 
 	rc = sqlite3_open_v2(DB_URL, &bible_db, SQLITE_OPEN_READONLY, NULL);
 
@@ -152,8 +148,6 @@ void LoadPart(MainWindow* mw, const char* part_name)
 	SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"");
 
 	sqlite3_close(bible_db);
-
-	LoadChapter(mw, g_part_name, g_chapter_idx);
 }
 
 void LoadChapter(MainWindow* mw, const char* part_name, int idx)
@@ -166,6 +160,12 @@ void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 	int rc;
 	char sql[255];
 	CHARRANGE cr;
+	wchar_t nmbr[20];
+
+	g_chapter_idx = idx;
+
+	_itow(g_chapter_idx, nmbr, 10);
+	SetWindowText(mw->_lb_chapter_count1->_baseWindow._hWnd, HindiNumbers(nmbr));
 
 	strcpy(sql, "SELECT * FROM ");
 	strcat(sql, part_name);
