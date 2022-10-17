@@ -409,6 +409,12 @@
     <None Include="..\data\john\john_7.sql" />
     <None Include="..\data\john\john_8.sql" />
     <None Include="..\data\john\john_9.sql" />
+    <None Include="..\data\john_1.sql" />
+    <None Include="..\data\john_1\john_1_1.sql" />
+    <None Include="..\data\john_1\john_1_2.sql" />
+    <None Include="..\data\john_1\john_1_3.sql" />
+    <None Include="..\data\john_1\john_1_4.sql" />
+    <None Include="..\data\john_1\john_1_5.sql" />
     <None Include="..\data\joshua.sql" />
     <None Include="..\data\joshua\joshua_1.sql" />
     <None Include="..\data\joshua\joshua_10.sql" />

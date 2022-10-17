@@ -43,7 +43,7 @@ struct Testament
 };
 
 #define OT_COUNT 10
-#define NT_COUNT 22
+#define NT_COUNT 23
 
 extern struct Testament OldTestament[OT_COUNT];
 extern struct Testament NewTestament[NT_COUNT];

@@ -31,3 +31,4 @@
 .read james.sql
 .read peter_1.sql
 .read peter_2.sql
+.read john_1.sql
