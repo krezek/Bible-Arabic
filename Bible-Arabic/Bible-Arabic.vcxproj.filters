@@ -64,6 +64,9 @@
     <Filter Include="data\romans">
       <UniqueIdentifier>{b8eb9f9f-8c82-45af-ba16-d9ebdd865cb5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\conrinthians_1">
+      <UniqueIdentifier>{ce30d9fd-2a2d-40bd-9dbe-2f2b40d6338e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -1324,6 +1327,9 @@
     </None>
     <None Include="..\data\romans\romans_16.sql">
       <Filter>data\romans</Filter>
+    </None>
+    <None Include="..\data\corinthians_1.sql">
+      <Filter>data</Filter>
     </None>
   </ItemGroup>
 </Project>

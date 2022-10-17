@@ -26,7 +26,8 @@ struct Testament NewTestament[NT_COUNT] =
 	{ "luke", L"لوقا" },
 	{ "john", L"يوحنا" },
 	{ "acts", L"أعمال الرسل" },
-	{ "romans", L"رومية" }
+	{ "romans", L"رومية" },
+	{ "corinthians_1", L"كورنثوس \u0661" }
 };
 
 //#define DB_URL "\\Windows\\System32\\bible.db"
@@ -154,17 +155,16 @@ void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 	CHARRANGE cr;
 	wchar_t nmbr[20];
 
-	cr.cpMin = 0;
-	cr.cpMax = -1;
-
-	SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
-	SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"");
-
 	g_chapter_idx = idx;
 
 	_itow(g_chapter_idx, nmbr, 10);
 	SetWindowText(mw->_tx_chapter_idx->_baseWindow._hWnd, HindiNumbers(nmbr));
 
+	cr.cpMin = 0;
+	cr.cpMax = -1;
+	SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
+	SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"");
+	
 	strcpy(sql, "SELECT * FROM ");
 	strcat(sql, part_name);
 	strcat(sql, " WHERE chapter = ");

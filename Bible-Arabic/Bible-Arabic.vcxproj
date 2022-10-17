@@ -190,6 +190,7 @@
     <None Include="..\data\acts\acts_8.sql" />
     <None Include="..\data\acts\acts_9.sql" />
     <None Include="..\data\all.sql" />
+    <None Include="..\data\corinthians_1.sql" />
     <None Include="..\data\deuteronomy.sql" />
     <None Include="..\data\exodus.sql" />
     <None Include="..\data\exodus\exodus_1.sql" />

@@ -15,3 +15,4 @@
 .read john.sql
 .read acts.sql
 .read romans.sql
+.read corinthians_1.sql
