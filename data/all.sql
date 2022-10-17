@@ -20,3 +20,4 @@
 .read galatians.sql
 .read ephesians.sql
 .read philippians.sql
+.read colossians.sql

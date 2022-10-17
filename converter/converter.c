@@ -5,7 +5,7 @@
 #include <locale.h>
 #include <string.h>
 
-#define PATH "C:\\Users\\Kinaz Rezek\\Test\\ar_new\\50\\"
+#define PATH "C:\\Users\\Kinaz Rezek\\Test\\ar_new\\51\\"
 #define BUFF_LENGTH 1024
 char buffer[BUFF_LENGTH];
 
@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
 		int idx = 0;
 
 		sprintf(source, "%s%d.htm", PATH, ix);
-		sprintf(dist, "%s_%d.sql", "philippians", ix);
+		sprintf(dist, "%s_%d.sql", "colossians", ix);
 
 		FILE* pSrc = fopen(source, "r");
 		FILE* pDist = fopen(dist, "w");
@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
 
 				buffer[idx] = 0;
 
-				fprintf(pDist, "INSERT INTO philippians (chapter, verse, prefix, suffix, body)\nVALUES (%d, %d, NULL, NULL, \"%s\");\n", ix, line, strchr(buffer, ';') + 1);
+				fprintf(pDist, "INSERT INTO colossians (chapter, verse, prefix, suffix, body)\nVALUES (%d, %d, NULL, NULL, \"%s\");\n", ix, line, strchr(buffer, ';') + 1);
 
 				++line;
 				idx = 0;

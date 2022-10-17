@@ -190,6 +190,11 @@
     <None Include="..\data\acts\acts_8.sql" />
     <None Include="..\data\acts\acts_9.sql" />
     <None Include="..\data\all.sql" />
+    <None Include="..\data\colossians.sql" />
+    <None Include="..\data\colossians\colossians_1.sql" />
+    <None Include="..\data\colossians\colossians_2.sql" />
+    <None Include="..\data\colossians\colossians_3.sql" />
+    <None Include="..\data\colossians\colossians_4.sql" />
     <None Include="..\data\corinthians_1.sql" />
     <None Include="..\data\corinthians_1\corinthians_1_1.sql" />
     <None Include="..\data\corinthians_1\corinthians_1_10.sql" />

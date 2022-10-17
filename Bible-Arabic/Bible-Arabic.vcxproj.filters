@@ -79,6 +79,9 @@
     <Filter Include="data\philippians">
       <UniqueIdentifier>{1a07d517-b935-4b79-a711-664310d7a78f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\colossians">
+      <UniqueIdentifier>{5b84f3c8-52b4-4c70-8b8c-531d7ff13105}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -1591,6 +1594,21 @@
     </None>
     <None Include="..\data\philippians\philippians_4.sql">
       <Filter>data\philippians</Filter>
+    </None>
+    <None Include="..\data\colossians.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\colossians\colossians_1.sql">
+      <Filter>data\colossians</Filter>
+    </None>
+    <None Include="..\data\colossians\colossians_2.sql">
+      <Filter>data\colossians</Filter>
+    </None>
+    <None Include="..\data\colossians\colossians_3.sql">
+      <Filter>data\colossians</Filter>
+    </None>
+    <None Include="..\data\colossians\colossians_4.sql">
+      <Filter>data\colossians</Filter>
     </None>
   </ItemGroup>
 </Project>
