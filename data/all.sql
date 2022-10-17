@@ -34,3 +34,4 @@
 .read john_1.sql
 .read john_2.sql
 .read john_3.sql
+.read jude.sql

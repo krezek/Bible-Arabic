@@ -444,6 +444,8 @@
     <None Include="..\data\joshua\joshua_7.sql" />
     <None Include="..\data\joshua\joshua_8.sql" />
     <None Include="..\data\joshua\joshua_9.sql" />
+    <None Include="..\data\jude.sql" />
+    <None Include="..\data\jude\jude_1.sql" />
     <None Include="..\data\judges.sql" />
     <None Include="..\data\judges\judges_1.sql" />
     <None Include="..\data\judges\judges_10.sql" />
