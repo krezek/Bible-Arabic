@@ -656,6 +656,12 @@
     <None Include="..\data\samuel_2\samuel_2_7.sql" />
     <None Include="..\data\samuel_2\samuel_2_8.sql" />
     <None Include="..\data\samuel_2\samuel_2_9.sql" />
+    <None Include="..\data\thessalonians_1.sql" />
+    <None Include="..\data\thessalonians_1\thessalonians_1_1.sql" />
+    <None Include="..\data\thessalonians_1\thessalonians_1_2.sql" />
+    <None Include="..\data\thessalonians_1\thessalonians_1_3.sql" />
+    <None Include="..\data\thessalonians_1\thessalonians_1_4.sql" />
+    <None Include="..\data\thessalonians_1\thessalonians_1_5.sql" />
     <None Include="rt_manif.bin" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
