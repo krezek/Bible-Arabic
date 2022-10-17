@@ -43,7 +43,9 @@ struct Testament NewTestament[NT_COUNT] =
 	{ "james", L"يعقوب" },
 	{ "peter_1", L"بطرس \u0661" },
 	{ "peter_2", L"بطرس \u0662" },
-	{ "john_1", L"يوحنا \u0661" }
+	{ "john_1", L"يوحنا \u0661" },
+	{ "john_2", L"يوحنا \u0662" },
+	{ "john_3", L"يوحنا \u0663" }
 };
 
 //#define DB_URL "\\Windows\\System32\\bible.db"

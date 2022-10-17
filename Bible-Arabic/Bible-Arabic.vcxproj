@@ -415,6 +415,10 @@
     <None Include="..\data\john_1\john_1_3.sql" />
     <None Include="..\data\john_1\john_1_4.sql" />
     <None Include="..\data\john_1\john_1_5.sql" />
+    <None Include="..\data\john_2.sql" />
+    <None Include="..\data\john_2\john_2_1.sql" />
+    <None Include="..\data\john_3.sql" />
+    <None Include="..\data\john_3\john_3_1.sql" />
     <None Include="..\data\joshua.sql" />
     <None Include="..\data\joshua\joshua_1.sql" />
     <None Include="..\data\joshua\joshua_10.sql" />
