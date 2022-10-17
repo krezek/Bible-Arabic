@@ -25,3 +25,4 @@
 .read thessalonians_2.sql
 .read timothy_1.sql
 .read timothy_2.sql
+.read titus.sql
