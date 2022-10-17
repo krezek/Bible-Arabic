@@ -85,6 +85,9 @@
     <Filter Include="data\thessalonians_1">
       <UniqueIdentifier>{1bbff4db-a529-4e9f-be80-699f344f70e5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\thessalonians_2">
+      <UniqueIdentifier>{1f3c0d6c-4745-45cf-8da1-c0daea989f8d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -1630,6 +1633,18 @@
     </None>
     <None Include="..\data\thessalonians_1\thessalonians_1_5.sql">
       <Filter>data\thessalonians_1</Filter>
+    </None>
+    <None Include="..\data\thessalonians_2.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\thessalonians_2\thessalonians_2_1.sql">
+      <Filter>data\thessalonians_2</Filter>
+    </None>
+    <None Include="..\data\thessalonians_2\thessalonians_2_2.sql">
+      <Filter>data\thessalonians_2</Filter>
+    </None>
+    <None Include="..\data\thessalonians_2\thessalonians_2_3.sql">
+      <Filter>data\thessalonians_2</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -22,3 +22,4 @@
 .read philippians.sql
 .read colossians.sql
 .read thessalonians_1.sql
+.read thessalonians_2.sql
