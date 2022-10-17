@@ -64,7 +64,10 @@
     <Filter Include="data\romans">
       <UniqueIdentifier>{b8eb9f9f-8c82-45af-ba16-d9ebdd865cb5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="data\conrinthians_1">
+    <Filter Include="data\corinthians_2">
+      <UniqueIdentifier>{1a29f414-f6d1-4232-baea-c826173abeb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data\corinthians_1">
       <UniqueIdentifier>{ce30d9fd-2a2d-40bd-9dbe-2f2b40d6338e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -1330,6 +1333,96 @@
     </None>
     <None Include="..\data\corinthians_1.sql">
       <Filter>data</Filter>
+    </None>
+    <None Include="..\data\corinthians_2.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\corinthians_1\corinthians_1_1.sql">
+      <Filter>data\corinthians_1</Filter>
+    </None>
+    <None Include="..\data\corinthians_1\corinthians_1_2.sql">
+      <Filter>data\corinthians_1</Filter>
+    </None>
+    <None Include="..\data\corinthians_1\corinthians_1_3.sql">
+      <Filter>data\corinthians_1</Filter>
+    </None>
+    <None Include="..\data\corinthians_1\corinthians_1_4.sql">
+      <Filter>data\corinthians_1</Filter>
+    </None>
+    <None Include="..\data\corinthians_1\corinthians_1_5.sql">
+      <Filter>data\corinthians_1</Filter>
+    </None>
+    <None Include="..\data\corinthians_1\corinthians_1_6.sql">
+      <Filter>data\corinthians_1</Filter>
+    </None>
+    <None Include="..\data\corinthians_1\corinthians_1_7.sql">
+      <Filter>data\corinthians_1</Filter>
+    </None>
+    <None Include="..\data\corinthians_1\corinthians_1_8.sql">
+      <Filter>data\corinthians_1</Filter>
+    </None>
+    <None Include="..\data\corinthians_1\corinthians_1_9.sql">
+      <Filter>data\corinthians_1</Filter>
+    </None>
+    <None Include="..\data\corinthians_1\corinthians_1_10.sql">
+      <Filter>data\corinthians_1</Filter>
+    </None>
+    <None Include="..\data\corinthians_1\corinthians_1_11.sql">
+      <Filter>data\corinthians_1</Filter>
+    </None>
+    <None Include="..\data\corinthians_1\corinthians_1_12.sql">
+      <Filter>data\corinthians_1</Filter>
+    </None>
+    <None Include="..\data\corinthians_1\corinthians_1_13.sql">
+      <Filter>data\corinthians_1</Filter>
+    </None>
+    <None Include="..\data\corinthians_1\corinthians_1_14.sql">
+      <Filter>data\corinthians_1</Filter>
+    </None>
+    <None Include="..\data\corinthians_1\corinthians_1_15.sql">
+      <Filter>data\corinthians_1</Filter>
+    </None>
+    <None Include="..\data\corinthians_1\corinthians_1_16.sql">
+      <Filter>data\corinthians_1</Filter>
+    </None>
+    <None Include="..\data\corinthians_2\corinthians_2_1.sql">
+      <Filter>data\corinthians_2</Filter>
+    </None>
+    <None Include="..\data\corinthians_2\corinthians_2_2.sql">
+      <Filter>data\corinthians_2</Filter>
+    </None>
+    <None Include="..\data\corinthians_2\corinthians_2_3.sql">
+      <Filter>data\corinthians_2</Filter>
+    </None>
+    <None Include="..\data\corinthians_2\corinthians_2_4.sql">
+      <Filter>data\corinthians_2</Filter>
+    </None>
+    <None Include="..\data\corinthians_2\corinthians_2_5.sql">
+      <Filter>data\corinthians_2</Filter>
+    </None>
+    <None Include="..\data\corinthians_2\corinthians_2_6.sql">
+      <Filter>data\corinthians_2</Filter>
+    </None>
+    <None Include="..\data\corinthians_2\corinthians_2_7.sql">
+      <Filter>data\corinthians_2</Filter>
+    </None>
+    <None Include="..\data\corinthians_2\corinthians_2_8.sql">
+      <Filter>data\corinthians_2</Filter>
+    </None>
+    <None Include="..\data\corinthians_2\corinthians_2_9.sql">
+      <Filter>data\corinthians_2</Filter>
+    </None>
+    <None Include="..\data\corinthians_2\corinthians_2_10.sql">
+      <Filter>data\corinthians_2</Filter>
+    </None>
+    <None Include="..\data\corinthians_2\corinthians_2_11.sql">
+      <Filter>data\corinthians_2</Filter>
+    </None>
+    <None Include="..\data\corinthians_2\corinthians_2_12.sql">
+      <Filter>data\corinthians_2</Filter>
+    </None>
+    <None Include="..\data\corinthians_2\corinthians_2_13.sql">
+      <Filter>data\corinthians_2</Filter>
     </None>
   </ItemGroup>
 </Project>

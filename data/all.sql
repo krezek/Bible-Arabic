@@ -16,3 +16,5 @@
 .read acts.sql
 .read romans.sql
 .read corinthians_1.sql
+.read corinthians_2.sql
+
