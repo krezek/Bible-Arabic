@@ -29,3 +29,4 @@
 .read philemon.sql
 .read hebrews.sql
 .read james.sql
+.read peter_1.sql
