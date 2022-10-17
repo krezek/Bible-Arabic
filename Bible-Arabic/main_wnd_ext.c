@@ -29,7 +29,8 @@ struct Testament NewTestament[NT_COUNT] =
 	{ "romans", L"رومية" },
 	{ "corinthians_1", L"كورنثوس \u0661" },
 	{ "corinthians_2", L"كورنثوس \u0662" },
-	{ "galatians", L"غلاطية" }
+	{ "galatians", L"غلاطية" },
+	{ "ephesians", L"أفسس" }
 };
 
 //#define DB_URL "\\Windows\\System32\\bible.db"

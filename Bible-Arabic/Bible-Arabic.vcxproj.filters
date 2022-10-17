@@ -73,6 +73,9 @@
     <Filter Include="data\galatians">
       <UniqueIdentifier>{f2f7d39b-3b1a-4700-9c1b-90d16e24f06b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\ephesians">
+      <UniqueIdentifier>{9810dbd2-fe68-43cc-ad85-c75781a58632}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -1447,6 +1450,129 @@
     </None>
     <None Include="..\data\galatians\galatians_6.sql">
       <Filter>data\galatians</Filter>
+    </None>
+    <None Include="..\data\ephesians.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_1.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_2.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_3.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_4.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_5.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_6.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_7.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_8.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_9.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_10.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_11.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_12.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_13.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_14.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_15.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_16.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_17.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_18.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_19.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_20.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_21.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_22.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_23.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_24.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_25.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_26.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_27.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_28.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_29.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_30.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_31.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_32.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_33.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\deuteronomy\deuteronomy_34.sql">
+      <Filter>data\deuteronomy</Filter>
+    </None>
+    <None Include="..\data\ephesians\ephesians_1.sql">
+      <Filter>data\ephesians</Filter>
+    </None>
+    <None Include="..\data\ephesians\ephesians_2.sql">
+      <Filter>data\ephesians</Filter>
+    </None>
+    <None Include="..\data\ephesians\ephesians_3.sql">
+      <Filter>data\ephesians</Filter>
+    </None>
+    <None Include="..\data\ephesians\ephesians_4.sql">
+      <Filter>data\ephesians</Filter>
+    </None>
+    <None Include="..\data\ephesians\ephesians_5.sql">
+      <Filter>data\ephesians</Filter>
+    </None>
+    <None Include="..\data\ephesians\ephesians_6.sql">
+      <Filter>data\ephesians</Filter>
     </None>
   </ItemGroup>
 </Project>
