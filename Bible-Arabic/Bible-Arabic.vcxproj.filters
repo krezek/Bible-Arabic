@@ -124,6 +124,9 @@
     <Filter Include="data\jude">
       <UniqueIdentifier>{515b6829-0612-44fd-9db3-793630e02c09}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\revelation">
+      <UniqueIdentifier>{008fc4aa-866b-4b4b-8183-30460ce6fa76}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -1861,6 +1864,75 @@
     </None>
     <None Include="..\data\jude\jude_1.sql">
       <Filter>data\jude</Filter>
+    </None>
+    <None Include="..\data\revelation.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_1.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_2.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_3.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_4.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_5.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_6.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_7.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_8.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_9.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_10.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_11.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_12.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_13.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_14.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_15.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_16.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_17.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_18.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_19.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_20.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_21.sql">
+      <Filter>data\revelation</Filter>
+    </None>
+    <None Include="..\data\revelation\revelation_22.sql">
+      <Filter>data\revelation</Filter>
     </None>
   </ItemGroup>
 </Project>
