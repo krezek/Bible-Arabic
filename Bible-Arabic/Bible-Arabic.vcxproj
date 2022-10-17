@@ -673,6 +673,11 @@
     <None Include="..\data\timothy_1\timothy_1_4.sql" />
     <None Include="..\data\timothy_1\timothy_1_5.sql" />
     <None Include="..\data\timothy_1\timothy_1_6.sql" />
+    <None Include="..\data\timothy_2.sql" />
+    <None Include="..\data\timothy_2\timothy_2_1.sql" />
+    <None Include="..\data\timothy_2\timothy_2_2.sql" />
+    <None Include="..\data\timothy_2\timothy_2_3.sql" />
+    <None Include="..\data\timothy_2\timothy_2_4.sql" />
     <None Include="rt_manif.bin" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

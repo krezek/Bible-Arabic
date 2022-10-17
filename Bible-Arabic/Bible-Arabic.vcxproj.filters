@@ -91,6 +91,9 @@
     <Filter Include="data\timothy_1">
       <UniqueIdentifier>{ee45fd75-ae41-4cca-bfc4-9623f050ea77}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\timothy_2">
+      <UniqueIdentifier>{3efe6926-1ec2-4ba1-a0ce-32139706f0eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -1669,6 +1672,21 @@
     </None>
     <None Include="..\data\timothy_1\timothy_1_6.sql">
       <Filter>data\timothy_1</Filter>
+    </None>
+    <None Include="..\data\timothy_2.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\timothy_2\timothy_2_1.sql">
+      <Filter>data\timothy_2</Filter>
+    </None>
+    <None Include="..\data\timothy_2\timothy_2_2.sql">
+      <Filter>data\timothy_2</Filter>
+    </None>
+    <None Include="..\data\timothy_2\timothy_2_3.sql">
+      <Filter>data\timothy_2</Filter>
+    </None>
+    <None Include="..\data\timothy_2\timothy_2_4.sql">
+      <Filter>data\timothy_2</Filter>
     </None>
   </ItemGroup>
 </Project>
