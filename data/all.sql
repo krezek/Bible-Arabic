@@ -23,3 +23,4 @@
 .read colossians.sql
 .read thessalonians_1.sql
 .read thessalonians_2.sql
+.read timothy_1.sql

@@ -88,6 +88,9 @@
     <Filter Include="data\thessalonians_2">
       <UniqueIdentifier>{1f3c0d6c-4745-45cf-8da1-c0daea989f8d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\timothy_1">
+      <UniqueIdentifier>{ee45fd75-ae41-4cca-bfc4-9623f050ea77}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -1645,6 +1648,27 @@
     </None>
     <None Include="..\data\thessalonians_2\thessalonians_2_3.sql">
       <Filter>data\thessalonians_2</Filter>
+    </None>
+    <None Include="..\data\timothy_1.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\timothy_1\timothy_1_1.sql">
+      <Filter>data\timothy_1</Filter>
+    </None>
+    <None Include="..\data\timothy_1\timothy_1_2.sql">
+      <Filter>data\timothy_1</Filter>
+    </None>
+    <None Include="..\data\timothy_1\timothy_1_3.sql">
+      <Filter>data\timothy_1</Filter>
+    </None>
+    <None Include="..\data\timothy_1\timothy_1_4.sql">
+      <Filter>data\timothy_1</Filter>
+    </None>
+    <None Include="..\data\timothy_1\timothy_1_5.sql">
+      <Filter>data\timothy_1</Filter>
+    </None>
+    <None Include="..\data\timothy_1\timothy_1_6.sql">
+      <Filter>data\timothy_1</Filter>
     </None>
   </ItemGroup>
 </Project>
