@@ -103,6 +103,9 @@
     <Filter Include="data\hebrews">
       <UniqueIdentifier>{89aaa40a-c352-4985-a1f7-779a54883131}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\james">
+      <UniqueIdentifier>{81e29c55-f6f7-47e4-9bb4-be38be2b53b8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -1756,6 +1759,24 @@
     </None>
     <None Include="..\data\hebrews\hebrews_13.sql">
       <Filter>data\hebrews</Filter>
+    </None>
+    <None Include="..\data\james.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\james\james_1.sql">
+      <Filter>data\james</Filter>
+    </None>
+    <None Include="..\data\james\james_2.sql">
+      <Filter>data\james</Filter>
+    </None>
+    <None Include="..\data\james\james_3.sql">
+      <Filter>data\james</Filter>
+    </None>
+    <None Include="..\data\james\james_4.sql">
+      <Filter>data\james</Filter>
+    </None>
+    <None Include="..\data\james\james_5.sql">
+      <Filter>data\james</Filter>
     </None>
   </ItemGroup>
 </Project>

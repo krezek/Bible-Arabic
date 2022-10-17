@@ -381,6 +381,12 @@
     <None Include="..\data\hebrews\hebrews_7.sql" />
     <None Include="..\data\hebrews\hebrews_8.sql" />
     <None Include="..\data\hebrews\hebrews_9.sql" />
+    <None Include="..\data\james.sql" />
+    <None Include="..\data\james\james_1.sql" />
+    <None Include="..\data\james\james_2.sql" />
+    <None Include="..\data\james\james_3.sql" />
+    <None Include="..\data\james\james_4.sql" />
+    <None Include="..\data\james\james_5.sql" />
     <None Include="..\data\john.sql" />
     <None Include="..\data\john\john_1.sql" />
     <None Include="..\data\john\john_10.sql" />

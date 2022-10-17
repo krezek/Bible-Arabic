@@ -28,3 +28,4 @@
 .read titus.sql
 .read philemon.sql
 .read hebrews.sql
+.read james.sql
