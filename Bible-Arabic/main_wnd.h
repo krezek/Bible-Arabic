@@ -40,6 +40,7 @@ struct Testament
 {
 	char* table_english;
 	wchar_t* table_arabic;
+	wchar_t* _title;
 };
 
 #define OT_COUNT 10

@@ -7,47 +7,47 @@
 
 struct Testament OldTestament[OT_COUNT] =
 {
-	{ "genesis", L"التكوين" },
-	{ "exodus", L"الخروج" },
-	{ "leviticus", L"اللاويين" },
-	{ "numbers", L"العدد" },
-	{ "deuteronomy", L"التثنية" },
-	{ "joshua", L"يشوع" },
-	{ "judges", L"القضاة"},
-	{ "ruth", L"راعوث" },
-	{ "samuel_1", L"صموئيل الأول" },
-	{ "samuel_2", L"صموئيل الثاني" }
+	{ "genesis", L"التكوين", L"التكوين" },
+	{ "exodus", L"الخروج", L"الخروج" },
+	{ "leviticus", L"اللاويين", L"اللاويين" },
+	{ "numbers", L"العدد", L"العدد" },
+	{ "deuteronomy", L"التثنية", L"التثنية" },
+	{ "joshua", L"يشوع", L"يشوع" },
+	{ "judges", L"القضاة", L"القضاة" },
+	{ "ruth", L"راعوث", L"راعوث" },
+	{ "samuel_1", L"صموئيل الأول", L"صموئيل الأول" },
+	{ "samuel_2", L"صموئيل الثاني", L"صموئيل الثاني" }
 };
 
 struct Testament NewTestament[NT_COUNT] =
 {
-	{ "matthew", L"متى" },
-	{ "mark", L"مرقس" },
-	{ "luke", L"لوقا" },
-	{ "john", L"يوحنا" },
-	{ "acts", L"أعمال الرسل" },
-	{ "romans", L"رومية" },
-	{ "corinthians_1", L"كورنثوس \u0661" },
-	{ "corinthians_2", L"كورنثوس \u0662" },
-	{ "galatians", L"غلاطية" },
-	{ "ephesians", L"أفسس" },
-	{ "philippians", L"فيليبي" },
-	{ "colossians", L"كولوسي" },
-	{ "thessalonians_1", L"تسالونيكي \u0661" },
-	{ "thessalonians_2", L"تسالونيكي \u0662" },
-	{ "timothy_1", L"تيموثاوس \u0661" },
-	{ "timothy_2", L"تيموثاوس \u0662" },
-	{ "titus", L"تيطس" },
-	{ "philemon", L"فيليمون" },
-	{ "hebrews", L"العبرانيين" },
-	{ "james", L"يعقوب" },
-	{ "peter_1", L"بطرس \u0661" },
-	{ "peter_2", L"بطرس \u0662" },
-	{ "john_1", L"يوحنا \u0661" },
-	{ "john_2", L"يوحنا \u0662" },
-	{ "john_3", L"يوحنا \u0663" },
-	{ "jude", L"يهوذا" },
-	{ "revelation", L"رؤيا" }
+	{ "matthew", L"متى", L"متى" },
+	{ "mark", L"مرقس", L"مرقس" },
+	{ "luke", L"لوقا", L"لوقا" },
+	{ "john", L"يوحنا", L"يوحنا" },
+	{ "acts", L"أعمال الرسل", L"أعمال الرسل" },
+	{ "romans", L"رومية", L"رومية" },
+	{ "corinthians_1", L"كورنثوس \u0661", L"كورنثوس \u0661" },
+	{ "corinthians_2", L"كورنثوس \u0662", L"كورنثوس \u0662" },
+	{ "galatians", L"غلاطية", L"غلاطية" },
+	{ "ephesians", L"أفسس", L"أفسس" },
+	{ "philippians", L"فيليبي", L"فيليبي" },
+	{ "colossians", L"كولوسي", L"كولوسي" },
+	{ "thessalonians_1", L"تسالونيكي \u0661", L"تسالونيكي \u0661" },
+	{ "thessalonians_2", L"تسالونيكي \u0662", L"تسالونيكي \u0662" },
+	{ "timothy_1", L"تيموثاوس \u0661", L"تيموثاوس \u0661" },
+	{ "timothy_2", L"تيموثاوس \u0662", L"تيموثاوس \u0662" },
+	{ "titus", L"تيطس", L"تيطس" },
+	{ "philemon", L"فيليمون", L"فيليمون" },
+	{ "hebrews", L"العبرانيين", L"العبرانيين" },
+	{ "james", L"يعقوب", L"يعقوب" },
+	{ "peter_1", L"بطرس \u0661", L"بطرس \u0661" },
+	{ "peter_2", L"بطرس \u0662", L"بطرس \u0662" },
+	{ "john_1", L"يوحنا \u0661", L"يوحنا \u0661" },
+	{ "john_2", L"يوحنا \u0662", L"يوحنا \u0662" },
+	{ "john_3", L"يوحنا \u0663", L"يوحنا \u0663" },
+	{ "jude", L"يهوذا", L"يهوذا" },
+	{ "revelation", L"رؤيا", L"رؤيا" }
 };
 
 //#define DB_URL "\\Windows\\System32\\bible.db"
@@ -184,6 +184,35 @@ void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 	cr.cpMax = -1;
 	SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
 	SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"");
+
+	if (g_chapter_idx == 1)
+	{
+		for (int ix = 0; ix < OT_COUNT; ++ix)
+		{
+			if (strcmp(g_part_name, OldTestament[ix].table_english) == 0)
+			{
+				cr.cpMin = -1;
+				cr.cpMax = -1;
+				SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
+				SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)OldTestament[ix]._title);
+				SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"\r\n");
+				break;
+			}
+		}
+
+		for (int ix = 0; ix < NT_COUNT; ++ix)
+		{
+			if (strcmp(g_part_name, NewTestament[ix].table_english) == 0)
+			{
+				cr.cpMin = -1;
+				cr.cpMax = -1;
+				SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
+				SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)NewTestament[ix]._title);
+				SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"\r\n");
+				break;
+			}
+		}
+	}
 	
 	strcpy(sql, "SELECT * FROM ");
 	strcat(sql, part_name);
