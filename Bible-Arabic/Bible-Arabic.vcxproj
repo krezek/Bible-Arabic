@@ -598,6 +598,10 @@
     <None Include="..\data\peter_1\peter_1_3.sql" />
     <None Include="..\data\peter_1\peter_1_4.sql" />
     <None Include="..\data\peter_1\peter_1_5.sql" />
+    <None Include="..\data\peter_2.sql" />
+    <None Include="..\data\peter_2\peter_2_1.sql" />
+    <None Include="..\data\peter_2\peter_2_2.sql" />
+    <None Include="..\data\peter_2\peter_2_3.sql" />
     <None Include="..\data\philemon.sql" />
     <None Include="..\data\philemon\philemon_1.sql" />
     <None Include="..\data\philippians.sql" />

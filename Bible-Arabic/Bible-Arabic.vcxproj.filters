@@ -109,6 +109,9 @@
     <Filter Include="data\peter_1">
       <UniqueIdentifier>{c184cdf7-38f2-45c1-91aa-cf5090268301}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\peter_2">
+      <UniqueIdentifier>{3623ebe9-6650-4dbd-8296-c46061dbde89}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -1798,6 +1801,18 @@
     </None>
     <None Include="..\data\peter_1\peter_1_5.sql">
       <Filter>data\peter_1</Filter>
+    </None>
+    <None Include="..\data\peter_2.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\peter_2\peter_2_1.sql">
+      <Filter>data\peter_2</Filter>
+    </None>
+    <None Include="..\data\peter_2\peter_2_2.sql">
+      <Filter>data\peter_2</Filter>
+    </None>
+    <None Include="..\data\peter_2\peter_2_3.sql">
+      <Filter>data\peter_2</Filter>
     </None>
   </ItemGroup>
 </Project>
