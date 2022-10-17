@@ -97,6 +97,12 @@
     <Filter Include="data\titus">
       <UniqueIdentifier>{ebca5c2f-bab3-4313-9f90-9dc882d1a832}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\philemon">
+      <UniqueIdentifier>{f9c32acc-6c7c-421d-940f-7e256b00096a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data\hebrews">
+      <UniqueIdentifier>{89aaa40a-c352-4985-a1f7-779a54883131}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -1702,6 +1708,54 @@
     </None>
     <None Include="..\data\titus\titus_3.sql">
       <Filter>data\titus</Filter>
+    </None>
+    <None Include="..\data\philemon.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\philemon\philemon_1.sql">
+      <Filter>data\philemon</Filter>
+    </None>
+    <None Include="..\data\hebrews.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\hebrews\hebrews_1.sql">
+      <Filter>data\hebrews</Filter>
+    </None>
+    <None Include="..\data\hebrews\hebrews_2.sql">
+      <Filter>data\hebrews</Filter>
+    </None>
+    <None Include="..\data\hebrews\hebrews_3.sql">
+      <Filter>data\hebrews</Filter>
+    </None>
+    <None Include="..\data\hebrews\hebrews_4.sql">
+      <Filter>data\hebrews</Filter>
+    </None>
+    <None Include="..\data\hebrews\hebrews_5.sql">
+      <Filter>data\hebrews</Filter>
+    </None>
+    <None Include="..\data\hebrews\hebrews_6.sql">
+      <Filter>data\hebrews</Filter>
+    </None>
+    <None Include="..\data\hebrews\hebrews_7.sql">
+      <Filter>data\hebrews</Filter>
+    </None>
+    <None Include="..\data\hebrews\hebrews_8.sql">
+      <Filter>data\hebrews</Filter>
+    </None>
+    <None Include="..\data\hebrews\hebrews_9.sql">
+      <Filter>data\hebrews</Filter>
+    </None>
+    <None Include="..\data\hebrews\hebrews_10.sql">
+      <Filter>data\hebrews</Filter>
+    </None>
+    <None Include="..\data\hebrews\hebrews_11.sql">
+      <Filter>data\hebrews</Filter>
+    </None>
+    <None Include="..\data\hebrews\hebrews_12.sql">
+      <Filter>data\hebrews</Filter>
+    </None>
+    <None Include="..\data\hebrews\hebrews_13.sql">
+      <Filter>data\hebrews</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -26,3 +26,5 @@
 .read timothy_1.sql
 .read timothy_2.sql
 .read titus.sql
+.read philemon.sql
+.read hebrews.sql
