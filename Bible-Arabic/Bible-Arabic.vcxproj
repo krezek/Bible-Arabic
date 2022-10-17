@@ -567,6 +567,11 @@
     <None Include="..\data\numbers\numbers_7.sql" />
     <None Include="..\data\numbers\numbers_8.sql" />
     <None Include="..\data\numbers\numbers_9.sql" />
+    <None Include="..\data\philippians.sql" />
+    <None Include="..\data\philippians\philippians_1.sql" />
+    <None Include="..\data\philippians\philippians_2.sql" />
+    <None Include="..\data\philippians\philippians_3.sql" />
+    <None Include="..\data\philippians\philippians_4.sql" />
     <None Include="..\data\romans.sql" />
     <None Include="..\data\romans\romans_1.sql" />
     <None Include="..\data\romans\romans_10.sql" />

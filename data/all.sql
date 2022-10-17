@@ -19,3 +19,4 @@
 .read corinthians_2.sql
 .read galatians.sql
 .read ephesians.sql
+.read philippians.sql

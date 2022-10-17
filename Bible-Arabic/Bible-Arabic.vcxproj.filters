@@ -76,6 +76,9 @@
     <Filter Include="data\ephesians">
       <UniqueIdentifier>{9810dbd2-fe68-43cc-ad85-c75781a58632}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\philippians">
+      <UniqueIdentifier>{1a07d517-b935-4b79-a711-664310d7a78f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -1573,6 +1576,21 @@
     </None>
     <None Include="..\data\ephesians\ephesians_6.sql">
       <Filter>data\ephesians</Filter>
+    </None>
+    <None Include="..\data\philippians.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\philippians\philippians_1.sql">
+      <Filter>data\philippians</Filter>
+    </None>
+    <None Include="..\data\philippians\philippians_2.sql">
+      <Filter>data\philippians</Filter>
+    </None>
+    <None Include="..\data\philippians\philippians_3.sql">
+      <Filter>data\philippians</Filter>
+    </None>
+    <None Include="..\data\philippians\philippians_4.sql">
+      <Filter>data\philippians</Filter>
     </None>
   </ItemGroup>
 </Project>
