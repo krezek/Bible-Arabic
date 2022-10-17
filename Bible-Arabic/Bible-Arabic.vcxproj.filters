@@ -70,6 +70,9 @@
     <Filter Include="data\corinthians_1">
       <UniqueIdentifier>{ce30d9fd-2a2d-40bd-9dbe-2f2b40d6338e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\galatians">
+      <UniqueIdentifier>{f2f7d39b-3b1a-4700-9c1b-90d16e24f06b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -1423,6 +1426,27 @@
     </None>
     <None Include="..\data\corinthians_2\corinthians_2_13.sql">
       <Filter>data\corinthians_2</Filter>
+    </None>
+    <None Include="..\data\galatians.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\galatians\galatians_1.sql">
+      <Filter>data\galatians</Filter>
+    </None>
+    <None Include="..\data\galatians\galatians_2.sql">
+      <Filter>data\galatians</Filter>
+    </None>
+    <None Include="..\data\galatians\galatians_3.sql">
+      <Filter>data\galatians</Filter>
+    </None>
+    <None Include="..\data\galatians\galatians_4.sql">
+      <Filter>data\galatians</Filter>
+    </None>
+    <None Include="..\data\galatians\galatians_5.sql">
+      <Filter>data\galatians</Filter>
+    </None>
+    <None Include="..\data\galatians\galatians_6.sql">
+      <Filter>data\galatians</Filter>
     </None>
   </ItemGroup>
 </Project>
