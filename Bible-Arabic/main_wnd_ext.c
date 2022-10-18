@@ -163,6 +163,27 @@ void LoadPart(MainWindow* mw, const char* part_name)
 	sqlite3_close(bible_db);
 }
 
+wchar_t* get_title(const char* part_name)
+{
+	for (int ix = 0; ix < OT_COUNT; ++ix)
+	{
+		if (strcmp(g_part_name, OldTestament[ix].table_english) == 0)
+		{
+			return OldTestament[ix]._title;
+		}
+	}
+
+	for (int ix = 0; ix < NT_COUNT; ++ix)
+	{
+		if (strcmp(g_part_name, NewTestament[ix].table_english) == 0)
+		{
+			return NewTestament[ix]._title;
+		}
+	}
+
+	return NULL;
+}
+
 void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 {
 	HWND richTextHWND = mw->_richEdit->_baseWindow._hWnd;
@@ -187,30 +208,15 @@ void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 
 	if (g_chapter_idx == 1)
 	{
-		for (int ix = 0; ix < OT_COUNT; ++ix)
-		{
-			if (strcmp(g_part_name, OldTestament[ix].table_english) == 0)
-			{
-				cr.cpMin = -1;
-				cr.cpMax = -1;
-				SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
-				SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)OldTestament[ix]._title);
-				SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"\r\n");
-				break;
-			}
-		}
+		wchar_t* title = get_title(g_part_name);
 
-		for (int ix = 0; ix < NT_COUNT; ++ix)
+		if (title)
 		{
-			if (strcmp(g_part_name, NewTestament[ix].table_english) == 0)
-			{
-				cr.cpMin = -1;
-				cr.cpMax = -1;
-				SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
-				SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)NewTestament[ix]._title);
-				SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"\r\n");
-				break;
-			}
+			cr.cpMin = -1;
+			cr.cpMax = -1;
+			SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
+			SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)title);
+			SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"\r\n");
 		}
 	}
 	
