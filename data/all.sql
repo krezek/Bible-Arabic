@@ -9,6 +9,7 @@
 .read samuel_1.sql
 .read samuel_2.sql
 .read kings_1.sql
+.read kings_2.sql
 
 .read matthew.sql
 .read mark.sql
