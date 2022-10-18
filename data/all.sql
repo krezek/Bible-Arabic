@@ -8,6 +8,7 @@
 .read ruth.sql
 .read samuel_1.sql
 .read samuel_2.sql
+.read kings_1.sql
 
 .read matthew.sql
 .read mark.sql
