@@ -1,0 +1,39 @@
+DROP TABLE IF EXISTS chronicles_2;
+CREATE VIRTUAL TABLE chronicles_2 USING FTS5(chapter, verse, prefix, suffix, body);
+
+.read chronicles_2/chronicles_2_1.sql
+.read chronicles_2/chronicles_2_2.sql
+.read chronicles_2/chronicles_2_3.sql
+.read chronicles_2/chronicles_2_4.sql
+.read chronicles_2/chronicles_2_5.sql
+.read chronicles_2/chronicles_2_6.sql
+.read chronicles_2/chronicles_2_7.sql
+.read chronicles_2/chronicles_2_8.sql
+.read chronicles_2/chronicles_2_9.sql
+.read chronicles_2/chronicles_2_10.sql
+.read chronicles_2/chronicles_2_11.sql
+.read chronicles_2/chronicles_2_12.sql
+.read chronicles_2/chronicles_2_13.sql
+.read chronicles_2/chronicles_2_14.sql
+.read chronicles_2/chronicles_2_15.sql
+.read chronicles_2/chronicles_2_16.sql
+.read chronicles_2/chronicles_2_17.sql
+.read chronicles_2/chronicles_2_18.sql
+.read chronicles_2/chronicles_2_19.sql
+.read chronicles_2/chronicles_2_20.sql
+.read chronicles_2/chronicles_2_21.sql
+.read chronicles_2/chronicles_2_22.sql
+.read chronicles_2/chronicles_2_23.sql
+.read chronicles_2/chronicles_2_24.sql
+.read chronicles_2/chronicles_2_25.sql
+.read chronicles_2/chronicles_2_26.sql
+.read chronicles_2/chronicles_2_27.sql
+.read chronicles_2/chronicles_2_28.sql
+.read chronicles_2/chronicles_2_29.sql
+.read chronicles_2/chronicles_2_30.sql
+.read chronicles_2/chronicles_2_31.sql
+.read chronicles_2/chronicles_2_32.sql
+.read chronicles_2/chronicles_2_33.sql
+.read chronicles_2/chronicles_2_34.sql
+.read chronicles_2/chronicles_2_35.sql
+.read chronicles_2/chronicles_2_36.sql
