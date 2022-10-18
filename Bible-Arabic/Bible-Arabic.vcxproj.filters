@@ -133,6 +133,9 @@
     <Filter Include="data\kings_2">
       <UniqueIdentifier>{2d2e0483-70cc-4bcc-9fcd-389cc88b628a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\chronicles_1">
+      <UniqueIdentifier>{2ca83884-1900-4830-9b56-857eda660b05}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -2086,6 +2089,96 @@
     </None>
     <None Include="..\data\kings_2\kings_2_25.sql">
       <Filter>data\kings_2</Filter>
+    </None>
+    <None Include="..\data\chronicles_1.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_1.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_2.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_3.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_4.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_5.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_6.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_7.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_8.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_9.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_10.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_11.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_12.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_13.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_14.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_15.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_16.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_17.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_18.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_19.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_20.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_21.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_22.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_23.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_24.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_25.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_26.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_27.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_28.sql">
+      <Filter>data\chronicles_1</Filter>
+    </None>
+    <None Include="..\data\chronicles_1\chronicles_1_29.sql">
+      <Filter>data\chronicles_1</Filter>
     </None>
   </ItemGroup>
 </Project>

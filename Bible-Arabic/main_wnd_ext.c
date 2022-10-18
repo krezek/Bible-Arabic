@@ -18,7 +18,8 @@ struct Testament OldTestament[OT_COUNT] =
 	{ "samuel_1", L"صموئيل \u0661", L"صموئيل \u0661" },
 	{ "samuel_2", L"صموئيل \u0662", L"صموئيل \u0662" },
 	{ "kings_1", L"الملوك \u0661", L"الملوك \u0661" },
-	{ "kings_2", L"الملوك \u0662", L"الملوك \u0662" }
+	{ "kings_2", L"الملوك \u0662", L"الملوك \u0662" },
+	{ "chronicles_1", L"أخبار الأيام \u0661", L"أخبار الأيام \u0661" }
 };
 
 struct Testament NewTestament[NT_COUNT] =
