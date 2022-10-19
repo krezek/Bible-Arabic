@@ -148,6 +148,9 @@
     <Filter Include="data\esther">
       <UniqueIdentifier>{cfccd16d-3c3c-4076-8cd2-b3e8dc77affe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\job">
+      <UniqueIdentifier>{4212a0b7-95d3-43fa-8b5a-fca65b540e1f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -2410,6 +2413,135 @@
     </None>
     <None Include="..\data\esther\esther_10.sql">
       <Filter>data\esther</Filter>
+    </None>
+    <None Include="..\data\job.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\job\job_1.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_2.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_3.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_4.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_5.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_6.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_7.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_8.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_9.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_10.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_11.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_12.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_13.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_14.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_15.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_16.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_17.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_18.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_19.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_20.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_21.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_22.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_23.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_24.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_25.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_26.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_27.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_28.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_29.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_30.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_31.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_32.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_33.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_34.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_35.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_36.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_37.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_38.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_39.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_40.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_41.sql">
+      <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\job\job_42.sql">
+      <Filter>data\job</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -15,6 +15,7 @@
 .read ezra.sql
 .read nehemiah.sql
 .read esther.sql
+.read job.sql
 
 
 .read matthew.sql
