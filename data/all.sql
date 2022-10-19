@@ -14,6 +14,7 @@
 .read chronicles_2.sql
 .read ezra.sql
 .read nehemiah.sql
+.read esther.sql
 
 
 .read matthew.sql

@@ -335,6 +335,17 @@
     <None Include="..\data\ephesians\ephesians_4.sql" />
     <None Include="..\data\ephesians\ephesians_5.sql" />
     <None Include="..\data\ephesians\ephesians_6.sql" />
+    <None Include="..\data\esther.sql" />
+    <None Include="..\data\esther\esther_1.sql" />
+    <None Include="..\data\esther\esther_10.sql" />
+    <None Include="..\data\esther\esther_2.sql" />
+    <None Include="..\data\esther\esther_3.sql" />
+    <None Include="..\data\esther\esther_4.sql" />
+    <None Include="..\data\esther\esther_5.sql" />
+    <None Include="..\data\esther\esther_6.sql" />
+    <None Include="..\data\esther\esther_7.sql" />
+    <None Include="..\data\esther\esther_8.sql" />
+    <None Include="..\data\esther\esther_9.sql" />
     <None Include="..\data\exodus.sql" />
     <None Include="..\data\exodus\exodus_1.sql" />
     <None Include="..\data\exodus\exodus_10.sql" />
