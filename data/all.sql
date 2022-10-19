@@ -13,6 +13,7 @@
 .read chronicles_1.sql
 .read chronicles_2.sql
 .read ezra.sql
+.read nehemiah.sql
 
 
 .read matthew.sql

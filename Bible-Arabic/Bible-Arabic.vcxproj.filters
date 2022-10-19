@@ -142,6 +142,9 @@
     <Filter Include="data\ezra">
       <UniqueIdentifier>{921433ee-be40-41b9-b4c9-4a23ef63406f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\nehemiah">
+      <UniqueIdentifier>{05eaebf3-3ca1-48f2-87d6-129ae6e01a69}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -2329,6 +2332,48 @@
     </None>
     <None Include="..\data\ezra\ezra_10.sql">
       <Filter>data\ezra</Filter>
+    </None>
+    <None Include="..\data\nehemiah.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\nehemiah\nehemiah_1.sql">
+      <Filter>data\nehemiah</Filter>
+    </None>
+    <None Include="..\data\nehemiah\nehemiah_2.sql">
+      <Filter>data\nehemiah</Filter>
+    </None>
+    <None Include="..\data\nehemiah\nehemiah_3.sql">
+      <Filter>data\nehemiah</Filter>
+    </None>
+    <None Include="..\data\nehemiah\nehemiah_4.sql">
+      <Filter>data\nehemiah</Filter>
+    </None>
+    <None Include="..\data\nehemiah\nehemiah_5.sql">
+      <Filter>data\nehemiah</Filter>
+    </None>
+    <None Include="..\data\nehemiah\nehemiah_6.sql">
+      <Filter>data\nehemiah</Filter>
+    </None>
+    <None Include="..\data\nehemiah\nehemiah_7.sql">
+      <Filter>data\nehemiah</Filter>
+    </None>
+    <None Include="..\data\nehemiah\nehemiah_8.sql">
+      <Filter>data\nehemiah</Filter>
+    </None>
+    <None Include="..\data\nehemiah\nehemiah_9.sql">
+      <Filter>data\nehemiah</Filter>
+    </None>
+    <None Include="..\data\nehemiah\nehemiah_10.sql">
+      <Filter>data\nehemiah</Filter>
+    </None>
+    <None Include="..\data\nehemiah\nehemiah_11.sql">
+      <Filter>data\nehemiah</Filter>
+    </None>
+    <None Include="..\data\nehemiah\nehemiah_12.sql">
+      <Filter>data\nehemiah</Filter>
+    </None>
+    <None Include="..\data\nehemiah\nehemiah_13.sql">
+      <Filter>data\nehemiah</Filter>
     </None>
   </ItemGroup>
 </Project>
