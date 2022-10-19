@@ -26,7 +26,8 @@ struct Testament OldTestament[OT_COUNT] =
 	{ "esther", L"أستير", L"أستير" },
 	{ "job", L"أيوب", L"أيوب" },
 	{ "psalms", L"المزامير", L"المزامير" },
-	{ "proverbs", L"الأمثال", L"الأمثال" }
+	{ "proverbs", L"الأمثال", L"الأمثال" },
+	{ "ecclesiastes", L"الجامعة", L"الجامعة" }
 };
 
 struct Testament NewTestament[NT_COUNT] =

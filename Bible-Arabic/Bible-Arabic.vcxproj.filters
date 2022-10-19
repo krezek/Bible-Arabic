@@ -157,6 +157,9 @@
     <Filter Include="data\proverbs">
       <UniqueIdentifier>{b50adc79-f143-42f2-bb5c-e27c4039a3ff}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\ecclesiastes">
+      <UniqueIdentifier>{835d3b9c-d40d-4161-9d9a-94fcd5eed009}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -3097,6 +3100,45 @@
     </None>
     <None Include="..\data\proverbs\proverbs_31.sql">
       <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\ecclesiastes.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\ecclesiastes\ecclesiastes_1.sql">
+      <Filter>data\ecclesiastes</Filter>
+    </None>
+    <None Include="..\data\ecclesiastes\ecclesiastes_2.sql">
+      <Filter>data\ecclesiastes</Filter>
+    </None>
+    <None Include="..\data\ecclesiastes\ecclesiastes_3.sql">
+      <Filter>data\ecclesiastes</Filter>
+    </None>
+    <None Include="..\data\ecclesiastes\ecclesiastes_4.sql">
+      <Filter>data\ecclesiastes</Filter>
+    </None>
+    <None Include="..\data\ecclesiastes\ecclesiastes_5.sql">
+      <Filter>data\ecclesiastes</Filter>
+    </None>
+    <None Include="..\data\ecclesiastes\ecclesiastes_6.sql">
+      <Filter>data\ecclesiastes</Filter>
+    </None>
+    <None Include="..\data\ecclesiastes\ecclesiastes_7.sql">
+      <Filter>data\ecclesiastes</Filter>
+    </None>
+    <None Include="..\data\ecclesiastes\ecclesiastes_8.sql">
+      <Filter>data\ecclesiastes</Filter>
+    </None>
+    <None Include="..\data\ecclesiastes\ecclesiastes_9.sql">
+      <Filter>data\ecclesiastes</Filter>
+    </None>
+    <None Include="..\data\ecclesiastes\ecclesiastes_10.sql">
+      <Filter>data\ecclesiastes</Filter>
+    </None>
+    <None Include="..\data\ecclesiastes\ecclesiastes_11.sql">
+      <Filter>data\ecclesiastes</Filter>
+    </None>
+    <None Include="..\data\ecclesiastes\ecclesiastes_12.sql">
+      <Filter>data\ecclesiastes</Filter>
     </None>
   </ItemGroup>
 </Project>
