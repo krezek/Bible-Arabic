@@ -5,7 +5,7 @@
 #include <locale.h>
 #include <string.h>
 
-#define PATH "C:\\Users\\Kinaz Rezek\\Test\\ar_new\\21\\"
+#define PATH "C:\\Users\\Kinaz Rezek\\Test\\ar_new\\22\\"
 #define BUFF_LENGTH 4096
 char buffer[BUFF_LENGTH];
 
@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
 {
 	setlocale(LC_ALL, "en_US.UTF-8");
 
-	for (int ix = 1; ix <= 12; ix++)
+	for (int ix = 1; ix <= 8; ix++)
 	{
 		char source[255];
 		char dist[255];
@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
 		int idx = 0;
 
 		sprintf(source, "%s%d.htm", PATH, ix);
-		sprintf(dist, "%s_%d.sql", "ecclesiastes", ix);
+		sprintf(dist, "%s_%d.sql", "song_of_solomon", ix);
 
 		FILE* pSrc = fopen(source, "r");
 		FILE* pDist = fopen(dist, "w");
@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
 
 				buffer[idx] = 0;
 
-				fprintf(pDist, "INSERT INTO ecclesiastes (chapter, verse, prefix, suffix, body)\nVALUES (%d, %d, NULL, NULL, \"%s\");\n", ix, line, strchr(buffer, ';') + 1);
+				fprintf(pDist, "INSERT INTO song_of_solomon (chapter, verse, prefix, suffix, body)\nVALUES (%d, %d, NULL, NULL, \"%s\");\n", ix, line, strchr(buffer, ';') + 1);
 
 				++line;
 				idx = 0;

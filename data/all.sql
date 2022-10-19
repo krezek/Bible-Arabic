@@ -19,6 +19,7 @@
 .read psalms.sql
 .read proverbs.sql
 .read ecclesiastes.sql
+.read song_of_solomon.sql
 
 
 .read matthew.sql

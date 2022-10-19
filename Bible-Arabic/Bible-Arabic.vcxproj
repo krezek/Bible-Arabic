@@ -1114,6 +1114,15 @@
     <None Include="..\data\samuel_2\samuel_2_7.sql" />
     <None Include="..\data\samuel_2\samuel_2_8.sql" />
     <None Include="..\data\samuel_2\samuel_2_9.sql" />
+    <None Include="..\data\song_of_solomon.sql" />
+    <None Include="..\data\song_of_solomon\song_of_solomon_1.sql" />
+    <None Include="..\data\song_of_solomon\song_of_solomon_2.sql" />
+    <None Include="..\data\song_of_solomon\song_of_solomon_3.sql" />
+    <None Include="..\data\song_of_solomon\song_of_solomon_4.sql" />
+    <None Include="..\data\song_of_solomon\song_of_solomon_5.sql" />
+    <None Include="..\data\song_of_solomon\song_of_solomon_6.sql" />
+    <None Include="..\data\song_of_solomon\song_of_solomon_7.sql" />
+    <None Include="..\data\song_of_solomon\song_of_solomon_8.sql" />
     <None Include="..\data\thessalonians_1.sql" />
     <None Include="..\data\thessalonians_1\thessalonians_1_1.sql" />
     <None Include="..\data\thessalonians_1\thessalonians_1_2.sql" />

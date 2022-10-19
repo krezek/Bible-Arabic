@@ -160,6 +160,9 @@
     <Filter Include="data\ecclesiastes">
       <UniqueIdentifier>{835d3b9c-d40d-4161-9d9a-94fcd5eed009}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\song_of_solomon">
+      <UniqueIdentifier>{704bdc81-1bc1-4e9d-8b62-e7fbb7b9f8fb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -3139,6 +3142,33 @@
     </None>
     <None Include="..\data\ecclesiastes\ecclesiastes_12.sql">
       <Filter>data\ecclesiastes</Filter>
+    </None>
+    <None Include="..\data\song_of_solomon.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\song_of_solomon\song_of_solomon_1.sql">
+      <Filter>data\song_of_solomon</Filter>
+    </None>
+    <None Include="..\data\song_of_solomon\song_of_solomon_2.sql">
+      <Filter>data\song_of_solomon</Filter>
+    </None>
+    <None Include="..\data\song_of_solomon\song_of_solomon_3.sql">
+      <Filter>data\song_of_solomon</Filter>
+    </None>
+    <None Include="..\data\song_of_solomon\song_of_solomon_4.sql">
+      <Filter>data\song_of_solomon</Filter>
+    </None>
+    <None Include="..\data\song_of_solomon\song_of_solomon_5.sql">
+      <Filter>data\song_of_solomon</Filter>
+    </None>
+    <None Include="..\data\song_of_solomon\song_of_solomon_6.sql">
+      <Filter>data\song_of_solomon</Filter>
+    </None>
+    <None Include="..\data\song_of_solomon\song_of_solomon_7.sql">
+      <Filter>data\song_of_solomon</Filter>
+    </None>
+    <None Include="..\data\song_of_solomon\song_of_solomon_8.sql">
+      <Filter>data\song_of_solomon</Filter>
     </None>
   </ItemGroup>
 </Project>
