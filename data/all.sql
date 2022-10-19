@@ -17,6 +17,7 @@
 .read esther.sql
 .read job.sql
 .read psalms.sql
+.read proverbs.sql
 
 
 .read matthew.sql

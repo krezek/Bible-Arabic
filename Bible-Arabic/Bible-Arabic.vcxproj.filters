@@ -154,6 +154,9 @@
     <Filter Include="data\psalms">
       <UniqueIdentifier>{d4475a3a-ad88-4e35-bfd4-119b7fa302bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\proverbs">
+      <UniqueIdentifier>{b50adc79-f143-42f2-bb5c-e27c4039a3ff}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -2998,6 +3001,102 @@
     </None>
     <None Include="..\data\psalms\psalms_150.sql">
       <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\proverbs.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_1.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_2.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_3.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_4.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_5.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_6.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_7.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_8.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_9.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_10.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_11.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_12.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_13.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_14.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_15.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_16.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_17.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_18.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_19.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_20.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_21.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_22.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_23.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_24.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_25.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_26.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_27.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_28.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_29.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_30.sql">
+      <Filter>data\proverbs</Filter>
+    </None>
+    <None Include="..\data\proverbs\proverbs_31.sql">
+      <Filter>data\proverbs</Filter>
     </None>
   </ItemGroup>
 </Project>
