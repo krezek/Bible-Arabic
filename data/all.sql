@@ -12,6 +12,7 @@
 .read kings_2.sql
 .read chronicles_1.sql
 .read chronicles_2.sql
+.read ezra.sql
 
 
 .read matthew.sql

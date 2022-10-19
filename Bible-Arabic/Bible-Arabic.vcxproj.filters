@@ -139,6 +139,9 @@
     <Filter Include="data\chronicles_2">
       <UniqueIdentifier>{4ef13737-bbec-447a-9628-907d8e0d6490}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\ezra">
+      <UniqueIdentifier>{921433ee-be40-41b9-b4c9-4a23ef63406f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -2293,6 +2296,39 @@
     </None>
     <None Include="..\data\chronicles_2\chronicles_2_36.sql">
       <Filter>data\chronicles_2</Filter>
+    </None>
+    <None Include="..\data\ezra.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\ezra\ezra_1.sql">
+      <Filter>data\ezra</Filter>
+    </None>
+    <None Include="..\data\ezra\ezra_2.sql">
+      <Filter>data\ezra</Filter>
+    </None>
+    <None Include="..\data\ezra\ezra_3.sql">
+      <Filter>data\ezra</Filter>
+    </None>
+    <None Include="..\data\ezra\ezra_4.sql">
+      <Filter>data\ezra</Filter>
+    </None>
+    <None Include="..\data\ezra\ezra_5.sql">
+      <Filter>data\ezra</Filter>
+    </None>
+    <None Include="..\data\ezra\ezra_6.sql">
+      <Filter>data\ezra</Filter>
+    </None>
+    <None Include="..\data\ezra\ezra_7.sql">
+      <Filter>data\ezra</Filter>
+    </None>
+    <None Include="..\data\ezra\ezra_8.sql">
+      <Filter>data\ezra</Filter>
+    </None>
+    <None Include="..\data\ezra\ezra_9.sql">
+      <Filter>data\ezra</Filter>
+    </None>
+    <None Include="..\data\ezra\ezra_10.sql">
+      <Filter>data\ezra</Filter>
     </None>
   </ItemGroup>
 </Project>

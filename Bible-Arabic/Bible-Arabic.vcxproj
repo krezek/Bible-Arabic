@@ -376,6 +376,17 @@
     <None Include="..\data\exodus\exodus_7.sql" />
     <None Include="..\data\exodus\exodus_8.sql" />
     <None Include="..\data\exodus\exodus_9.sql" />
+    <None Include="..\data\ezra.sql" />
+    <None Include="..\data\ezra\ezra_1.sql" />
+    <None Include="..\data\ezra\ezra_10.sql" />
+    <None Include="..\data\ezra\ezra_2.sql" />
+    <None Include="..\data\ezra\ezra_3.sql" />
+    <None Include="..\data\ezra\ezra_4.sql" />
+    <None Include="..\data\ezra\ezra_5.sql" />
+    <None Include="..\data\ezra\ezra_6.sql" />
+    <None Include="..\data\ezra\ezra_7.sql" />
+    <None Include="..\data\ezra\ezra_8.sql" />
+    <None Include="..\data\ezra\ezra_9.sql" />
     <None Include="..\data\galatians.sql" />
     <None Include="..\data\galatians\galatians_1.sql" />
     <None Include="..\data\galatians\galatians_2.sql" />
