@@ -151,6 +151,9 @@
     <Filter Include="data\job">
       <UniqueIdentifier>{4212a0b7-95d3-43fa-8b5a-fca65b540e1f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\psalms">
+      <UniqueIdentifier>{d4475a3a-ad88-4e35-bfd4-119b7fa302bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -2542,6 +2545,459 @@
     </None>
     <None Include="..\data\job\job_42.sql">
       <Filter>data\job</Filter>
+    </None>
+    <None Include="..\data\psalms.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_1.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_2.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_3.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_4.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_5.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_6.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_7.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_8.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_9.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_10.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_11.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_12.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_13.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_14.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_15.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_16.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_17.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_18.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_19.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_20.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_21.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_22.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_23.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_24.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_25.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_26.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_27.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_28.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_29.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_30.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_31.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_32.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_33.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_34.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_35.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_36.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_37.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_38.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_39.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_40.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_41.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_42.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_43.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_44.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_45.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_46.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_47.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_48.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_49.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_50.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_51.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_52.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_53.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_54.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_55.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_56.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_57.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_58.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_59.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_60.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_61.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_62.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_63.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_64.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_65.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_66.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_67.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_68.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_69.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_70.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_71.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_72.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_73.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_74.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_75.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_76.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_77.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_78.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_79.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_80.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_81.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_82.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_83.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_84.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_85.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_86.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_87.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_88.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_89.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_90.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_91.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_92.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_93.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_94.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_95.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_96.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_97.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_98.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_99.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_100.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_101.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_102.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_103.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_104.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_105.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_106.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_107.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_108.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_109.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_110.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_111.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_112.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_113.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_114.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_115.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_116.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_117.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_118.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_119.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_120.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_121.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_122.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_123.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_124.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_125.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_126.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_127.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_128.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_129.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_130.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_131.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_132.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_133.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_134.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_135.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_136.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_137.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_138.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_139.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_140.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_141.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_142.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_143.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_144.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_145.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_146.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_147.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_148.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_149.sql">
+      <Filter>data\psalms</Filter>
+    </None>
+    <None Include="..\data\psalms\psalms_150.sql">
+      <Filter>data\psalms</Filter>
     </None>
   </ItemGroup>
 </Project>
