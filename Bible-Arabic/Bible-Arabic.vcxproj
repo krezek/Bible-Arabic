@@ -545,6 +545,9 @@
     <None Include="..\data\habakkuk\habakkuk_1.sql" />
     <None Include="..\data\habakkuk\habakkuk_2.sql" />
     <None Include="..\data\habakkuk\habakkuk_3.sql" />
+    <None Include="..\data\haggai.sql" />
+    <None Include="..\data\haggai\haggai_1.sql" />
+    <None Include="..\data\haggai\haggai_2.sql" />
     <None Include="..\data\hebrews.sql" />
     <None Include="..\data\hebrews\hebrews_1.sql" />
     <None Include="..\data\hebrews\hebrews_10.sql" />

@@ -205,6 +205,9 @@
     <Filter Include="data\zephaniah">
       <UniqueIdentifier>{49720748-23f7-43ef-b2df-d1fc587b394a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\haggai">
+      <UniqueIdentifier>{fcbbf81b-cde5-48c5-8643-e2e091455bbe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -3943,6 +3946,15 @@
     </None>
     <None Include="..\data\zephaniah\zephaniah_3.sql">
       <Filter>data\zephaniah</Filter>
+    </None>
+    <None Include="..\data\haggai.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\haggai\haggai_1.sql">
+      <Filter>data\haggai</Filter>
+    </None>
+    <None Include="..\data\haggai\haggai_2.sql">
+      <Filter>data\haggai</Filter>
     </None>
   </ItemGroup>
 </Project>
