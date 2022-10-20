@@ -181,6 +181,9 @@
     <Filter Include="data\hosea">
       <UniqueIdentifier>{b373cbf5-a4a1-4f65-85c8-f5bbc2d81489}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\joel">
+      <UniqueIdentifier>{54284105-2139-4e01-9bcb-ded777ca4fd3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -3796,6 +3799,18 @@
     </None>
     <None Include="..\data\hosea\hosea_14.sql">
       <Filter>data\hosea</Filter>
+    </None>
+    <None Include="..\data\joel.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\joel\joel_1.sql">
+      <Filter>data\joel</Filter>
+    </None>
+    <None Include="..\data\joel\joel_2.sql">
+      <Filter>data\joel</Filter>
+    </None>
+    <None Include="..\data\joel\joel_3.sql">
+      <Filter>data\joel</Filter>
     </None>
   </ItemGroup>
 </Project>

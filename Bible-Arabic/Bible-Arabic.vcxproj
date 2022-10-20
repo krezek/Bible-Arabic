@@ -729,6 +729,10 @@
     <None Include="..\data\job\job_7.sql" />
     <None Include="..\data\job\job_8.sql" />
     <None Include="..\data\job\job_9.sql" />
+    <None Include="..\data\joel.sql" />
+    <None Include="..\data\joel\joel_1.sql" />
+    <None Include="..\data\joel\joel_2.sql" />
+    <None Include="..\data\joel\joel_3.sql" />
     <None Include="..\data\john.sql" />
     <None Include="..\data\john\john_1.sql" />
     <None Include="..\data\john\john_10.sql" />
