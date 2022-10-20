@@ -166,6 +166,9 @@
     <Filter Include="data\isaiah">
       <UniqueIdentifier>{28adf016-16cc-4d6d-ab52-636ef3f8fb95}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\jeremiah">
+      <UniqueIdentifier>{e92deb98-6b11-4c2f-b1cf-d4f49408d6fd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -3373,6 +3376,165 @@
     </None>
     <None Include="..\data\isaiah\isaiah_66.sql">
       <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_1.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_2.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_3.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_4.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_5.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_6.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_7.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_8.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_9.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_10.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_11.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_12.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_13.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_14.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_15.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_16.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_17.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_18.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_19.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_20.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_21.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_22.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_23.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_24.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_25.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_26.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_27.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_28.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_29.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_30.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_31.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_32.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_33.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_34.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_35.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_36.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_37.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_38.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_39.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_40.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_41.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_42.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_43.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_44.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_45.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_46.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_47.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_48.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_49.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_50.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_51.sql">
+      <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\jeremiah\jeremiah_52.sql">
+      <Filter>data\jeremiah</Filter>
     </None>
   </ItemGroup>
 </Project>
