@@ -169,6 +169,9 @@
     <Filter Include="data\jeremiah">
       <UniqueIdentifier>{e92deb98-6b11-4c2f-b1cf-d4f49408d6fd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\lamentations">
+      <UniqueIdentifier>{c55dc1ba-4ea1-4944-86d2-5487dc7f3c76}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -3535,6 +3538,24 @@
     </None>
     <None Include="..\data\jeremiah\jeremiah_52.sql">
       <Filter>data\jeremiah</Filter>
+    </None>
+    <None Include="..\data\lamentations.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\lamentations\lamentations_1.sql">
+      <Filter>data\lamentations</Filter>
+    </None>
+    <None Include="..\data\lamentations\lamentations_2.sql">
+      <Filter>data\lamentations</Filter>
+    </None>
+    <None Include="..\data\lamentations\lamentations_3.sql">
+      <Filter>data\lamentations</Filter>
+    </None>
+    <None Include="..\data\lamentations\lamentations_4.sql">
+      <Filter>data\lamentations</Filter>
+    </None>
+    <None Include="..\data\lamentations\lamentations_5.sql">
+      <Filter>data\lamentations</Filter>
     </None>
   </ItemGroup>
 </Project>

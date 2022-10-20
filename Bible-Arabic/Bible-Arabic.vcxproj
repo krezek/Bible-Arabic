@@ -782,6 +782,12 @@
     <None Include="..\data\kings_2\kings_2_7.sql" />
     <None Include="..\data\kings_2\kings_2_8.sql" />
     <None Include="..\data\kings_2\kings_2_9.sql" />
+    <None Include="..\data\lamentations.sql" />
+    <None Include="..\data\lamentations\lamentations_1.sql" />
+    <None Include="..\data\lamentations\lamentations_2.sql" />
+    <None Include="..\data\lamentations\lamentations_3.sql" />
+    <None Include="..\data\lamentations\lamentations_4.sql" />
+    <None Include="..\data\lamentations\lamentations_5.sql" />
     <None Include="..\data\leviticus.sql" />
     <None Include="..\data\leviticus\leviticus_1.sql" />
     <None Include="..\data\leviticus\leviticus_10.sql" />

@@ -22,6 +22,7 @@
 .read song_of_solomon.sql
 .read isaiah.sql
 .read jeremiah.sql
+.read lamentations.sql
 
 
 .read matthew.sql
