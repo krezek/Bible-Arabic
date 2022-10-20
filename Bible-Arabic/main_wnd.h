@@ -43,7 +43,7 @@ struct Testament
 	wchar_t* _title;
 };
 
-#define OT_COUNT 31
+#define OT_COUNT 32
 #define NT_COUNT 27
 
 extern struct Testament OldTestament[OT_COUNT];

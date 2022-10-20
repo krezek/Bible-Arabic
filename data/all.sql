@@ -29,6 +29,7 @@
 .read joel.sql
 .read amos.sql
 .read obadiah.sql
+.read jonah.sql
 
 
 .read matthew.sql

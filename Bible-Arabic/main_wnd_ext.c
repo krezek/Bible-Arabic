@@ -37,7 +37,8 @@ struct Testament OldTestament[OT_COUNT] =
 	{ "hosea", L"هوشع", L"هوشع" },
 	{ "joel", L"يوئيل", L"يوئيل" },
 	{ "amos", L"عاموس", L"عاموس" },
-	{ "obadiah", L"عوبديا", L"عوبديا" }
+	{ "obadiah", L"عوبديا", L"عوبديا" },
+	{ "jonah", L"يونان", L"يونان" }
 };
 
 struct Testament NewTestament[NT_COUNT] =
