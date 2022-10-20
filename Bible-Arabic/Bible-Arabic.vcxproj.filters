@@ -163,6 +163,9 @@
     <Filter Include="data\song_of_solomon">
       <UniqueIdentifier>{704bdc81-1bc1-4e9d-8b62-e7fbb7b9f8fb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\isaiah">
+      <UniqueIdentifier>{28adf016-16cc-4d6d-ab52-636ef3f8fb95}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -3169,6 +3172,207 @@
     </None>
     <None Include="..\data\song_of_solomon\song_of_solomon_8.sql">
       <Filter>data\song_of_solomon</Filter>
+    </None>
+    <None Include="..\data\isaiah.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_1.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_2.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_3.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_4.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_5.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_6.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_7.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_8.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_9.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_10.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_11.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_12.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_13.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_14.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_15.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_16.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_17.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_18.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_19.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_20.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_21.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_22.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_23.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_24.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_25.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_26.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_27.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_28.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_29.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_30.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_31.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_32.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_33.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_34.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_35.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_36.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_37.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_38.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_39.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_40.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_41.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_42.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_43.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_44.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_45.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_46.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_47.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_48.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_49.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_50.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_51.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_52.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_53.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_54.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_55.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_56.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_57.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_58.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_59.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_60.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_61.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_62.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_63.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_64.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_65.sql">
+      <Filter>data\isaiah</Filter>
+    </None>
+    <None Include="..\data\isaiah\isaiah_66.sql">
+      <Filter>data\isaiah</Filter>
     </None>
   </ItemGroup>
 </Project>
