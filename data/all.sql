@@ -35,6 +35,7 @@
 .read habakkuk.sql
 .read zephaniah.sql
 .read haggai.sql
+.read zechariah.sql
 
 
 .read matthew.sql

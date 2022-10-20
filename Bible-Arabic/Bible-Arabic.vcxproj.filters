@@ -208,6 +208,9 @@
     <Filter Include="data\haggai">
       <UniqueIdentifier>{fcbbf81b-cde5-48c5-8643-e2e091455bbe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\zechariah">
+      <UniqueIdentifier>{87e99db6-3611-4a8f-aa28-c2e4ba459690}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -3955,6 +3958,51 @@
     </None>
     <None Include="..\data\haggai\haggai_2.sql">
       <Filter>data\haggai</Filter>
+    </None>
+    <None Include="..\data\zechariah.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\zechariah\zechariah_1.sql">
+      <Filter>data\zechariah</Filter>
+    </None>
+    <None Include="..\data\zechariah\zechariah_2.sql">
+      <Filter>data\zechariah</Filter>
+    </None>
+    <None Include="..\data\zechariah\zechariah_3.sql">
+      <Filter>data\zechariah</Filter>
+    </None>
+    <None Include="..\data\zechariah\zechariah_4.sql">
+      <Filter>data\zechariah</Filter>
+    </None>
+    <None Include="..\data\zechariah\zechariah_5.sql">
+      <Filter>data\zechariah</Filter>
+    </None>
+    <None Include="..\data\zechariah\zechariah_6.sql">
+      <Filter>data\zechariah</Filter>
+    </None>
+    <None Include="..\data\zechariah\zechariah_7.sql">
+      <Filter>data\zechariah</Filter>
+    </None>
+    <None Include="..\data\zechariah\zechariah_8.sql">
+      <Filter>data\zechariah</Filter>
+    </None>
+    <None Include="..\data\zechariah\zechariah_9.sql">
+      <Filter>data\zechariah</Filter>
+    </None>
+    <None Include="..\data\zechariah\zechariah_10.sql">
+      <Filter>data\zechariah</Filter>
+    </None>
+    <None Include="..\data\zechariah\zechariah_11.sql">
+      <Filter>data\zechariah</Filter>
+    </None>
+    <None Include="..\data\zechariah\zechariah_12.sql">
+      <Filter>data\zechariah</Filter>
+    </None>
+    <None Include="..\data\zechariah\zechariah_13.sql">
+      <Filter>data\zechariah</Filter>
+    </None>
+    <None Include="..\data\zechariah\zechariah_14.sql">
+      <Filter>data\zechariah</Filter>
     </None>
   </ItemGroup>
 </Project>
