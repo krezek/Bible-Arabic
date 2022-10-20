@@ -36,6 +36,7 @@
 .read zephaniah.sql
 .read haggai.sql
 .read zechariah.sql
+.read malachi.sql
 
 
 .read matthew.sql

@@ -944,6 +944,11 @@
     <None Include="..\data\luke\luke_7.sql" />
     <None Include="..\data\luke\luke_8.sql" />
     <None Include="..\data\luke\luke_9.sql" />
+    <None Include="..\data\malachi.sql" />
+    <None Include="..\data\malachi\malachi_1.sql" />
+    <None Include="..\data\malachi\malachi_2.sql" />
+    <None Include="..\data\malachi\malachi_3.sql" />
+    <None Include="..\data\malachi\malachi_4.sql" />
     <None Include="..\data\mark.sql" />
     <None Include="..\data\mark\mark_1.sql" />
     <None Include="..\data\mark\mark_10.sql" />

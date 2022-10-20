@@ -211,6 +211,9 @@
     <Filter Include="data\zechariah">
       <UniqueIdentifier>{87e99db6-3611-4a8f-aa28-c2e4ba459690}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\malachi">
+      <UniqueIdentifier>{9a78d58c-226f-4ddd-b2d7-92cd73c91f20}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -4003,6 +4006,21 @@
     </None>
     <None Include="..\data\zechariah\zechariah_14.sql">
       <Filter>data\zechariah</Filter>
+    </None>
+    <None Include="..\data\malachi.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\malachi\malachi_1.sql">
+      <Filter>data\malachi</Filter>
+    </None>
+    <None Include="..\data\malachi\malachi_2.sql">
+      <Filter>data\malachi</Filter>
+    </None>
+    <None Include="..\data\malachi\malachi_3.sql">
+      <Filter>data\malachi</Filter>
+    </None>
+    <None Include="..\data\malachi\malachi_4.sql">
+      <Filter>data\malachi</Filter>
     </None>
   </ItemGroup>
 </Project>

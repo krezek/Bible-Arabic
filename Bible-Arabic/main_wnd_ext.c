@@ -44,7 +44,8 @@ struct Testament OldTestament[OT_COUNT] =
 	{ "habakkuk", L"حبقوق", L"حبقوق" },
 	{ "zephaniah", L"صفنيا", L"صفنيا" },
 	{ "haggai", L"حجي", L"حجي" },
-	{ "zechariah", L"زكريا", L"زكريا" }
+	{ "zechariah", L"زكريا", L"زكريا" },
+	{ "malachi", L"ملاخي", L"ملاخي" }
 };
 
 struct Testament NewTestament[NT_COUNT] =
