@@ -33,6 +33,7 @@
 .read micah.sql
 .read nahum.sql
 .read habakkuk.sql
+.read zephaniah.sql
 
 
 .read matthew.sql

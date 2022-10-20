@@ -1389,6 +1389,10 @@
     <None Include="..\data\titus\titus_1.sql" />
     <None Include="..\data\titus\titus_2.sql" />
     <None Include="..\data\titus\titus_3.sql" />
+    <None Include="..\data\zephaniah.sql" />
+    <None Include="..\data\zephaniah\zephaniah_1.sql" />
+    <None Include="..\data\zephaniah\zephaniah_2.sql" />
+    <None Include="..\data\zephaniah\zephaniah_3.sql" />
     <None Include="rt_manif.bin" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

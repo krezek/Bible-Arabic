@@ -202,6 +202,9 @@
     <Filter Include="data\habakkuk">
       <UniqueIdentifier>{baa3068d-ba2f-47b7-b25e-cf04c5b6a756}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\zephaniah">
+      <UniqueIdentifier>{49720748-23f7-43ef-b2df-d1fc587b394a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -3928,6 +3931,18 @@
     </None>
     <None Include="..\data\habakkuk\habakkuk_3.sql">
       <Filter>data\habakkuk</Filter>
+    </None>
+    <None Include="..\data\zephaniah.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\zephaniah\zephaniah_1.sql">
+      <Filter>data\zephaniah</Filter>
+    </None>
+    <None Include="..\data\zephaniah\zephaniah_2.sql">
+      <Filter>data\zephaniah</Filter>
+    </None>
+    <None Include="..\data\zephaniah\zephaniah_3.sql">
+      <Filter>data\zephaniah</Filter>
     </None>
   </ItemGroup>
 </Project>
