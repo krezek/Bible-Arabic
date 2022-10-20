@@ -23,6 +23,7 @@
 .read isaiah.sql
 .read jeremiah.sql
 .read lamentations.sql
+.read ezekiel.sql
 
 
 .read matthew.sql

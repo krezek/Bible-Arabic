@@ -172,6 +172,9 @@
     <Filter Include="data\lamentations">
       <UniqueIdentifier>{c55dc1ba-4ea1-4944-86d2-5487dc7f3c76}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\ezekiel">
+      <UniqueIdentifier>{9493bc06-0dcb-4cee-9480-e783bb8c194b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -3556,6 +3559,153 @@
     </None>
     <None Include="..\data\lamentations\lamentations_5.sql">
       <Filter>data\lamentations</Filter>
+    </None>
+    <None Include="..\data\ezekiel.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_1.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_2.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_3.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_4.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_5.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_6.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_7.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_8.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_9.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_10.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_11.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_12.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_13.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_14.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_15.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_16.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_17.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_18.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_19.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_20.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_21.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_22.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_23.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_24.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_25.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_26.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_27.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_28.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_29.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_30.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_31.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_32.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_33.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_34.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_35.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_36.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_37.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_38.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_39.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_40.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_41.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_42.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_43.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_44.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_45.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_46.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_47.sql">
+      <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\ezekiel\ezekiel_48.sql">
+      <Filter>data\ezekiel</Filter>
     </None>
   </ItemGroup>
 </Project>

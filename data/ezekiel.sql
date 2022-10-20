@@ -1,0 +1,52 @@
+DROP TABLE IF EXISTS ezekiel;
+CREATE VIRTUAL TABLE ezekiel USING FTS5(chapter, verse, prefix, suffix, body);
+
+.read ezekiel/ezekiel_1.sql
+.read ezekiel/ezekiel_2.sql
+.read ezekiel/ezekiel_3.sql
+.read ezekiel/ezekiel_4.sql
+.read ezekiel/ezekiel_5.sql
+.read ezekiel/ezekiel_6.sql
+.read ezekiel/ezekiel_7.sql
+.read ezekiel/ezekiel_8.sql
+.read ezekiel/ezekiel_9.sql
+.read ezekiel/ezekiel_10.sql
+.read ezekiel/ezekiel_11.sql
+.read ezekiel/ezekiel_12.sql
+.read ezekiel/ezekiel_13.sql
+.read ezekiel/ezekiel_14.sql
+.read ezekiel/ezekiel_15.sql
+.read ezekiel/ezekiel_16.sql
+.read ezekiel/ezekiel_17.sql
+.read ezekiel/ezekiel_18.sql
+.read ezekiel/ezekiel_19.sql
+.read ezekiel/ezekiel_20.sql
+.read ezekiel/ezekiel_21.sql
+.read ezekiel/ezekiel_22.sql
+.read ezekiel/ezekiel_23.sql
+.read ezekiel/ezekiel_24.sql
+.read ezekiel/ezekiel_25.sql
+.read ezekiel/ezekiel_26.sql
+.read ezekiel/ezekiel_27.sql
+.read ezekiel/ezekiel_28.sql
+.read ezekiel/ezekiel_29.sql
+.read ezekiel/ezekiel_30.sql
+.read ezekiel/ezekiel_31.sql
+.read ezekiel/ezekiel_32.sql
+.read ezekiel/ezekiel_33.sql
+.read ezekiel/ezekiel_34.sql
+.read ezekiel/ezekiel_35.sql
+.read ezekiel/ezekiel_36.sql
+.read ezekiel/ezekiel_37.sql
+.read ezekiel/ezekiel_38.sql
+.read ezekiel/ezekiel_39.sql
+.read ezekiel/ezekiel_40.sql
+.read ezekiel/ezekiel_41.sql
+.read ezekiel/ezekiel_42.sql
+.read ezekiel/ezekiel_43.sql
+.read ezekiel/ezekiel_44.sql
+.read ezekiel/ezekiel_45.sql
+.read ezekiel/ezekiel_46.sql
+.read ezekiel/ezekiel_47.sql
+.read ezekiel/ezekiel_48.sql
+
