@@ -27,6 +27,7 @@
 .read daniel.sql
 .read hosea.sql
 .read joel.sql
+.read amos.sql
 
 
 .read matthew.sql

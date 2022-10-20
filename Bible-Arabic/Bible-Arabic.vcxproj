@@ -190,6 +190,16 @@
     <None Include="..\data\acts\acts_8.sql" />
     <None Include="..\data\acts\acts_9.sql" />
     <None Include="..\data\all.sql" />
+    <None Include="..\data\amos.sql" />
+    <None Include="..\data\amos\amos_1.sql" />
+    <None Include="..\data\amos\amos_2.sql" />
+    <None Include="..\data\amos\amos_3.sql" />
+    <None Include="..\data\amos\amos_4.sql" />
+    <None Include="..\data\amos\amos_5.sql" />
+    <None Include="..\data\amos\amos_6.sql" />
+    <None Include="..\data\amos\amos_7.sql" />
+    <None Include="..\data\amos\amos_8.sql" />
+    <None Include="..\data\amos\amos_9.sql" />
     <None Include="..\data\chronicles_1.sql" />
     <None Include="..\data\chronicles_1\chronicles_1_1.sql" />
     <None Include="..\data\chronicles_1\chronicles_1_10.sql" />

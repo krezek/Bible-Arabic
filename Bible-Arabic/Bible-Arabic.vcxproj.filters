@@ -184,6 +184,9 @@
     <Filter Include="data\joel">
       <UniqueIdentifier>{54284105-2139-4e01-9bcb-ded777ca4fd3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\amos">
+      <UniqueIdentifier>{ec7a99bf-f4e1-43d6-9885-69dfe9ab9282}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -3811,6 +3814,36 @@
     </None>
     <None Include="..\data\joel\joel_3.sql">
       <Filter>data\joel</Filter>
+    </None>
+    <None Include="..\data\amos.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\amos\amos_1.sql">
+      <Filter>data\amos</Filter>
+    </None>
+    <None Include="..\data\amos\amos_2.sql">
+      <Filter>data\amos</Filter>
+    </None>
+    <None Include="..\data\amos\amos_3.sql">
+      <Filter>data\amos</Filter>
+    </None>
+    <None Include="..\data\amos\amos_4.sql">
+      <Filter>data\amos</Filter>
+    </None>
+    <None Include="..\data\amos\amos_5.sql">
+      <Filter>data\amos</Filter>
+    </None>
+    <None Include="..\data\amos\amos_6.sql">
+      <Filter>data\amos</Filter>
+    </None>
+    <None Include="..\data\amos\amos_7.sql">
+      <Filter>data\amos</Filter>
+    </None>
+    <None Include="..\data\amos\amos_8.sql">
+      <Filter>data\amos</Filter>
+    </None>
+    <None Include="..\data\amos\amos_9.sql">
+      <Filter>data\amos</Filter>
     </None>
   </ItemGroup>
 </Project>
