@@ -541,6 +541,10 @@
     <None Include="..\data\genesis\genesis_7.sql" />
     <None Include="..\data\genesis\genesis_8.sql" />
     <None Include="..\data\genesis\genesis_9.sql" />
+    <None Include="..\data\habakkuk.sql" />
+    <None Include="..\data\habakkuk\habakkuk_1.sql" />
+    <None Include="..\data\habakkuk\habakkuk_2.sql" />
+    <None Include="..\data\habakkuk\habakkuk_3.sql" />
     <None Include="..\data\hebrews.sql" />
     <None Include="..\data\hebrews\hebrews_1.sql" />
     <None Include="..\data\hebrews\hebrews_10.sql" />

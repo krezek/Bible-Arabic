@@ -199,6 +199,9 @@
     <Filter Include="data\nahum">
       <UniqueIdentifier>{771dbb9a-f86c-44a2-9d44-44d1791e1b09}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\habakkuk">
+      <UniqueIdentifier>{baa3068d-ba2f-47b7-b25e-cf04c5b6a756}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -3913,6 +3916,18 @@
     </None>
     <None Include="..\data\nahum\nahum_3.sql">
       <Filter>data\nahum</Filter>
+    </None>
+    <None Include="..\data\habakkuk.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\habakkuk\habakkuk_1.sql">
+      <Filter>data\habakkuk</Filter>
+    </None>
+    <None Include="..\data\habakkuk\habakkuk_2.sql">
+      <Filter>data\habakkuk</Filter>
+    </None>
+    <None Include="..\data\habakkuk\habakkuk_3.sql">
+      <Filter>data\habakkuk</Filter>
     </None>
   </ItemGroup>
 </Project>
