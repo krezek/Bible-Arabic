@@ -231,7 +231,7 @@ void write_header(MainWindow* mw, CHARRANGE* pcr)
 			
 			pcr->cpMin = -1;
 			pcr->cpMax = -1;
-			SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"\r\n\r\n");
+			SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"\r\n");
 			SendMessage(richTextHWND, EM_EXGETSEL, 0, (LPARAM)pcr);
 
 			pcr->cpMin = 0;
