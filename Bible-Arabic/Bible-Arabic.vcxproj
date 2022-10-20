@@ -1029,6 +1029,8 @@
     <None Include="..\data\numbers\numbers_7.sql" />
     <None Include="..\data\numbers\numbers_8.sql" />
     <None Include="..\data\numbers\numbers_9.sql" />
+    <None Include="..\data\obadiah.sql" />
+    <None Include="..\data\obadiah\obadiah_1.sql" />
     <None Include="..\data\peter_1.sql" />
     <None Include="..\data\peter_1\peter_1_1.sql" />
     <None Include="..\data\peter_1\peter_1_2.sql" />

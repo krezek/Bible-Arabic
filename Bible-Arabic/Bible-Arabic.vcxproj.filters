@@ -187,6 +187,9 @@
     <Filter Include="data\amos">
       <UniqueIdentifier>{ec7a99bf-f4e1-43d6-9885-69dfe9ab9282}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\obadiah">
+      <UniqueIdentifier>{f4daa701-22e5-4805-b5f3-f4a6df444e7d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -3844,6 +3847,12 @@
     </None>
     <None Include="..\data\amos\amos_9.sql">
       <Filter>data\amos</Filter>
+    </None>
+    <None Include="..\data\obadiah.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\obadiah\obadiah_1.sql">
+      <Filter>data\obadiah</Filter>
     </None>
   </ItemGroup>
 </Project>
