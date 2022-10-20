@@ -31,6 +31,7 @@
 .read obadiah.sql
 .read jonah.sql
 .read micah.sql
+.read nahum.sql
 
 
 .read matthew.sql

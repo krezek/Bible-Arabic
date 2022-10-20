@@ -196,6 +196,9 @@
     <Filter Include="data\micah">
       <UniqueIdentifier>{58eb49c6-2d63-426c-806a-1a616fc3e0c9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\nahum">
+      <UniqueIdentifier>{771dbb9a-f86c-44a2-9d44-44d1791e1b09}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -3898,6 +3901,18 @@
     </None>
     <None Include="..\data\micah\micah_7.sql">
       <Filter>data\micah</Filter>
+    </None>
+    <None Include="..\data\nahum.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\nahum\nahum_1.sql">
+      <Filter>data\nahum</Filter>
+    </None>
+    <None Include="..\data\nahum\nahum_2.sql">
+      <Filter>data\nahum</Filter>
+    </None>
+    <None Include="..\data\nahum\nahum_3.sql">
+      <Filter>data\nahum</Filter>
     </None>
   </ItemGroup>
 </Project>
