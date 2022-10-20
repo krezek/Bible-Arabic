@@ -213,6 +213,46 @@ wchar_t* get_title(const char* part_name)
 	return NULL;
 }
 
+void write_header(MainWindow* mw, CHARRANGE* pcr)
+{
+	HWND richTextHWND = mw->_richEdit->_baseWindow._hWnd;
+
+	if (g_chapter_idx == 1)
+	{
+		wchar_t* title = get_title(g_part_name);
+
+		if (title)
+		{
+			pcr->cpMin = 0;
+			pcr->cpMax = -1;
+			SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)pcr);
+			SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)title);
+			
+			
+			pcr->cpMin = -1;
+			pcr->cpMax = -1;
+			SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"\r\n\r\n");
+			SendMessage(richTextHWND, EM_EXGETSEL, 0, (LPARAM)pcr);
+
+			pcr->cpMin = 0;
+			SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)pcr);
+			
+			PARAFORMAT pf;
+			pf.cbSize = sizeof(PARAFORMAT);
+			pf.dwMask = PFM_ALIGNMENT;
+			pf.wAlignment = PFA_CENTER;
+			SendMessage(richTextHWND, EM_SETPARAFORMAT, 0, (LPARAM)&pf);
+
+			CHARFORMATA cf;
+			cf.cbSize = sizeof(CHARFORMATA);
+			cf.dwMask = CFM_BOLD | CFM_SIZE;
+			cf.dwEffects = CFE_BOLD;
+			cf.yHeight = 600;
+			SendMessage(richTextHWND, EM_SETCHARFORMAT, SCF_SELECTION, (LPARAM)&cf);
+		}
+	}
+}
+
 void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 {
 	HWND richTextHWND = mw->_richEdit->_baseWindow._hWnd;
@@ -235,19 +275,22 @@ void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 	SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
 	SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"");
 
-	if (g_chapter_idx == 1)
-	{
-		wchar_t* title = get_title(g_part_name);
+	PARAFORMAT pf;
+	pf.cbSize = sizeof(PARAFORMAT);
+	pf.dwMask = PFM_ALIGNMENT;
+	pf.wAlignment = PFA_RIGHT;
+	SendMessage(richTextHWND, EM_SETPARAFORMAT, 0, (LPARAM)&pf);
 
-		if (title)
-		{
-			cr.cpMin = -1;
-			cr.cpMax = -1;
-			SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
-			SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)title);
-			SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"\r\n");
-		}
-	}
+	CHARFORMATA cf;
+	cf.cbSize = sizeof(CHARFORMATA);
+	cf.dwMask = CFM_BOLD | CFM_SIZE | CFM_FACE | CFM_COLOR;
+	cf.dwEffects = 0;
+	cf.yHeight = 400;
+	strcpy(cf.szFaceName, "Arial");
+	cf.crTextColor = RGB(0, 0, 0);
+	SendMessage(richTextHWND, EM_SETCHARFORMAT, SCF_ALL, (LPARAM)&cf);
+
+	write_header(mw, &cr);
 	
 	strcpy(sql, "SELECT * FROM ");
 	strcat(sql, part_name);
@@ -271,7 +314,7 @@ void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 		sqlite3_close(bible_db);
 		return;
 	}
-
+	
 	while (sqlite3_step(res) == SQLITE_ROW)
 	{
 		const wchar_t* prefix = sqlite3_column_text16(res, 2);
@@ -284,6 +327,7 @@ void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 		
 		cr.cpMin = -1;
 		cr.cpMax = -1;
+		SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
 
 		if (prefix)
 		{
@@ -291,8 +335,26 @@ void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 			SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)prefix);
 		}
 
+		CHARFORMATA cf;
+		cf.cbSize = sizeof(CHARFORMATA);
+		cf.dwMask = CFM_BOLD | CFM_COLOR;
+		cf.dwEffects = CFE_BOLD;
+		cf.crTextColor = RGB(255, 0, 0);
+		SendMessage(richTextHWND, EM_SETCHARFORMAT, SCF_SELECTION, (LPARAM)&cf);
+		
 		SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
 		SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)HindiNumbers(number));
+
+		cr.cpMin = -1;
+		cr.cpMax = -1;
+		SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr); 
+		
+		CHARFORMATA cf2;
+		cf2.cbSize = sizeof(CHARFORMATA);
+		cf2.dwMask = CFM_BOLD | CFM_COLOR;
+		cf2.dwEffects = 0;
+		cf2.crTextColor = RGB(0, 0, 0);
+		SendMessage(richTextHWND, EM_SETCHARFORMAT, SCF_SELECTION, (LPARAM)&cf2);
 
 		SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
 		SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L" ");
