@@ -193,6 +193,9 @@
     <Filter Include="data\jonah">
       <UniqueIdentifier>{1df209a1-c060-41df-b8e8-34fe888726cc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\micah">
+      <UniqueIdentifier>{58eb49c6-2d63-426c-806a-1a616fc3e0c9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -3871,6 +3874,30 @@
     </None>
     <None Include="..\data\jonah\jonah_4.sql">
       <Filter>data\jonah</Filter>
+    </None>
+    <None Include="..\data\micah.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\micah\micah_1.sql">
+      <Filter>data\micah</Filter>
+    </None>
+    <None Include="..\data\micah\micah_2.sql">
+      <Filter>data\micah</Filter>
+    </None>
+    <None Include="..\data\micah\micah_3.sql">
+      <Filter>data\micah</Filter>
+    </None>
+    <None Include="..\data\micah\micah_4.sql">
+      <Filter>data\micah</Filter>
+    </None>
+    <None Include="..\data\micah\micah_5.sql">
+      <Filter>data\micah</Filter>
+    </None>
+    <None Include="..\data\micah\micah_6.sql">
+      <Filter>data\micah</Filter>
+    </None>
+    <None Include="..\data\micah\micah_7.sql">
+      <Filter>data\micah</Filter>
     </None>
   </ItemGroup>
 </Project>

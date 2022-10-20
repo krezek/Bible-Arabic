@@ -30,6 +30,7 @@
 .read amos.sql
 .read obadiah.sql
 .read jonah.sql
+.read micah.sql
 
 
 .read matthew.sql

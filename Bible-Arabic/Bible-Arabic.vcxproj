@@ -983,6 +983,14 @@
     <None Include="..\data\matthew\matthew_7.sql" />
     <None Include="..\data\matthew\matthew_8.sql" />
     <None Include="..\data\matthew\matthew_9.sql" />
+    <None Include="..\data\micah.sql" />
+    <None Include="..\data\micah\micah_1.sql" />
+    <None Include="..\data\micah\micah_2.sql" />
+    <None Include="..\data\micah\micah_3.sql" />
+    <None Include="..\data\micah\micah_4.sql" />
+    <None Include="..\data\micah\micah_5.sql" />
+    <None Include="..\data\micah\micah_6.sql" />
+    <None Include="..\data\micah\micah_7.sql" />
     <None Include="..\data\nehemiah.sql" />
     <None Include="..\data\nehemiah\nehemiah_1.sql" />
     <None Include="..\data\nehemiah\nehemiah_10.sql" />
