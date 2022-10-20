@@ -175,6 +175,9 @@
     <Filter Include="data\ezekiel">
       <UniqueIdentifier>{9493bc06-0dcb-4cee-9480-e783bb8c194b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\daniel">
+      <UniqueIdentifier>{a26f586a-1a85-4efc-b1d1-09b509b44d69}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -3706,6 +3709,45 @@
     </None>
     <None Include="..\data\ezekiel\ezekiel_48.sql">
       <Filter>data\ezekiel</Filter>
+    </None>
+    <None Include="..\data\daniel.sql">
+      <Filter>data</Filter>
+    </None>
+    <None Include="..\data\daniel\daniel_1.sql">
+      <Filter>data\daniel</Filter>
+    </None>
+    <None Include="..\data\daniel\daniel_2.sql">
+      <Filter>data\daniel</Filter>
+    </None>
+    <None Include="..\data\daniel\daniel_3.sql">
+      <Filter>data\daniel</Filter>
+    </None>
+    <None Include="..\data\daniel\daniel_4.sql">
+      <Filter>data\daniel</Filter>
+    </None>
+    <None Include="..\data\daniel\daniel_5.sql">
+      <Filter>data\daniel</Filter>
+    </None>
+    <None Include="..\data\daniel\daniel_6.sql">
+      <Filter>data\daniel</Filter>
+    </None>
+    <None Include="..\data\daniel\daniel_7.sql">
+      <Filter>data\daniel</Filter>
+    </None>
+    <None Include="..\data\daniel\daniel_8.sql">
+      <Filter>data\daniel</Filter>
+    </None>
+    <None Include="..\data\daniel\daniel_9.sql">
+      <Filter>data\daniel</Filter>
+    </None>
+    <None Include="..\data\daniel\daniel_10.sql">
+      <Filter>data\daniel</Filter>
+    </None>
+    <None Include="..\data\daniel\daniel_11.sql">
+      <Filter>data\daniel</Filter>
+    </None>
+    <None Include="..\data\daniel\daniel_12.sql">
+      <Filter>data\daniel</Filter>
     </None>
   </ItemGroup>
 </Project>
