@@ -23,7 +23,8 @@
 #define ID_LISTVIW_RESULT				1017
 #define ID_BUTTON_PREV_CHAPTER			1018
 #define ID_BUTTON_NEXT_CHAPTER			1019
-#define ID_BUTTON_SEARCH				1020
+#define ID_BUTTON_READ					1020
+#define ID_BUTTON_SEARCH				1021
 #define IDC_STATIC                      -1
 
 // Next default values for new objects
