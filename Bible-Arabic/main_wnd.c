@@ -19,6 +19,7 @@ static const int g_margin = 5;
 void OnDBClick_treeView(MainWindow* mw, WPARAM wParam, LPARAM lParam);
 void OnBtnClicked_next_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam);
 void OnBtnClicked_prev_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam);
+void OnBtnClicked_read(MainWindow* mw, WPARAM wParam, LPARAM lParam);
 void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam);
 void OnTXChaper_enter(MainWindow* mw, WPARAM wParam, LPARAM lParam);
 
@@ -546,6 +547,10 @@ LRESULT TabControlCallBckProcedure(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM l
 
         case ID_BUTTON_PREV_CHAPTER:
             OnBtnClicked_prev_chapter(mw, wParam, lParam);
+            break;
+
+        case ID_BUTTON_READ:
+            OnBtnClicked_read(mw, wParam, lParam);
             break;
         
         case ID_BUTTON_SEARCH:

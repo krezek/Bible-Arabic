@@ -158,6 +158,7 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="main_wnd.c" />
     <ClCompile Include="main_wnd_ext.c" />
+    <ClCompile Include="main_wnd_mbr.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\data\acts.sql" />
