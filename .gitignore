@@ -24,3 +24,6 @@
 /Setup/Debug
 /Setup/Release/Setup.msi
 /Setup/Release
+/mbrola/Debug
+/mbrola/Release
+/mbrola/x64

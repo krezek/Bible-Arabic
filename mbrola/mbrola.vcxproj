@@ -18,6 +18,32 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Database\database.c" />
+    <ClCompile Include="Database\database_old.c" />
+    <ClCompile Include="Database\diphone_info.c" />
+    <ClCompile Include="Database\hash_tab.c" />
+    <ClCompile Include="Database\little_big.c" />
+    <ClCompile Include="Database\rom_database.c" />
+    <ClCompile Include="Database\rom_handling.c" />
+    <ClCompile Include="Database\zstring_list.c" />
+    <ClCompile Include="Engine\diphone.c" />
+    <ClCompile Include="Engine\mbrola.c" />
+    <ClCompile Include="Misc\audio.c" />
+    <ClCompile Include="Misc\common.c" />
+    <ClCompile Include="Misc\g711.c" />
+    <ClCompile Include="Misc\mbralloc.c" />
+    <ClCompile Include="Misc\vp_error.c" />
+    <ClCompile Include="Parser\fifo.c" />
+    <ClCompile Include="Parser\input_fifo.c" />
+    <ClCompile Include="Parser\input_file.c" />
+    <ClCompile Include="Parser\parser_input.c" />
+    <ClCompile Include="Parser\phonbuff.c" />
+    <ClCompile Include="Parser\phone.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LibOneChannel\onechannel.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -74,10 +100,11 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;TARGET_OS_DOS;LITTLE_ENDIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>Database;Engine;Misc;Parser;Standalone</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -91,10 +118,11 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;TARGET_OS_DOS;LITTLE_ENDIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>Database;Engine;Misc;Parser;Standalone</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -108,10 +136,11 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;TARGET_OS_DOS;LITTLE_ENDIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>Database;Engine;Misc;Parser;Standalone</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -125,10 +154,11 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;TARGET_OS_DOS;LITTLE_ENDIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>Database;Engine;Misc;Parser;Standalone</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
