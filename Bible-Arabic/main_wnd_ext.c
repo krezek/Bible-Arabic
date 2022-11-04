@@ -80,8 +80,8 @@ struct Testament NewTestament[NT_COUNT] =
 };
 
 //#define DB_URL "\\Windows\\System32\\bible.db"
-//#define DB_URL "..\\data\\bible.db"
-#define DB_URL "bible.db"
+#define DB_URL "..\\data\\bible.db"
+//#define DB_URL "bible.db"
 char g_part_name[100];
 int g_chapter_idx = 0;
 int g_chapter_count = 0;

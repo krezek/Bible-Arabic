@@ -29,6 +29,7 @@
     <ClCompile Include="Database\zstring_list.c" />
     <ClCompile Include="Engine\diphone.c" />
     <ClCompile Include="Engine\mbrola.c" />
+    <ClCompile Include="LibOneChannel\onechannel.c" />
     <ClCompile Include="Misc\audio.c" />
     <ClCompile Include="Misc\common.c" />
     <ClCompile Include="Misc\g711.c" />
@@ -136,7 +137,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;TARGET_OS_DOS;LITTLE_ENDIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;TARGET_OS_DOS;LITTLE_ENDIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>

@@ -78,6 +78,9 @@
     <ClCompile Include="Parser\phone.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="LibOneChannel\onechannel.c">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LibOneChannel\onechannel.h">
