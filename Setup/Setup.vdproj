@@ -43,6 +43,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -130,7 +138,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_8C75A80CE35A4A0E8B694E72C17F43B4"
             {
-            "DefaultLocation" = "8:[ProgramFiles64Folder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -168,7 +176,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Setup"
         "ProductCode" = "8:{9C00C01F-F64A-478A-B563-4D00E66D5B95}"
-        "PackageCode" = "8:{3D82A6D3-2E2E-417F-A64A-7F93F0B25E80}"
+        "PackageCode" = "8:{97939DD9-959E-4076-9C54-0DE36AC348D2}"
         "UpgradeCode" = "8:{9E6F94A7-FD3D-4D6E-B214-36BC095ED8F4}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
@@ -189,7 +197,7 @@
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
-        "TargetPlatform" = "3:1"
+        "TargetPlatform" = "3:0"
         "PreBuildEvent" = "8:"
         "PostBuildEvent" = "8:"
         "RunPostBuildEvent" = "3:0"
@@ -288,6 +296,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_1273B9C11B5242F38B99BF8B871E03D2"
+            {
+            "Name" = "8:Bible-Arabic"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_4E7F2FF4AA3345BF8996053F0062567E"
+            "Folder" = "8:_0D30A18DE7C74DE5B7CD200367A5DCF9"
+            "WorkingFolder" = "8:_8C75A80CE35A4A0E8B694E72C17F43B4"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
@@ -717,7 +739,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_4E7F2FF4AA3345BF8996053F0062567E"
             {
-            "SourcePath" = "8:..\\x64\\Release\\Bible-Arabic.exe"
+            "SourcePath" = "8:..\\Release\\Bible-Arabic.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_8C75A80CE35A4A0E8B694E72C17F43B4"
