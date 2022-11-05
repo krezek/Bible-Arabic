@@ -214,7 +214,7 @@ wchar_t* get_title(const char* part_name)
 	return NULL;
 }
 
-void write_header(MainWindow* mw, CHARRANGE* pcr)
+static void write_header(MainWindow* mw, CHARRANGE* pcr)
 {
 	HWND richTextHWND = mw->_richEdit->_baseWindow._hWnd;
 
