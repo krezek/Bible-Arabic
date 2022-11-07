@@ -539,3 +539,49 @@ void OnTXChaper_enter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 		LoadChapter(mw, g_part_name, idx);
 	}
 }
+
+char* get_pho(const char* table_name, int chapter, int verse)
+{
+	sqlite3* bible_db;
+	char* err_msg = 0;
+	sqlite3_stmt* res;
+	char sql[255];
+	char* retVal = NULL;
+	int rc;
+
+	rc = sqlite3_open_v2(DB_URL, &bible_db, SQLITE_OPEN_READONLY, NULL);
+
+	if (rc != SQLITE_OK) {
+		ShowError(L"Can't open database file!");
+		sqlite3_close(bible_db);
+		return NULL;
+	}
+
+	sprintf(sql, "SELECT pho FROM %s WHERE chapter = %d AND verse = %d ORDER BY verse", table_name, chapter, verse);
+
+	rc = sqlite3_prepare_v2(bible_db, sql, -1, &res, 0);
+	if (rc != SQLITE_OK)
+	{
+		ShowError(L"Unable to select pho!");
+		sqlite3_finalize(res);
+		sqlite3_close(bible_db);
+		return NULL;
+	}
+	if (sqlite3_step(res) == SQLITE_ROW)
+	{
+		const char* pho = sqlite3_column_text(res, 0);
+
+		if (pho)
+		{
+			size_t len = strlen(pho);
+			retVal = (char*)malloc(len + sizeof(char));
+			assert(retVal != NULL);
+			strcpy(retVal, pho);
+		}
+	}
+
+	sqlite3_finalize(res);
+	sqlite3_close(bible_db);
+
+	return retVal;
+}
