@@ -9,7 +9,7 @@ typedef struct Parser Parser;
 
 void write_header(int file_format, int audio_length, unsigned short samp_rate, FILE* output_file);
 
-#define DB_MBR_URL "..\\mbrola_db\\ar0"
+#define DB_MBR_URL "..\\data\\ar0"
 short buffer[16000];
 
 void OnBtnClicked_read(MainWindow* mw, WPARAM wParam, LPARAM lParam)
