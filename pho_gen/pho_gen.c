@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <wchar.h>
+#include <assert.h>
 #include <sqlite3.h>
 
 
@@ -63,8 +64,60 @@ void get_verse_text();
 
 int main(int argc, char* argv[])
 {
-	get_verse_text();
+	char file_name[255];
 
+	sprintf(file_name, "%s_%d_%d.pho", g_table_name, g_chapter, g_verse_number);
+	get_verse_text();
+	FILE* output = fopen(file_name, "w");
+
+	fprintf(output, "%c %d\n", '_', 150);
+
+	size_t len = wcslen(g_verse_text);
+	for (size_t ix = 0; ix < len; ++ix)
+	{
+		if (g_verse_text[ix] == L' ')
+		{
+			fprintf(output, "%c %d\n\n", '_', 10);
+			fprintf(output, "%c %d\n", '_', 10);
+		}
+		else if (g_verse_text[ix] == L'ْ')
+		{
+
+		}
+		else if (g_verse_text[ix] == L'إ')
+		{
+			fprintf(output, "%c %d\n", '^', 75);
+		}
+		else if (g_verse_text[ix] == L'أ')
+		{
+			fprintf(output, "%c %d\n", '^', 75);
+		}
+		else
+		{
+			char c = 0;
+			int d = 0;
+			for (int iy = 0; iy < sizeof(pho) / sizeof(pho[0]); ++iy)
+			{
+				if (pho[iy]._alpha == g_verse_text[ix])
+				{
+					c = pho[iy]._phonem;
+					d = pho[iy]._time;
+				}
+			}
+
+			if (c == 0)
+			{
+				fprintf(stderr, "%x\n", (int)g_verse_text[ix]);
+			}
+
+			fprintf(output, "%c %d\n", c, d);
+		}
+		
+	}
+
+	fprintf(output, "%c %d\n", '_', 150);
+
+	fclose(output);
 	return 0;
 }
 
