@@ -152,7 +152,6 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Bible-Arabic.ico" />
-    <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />

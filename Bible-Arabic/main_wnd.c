@@ -38,7 +38,7 @@ ATOM MainWindow_RegisterClass()
     wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
     wcex.lpszMenuName = NULL; // MAKEINTRESOURCE(IDR_POPUPMENU);
     wcex.lpszClassName = szWindowClass;
-    wcex.hIconSm = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDC_MYICON));
+    wcex.hIconSm = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_BIBLEARABIC));
 
     return RegisterClassEx(&wcex);
 }

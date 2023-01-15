@@ -31,9 +31,6 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="small.ico">
-      <Filter>Ressourcendateien</Filter>
-    </Image>
     <Image Include="Bible-Arabic.ico">
       <Filter>Ressourcendateien</Filter>
     </Image>

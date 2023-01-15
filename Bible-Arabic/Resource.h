@@ -2,7 +2,6 @@
 // Von Microsoft Visual C++ generierte Includedatei.
 // Verwendet durch Bible-Arabic.rc
 //
-#define IDC_MYICON                      2
 #define IDD_BIBLEARABIC_DIALOG          102
 #define IDS_APP_TITLE                   103
 #define IDD_ABOUTBOX                    103
