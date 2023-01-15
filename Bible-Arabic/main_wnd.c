@@ -550,7 +550,7 @@ LRESULT TabControlCallBckProcedure(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM l
             break;
 
         case ID_BUTTON_READ:
-            OnBtnClicked_read(mw, wParam, lParam);
+            //OnBtnClicked_read(mw, wParam, lParam);
             break;
         
         case ID_BUTTON_SEARCH:

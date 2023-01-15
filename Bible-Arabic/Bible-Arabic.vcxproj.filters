@@ -45,9 +45,6 @@
     <ClCompile Include="main_wnd_ext.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="main_wnd_mbr.c">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="rt_manif.bin">
