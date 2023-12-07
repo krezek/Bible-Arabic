@@ -79,7 +79,7 @@ struct Testament NewTestament[NT_COUNT] =
 	{ "revelation", L"رؤيا", L"رؤيا" }
 };
 
-//#define DB_URL "\\Windows\\System32\\bible.db"
+//#define DB_URL "\\ProgramData\\rezek\\bible.db"
 #define DB_URL "..\\data\\bible.db"
 //#define DB_URL "bible.db"
 char g_part_name[100];
