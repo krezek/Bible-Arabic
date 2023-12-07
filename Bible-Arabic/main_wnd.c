@@ -19,7 +19,6 @@ static const int g_margin = 5;
 void OnDBClick_treeView(MainWindow* mw, WPARAM wParam, LPARAM lParam);
 void OnBtnClicked_next_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam);
 void OnBtnClicked_prev_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam);
-void OnBtnClicked_read(MainWindow* mw, WPARAM wParam, LPARAM lParam);
 void OnBtnClicked_search(MainWindow* mw, WPARAM wParam, LPARAM lParam);
 void OnTXChaper_enter(MainWindow* mw, WPARAM wParam, LPARAM lParam);
 
@@ -90,7 +89,6 @@ MainWindow* MainWindow_init()
     mw->_lv_result = ListView_init();
     mw->_bt_next_chapter = Button_init();
     mw->_bt_prev_chapter = Button_init();
-    mw->_bt_read = Button_init();
     mw->_bt_search = Button_init();
 
     return mw;
@@ -99,7 +97,6 @@ MainWindow* MainWindow_init()
 void MainWindow_free(MainWindow* mw)
 {
     Button_free(mw->_bt_search);
-    Button_free(mw->_bt_read);
     Button_free(mw->_bt_prev_chapter);
     Button_free(mw->_bt_next_chapter);
     ListView_free(mw->_lv_result);
@@ -284,17 +281,6 @@ static void OnCreate_TabControl(MainWindow* mw)
 
     SetWindowText(mw->_bt_next_chapter->_baseWindow._hWnd, L"التالي");
 
-    mw->_bt_read->_baseWindow._SetParentFunc((BaseWindow*)mw->_bt_read, mw->_tabControl->_baseWindow._hWnd);
-    mw->_bt_read->_baseWindow._SetIdFunc((BaseWindow*)mw->_bt_read, (HMENU)ID_BUTTON_READ);
-
-    if (!mw->_bt_read->_baseWindow._CreateFunc((BaseWindow*)mw->_bt_read))
-    {
-        ShowError(L"Unable to create read button");
-        return;
-    }
-
-    SetWindowText(mw->_bt_read->_baseWindow._hWnd, L"قراءة");
-
     mw->_tx_search->_baseWindow._SetParentFunc((BaseWindow*)mw->_tx_search, mw->_tabControl->_baseWindow._hWnd);
     mw->_tx_search->_baseWindow._SetIdFunc((BaseWindow*)mw->_tx_search, (HMENU)ID_TEXTEDIT_SEARCH);
 
@@ -378,9 +364,9 @@ static void OnCreate(MainWindow* mw)
     mw->_lm_tab_bible->_SetCmpFunc(mw->_lm_tab_bible, 0, 0, (Component*)mw->_richEdit, LM_H_EXPAND | LM_V_EXPAND, m3);
     mw->_lm_tab_bible->_SetCmpFunc(mw->_lm_tab_bible, 1, 0, (Component*)mw->_lm_tab_bible_bottom, LM_H_EXPAND | LM_V_EXPAND, m3);
 
-    mw->_lm_tab_bible_bottom->_InitFunc(mw->_lm_tab_bible_bottom, 1, 6);
+    mw->_lm_tab_bible_bottom->_InitFunc(mw->_lm_tab_bible_bottom, 1, 5);
     mw->_lm_tab_bible_bottom->_SetRowsHeightFunc(mw->_lm_tab_bible_bottom, 1.0);
-    mw->_lm_tab_bible_bottom->_SetColumnWidthFunc(mw->_lm_tab_bible_bottom, 100.0, 70.0, 70.0, 90.0, 90.0, 70.0);
+    mw->_lm_tab_bible_bottom->_SetColumnWidthFunc(mw->_lm_tab_bible_bottom, 100.0, 70.0, 70.0, 90.0, 90.0);
 
     Margin m4 = { 5, 5, 5, 5 };
     mw->_lm_tab_bible_bottom->_SetCmpFunc(mw->_lm_tab_bible_bottom, 0, 0, (Component*)mw->_lb_chapter, LM_H_EXPAND | LM_V_EXPAND, m4);
@@ -388,8 +374,7 @@ static void OnCreate(MainWindow* mw)
     mw->_lm_tab_bible_bottom->_SetCmpFunc(mw->_lm_tab_bible_bottom, 0, 2, (Component*)mw->_lb_chapter_count, LM_H_EXPAND | LM_V_EXPAND, m4);
     mw->_lm_tab_bible_bottom->_SetCmpFunc(mw->_lm_tab_bible_bottom, 0, 3, (Component*)mw->_bt_prev_chapter, LM_H_EXPAND | LM_V_EXPAND, m4);
     mw->_lm_tab_bible_bottom->_SetCmpFunc(mw->_lm_tab_bible_bottom, 0, 4, (Component*)mw->_bt_next_chapter, LM_H_EXPAND | LM_V_EXPAND, m4);
-    mw->_lm_tab_bible_bottom->_SetCmpFunc(mw->_lm_tab_bible_bottom, 0, 5, (Component*)mw->_bt_read, LM_H_EXPAND | LM_V_EXPAND, m4);
-
+    
     mw->_lm_tab_search->_InitFunc(mw->_lm_tab_search, 3, 1);
     mw->_lm_tab_search->_SetRowsHeightFunc(mw->_lm_tab_search, 40.0, 40.0, 1.0);
     mw->_lm_tab_search->_SetColumnWidthFunc(mw->_lm_tab_search, 1.0);
@@ -441,7 +426,6 @@ static void OnNotify_tabControl(MainWindow* mw, WPARAM wParam, LPARAM lParam)
             ShowWindow(mw->_lb_chapter_count->_baseWindow._hWnd, SW_SHOW);
             ShowWindow(mw->_bt_next_chapter->_baseWindow._hWnd, SW_SHOW);
             ShowWindow(mw->_bt_prev_chapter->_baseWindow._hWnd, SW_SHOW);
-            ShowWindow(mw->_bt_read->_baseWindow._hWnd, SW_SHOW);
 
             ShowWindow(mw->_tx_search->_baseWindow._hWnd, SW_HIDE);
             ShowWindow(mw->_bt_search->_baseWindow._hWnd, SW_HIDE);
@@ -455,7 +439,6 @@ static void OnNotify_tabControl(MainWindow* mw, WPARAM wParam, LPARAM lParam)
             ShowWindow(mw->_lb_chapter_count->_baseWindow._hWnd, SW_HIDE);
             ShowWindow(mw->_bt_next_chapter->_baseWindow._hWnd, SW_HIDE);
             ShowWindow(mw->_bt_prev_chapter->_baseWindow._hWnd, SW_HIDE);
-            ShowWindow(mw->_bt_read->_baseWindow._hWnd, SW_HIDE);
 
             ShowWindow(mw->_tx_search->_baseWindow._hWnd, SW_SHOW);
             ShowWindow(mw->_bt_search->_baseWindow._hWnd, SW_SHOW);
@@ -549,10 +532,6 @@ LRESULT TabControlCallBckProcedure(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM l
             OnBtnClicked_prev_chapter(mw, wParam, lParam);
             break;
 
-        case ID_BUTTON_READ:
-            //OnBtnClicked_read(mw, wParam, lParam);
-            break;
-        
         case ID_BUTTON_SEARCH:
             OnBtnClicked_search(mw, wParam, lParam);
             break;

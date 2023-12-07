@@ -33,7 +33,6 @@ typedef struct
 	ListView* _lv_result;
 	Button* _bt_next_chapter;
 	Button* _bt_prev_chapter;
-	Button* _bt_read;
 	Button* _bt_search;
 } MainWindow;
 
