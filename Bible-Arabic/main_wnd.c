@@ -386,6 +386,9 @@ static void OnCreate(MainWindow* mw)
 
     OnCreate_TreeView(mw);
     OnCreate_TabControl(mw);
+
+    LoadPart(mw, OldTestament[0].table_english);
+    LoadChapter(mw, "genesis", 1);
 }
 
 static void OnSize(MainWindow* mw, int width, int height)
