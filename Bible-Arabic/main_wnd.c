@@ -77,11 +77,13 @@ MainWindow* MainWindow_init()
     mw->_lm_tab_bible = LayoutManager_init();
     mw->_lm_tab_bible_bottom = LayoutManager_init();
     mw->_lm_tab_search = LayoutManager_init();
+    mw->_lm_tab_bible_sy = LayoutManager_init();
 
     mw->_statusBar = StatusBar_init();
     mw->_treeView = TreeView_init();
     mw->_tabControl = TabControl_init();
     mw->_richEdit = RichEdit_init();
+    mw->_richEdit_sy = RichEdit_init();
     mw->_lb_chapter = Label_init();
     mw->_tx_chapter_idx = TextEdit_init();
     mw->_lb_chapter_count = Label_init();
@@ -104,11 +106,13 @@ void MainWindow_free(MainWindow* mw)
     Label_free(mw->_lb_chapter_count);
     TextEdit_free(mw->_tx_chapter_idx);
     Label_free(mw->_lb_chapter);
+    RichEdit_free(mw->_richEdit_sy);
     RichEdit_free(mw->_richEdit);
     TabControl_free(mw->_tabControl);
     TreeView_free(mw->_treeView);
     StatusBar_free(mw->_statusBar);
 
+    LayoutManager_free(mw->_lm_tab_bible_sy); 
     LayoutManager_free(mw->_lm_tab_search);
     LayoutManager_free(mw->_lm_tab_bible_bottom);
     LayoutManager_free(mw->_lm_tab_bible);
@@ -193,6 +197,11 @@ static void OnCreate_TabControl(MainWindow* mw)
     tie.iImage = -1;
     tie.pszText = L"البحث";
     TabCtrl_InsertItem(mw->_tabControl->_baseWindow._hWnd, 1, &tie);
+
+    tie.mask = TCIF_TEXT;
+    tie.iImage = -1;
+    tie.pszText = L"ܦܫܺܝܛܬܳܐ";
+    TabCtrl_InsertItem(mw->_tabControl->_baseWindow._hWnd, 2, &tie);
     
     
     mw->_richEdit->_baseWindow._SetParentFunc((BaseWindow*)mw->_richEdit, mw->_tabControl->_baseWindow._hWnd);
@@ -201,6 +210,15 @@ static void OnCreate_TabControl(MainWindow* mw)
     if (!mw->_richEdit->_baseWindow._CreateFunc((BaseWindow*)mw->_richEdit))
     {
         ShowError(L"Unable to create rich edit!");
+        return;
+    }
+
+    mw->_richEdit_sy->_baseWindow._SetParentFunc((BaseWindow*)mw->_richEdit_sy, mw->_tabControl->_baseWindow._hWnd);
+    mw->_richEdit_sy->_baseWindow._SetIdFunc((BaseWindow*)mw->_richEdit_sy, (HMENU)ID_RICHEDIT_SY);
+
+    if (!mw->_richEdit_sy->_baseWindow._CreateFunc((BaseWindow*)mw->_richEdit_sy))
+    {
+        ShowError(L"Unable to create rich sy edit!");
         return;
     }
 
@@ -384,11 +402,20 @@ static void OnCreate(MainWindow* mw)
     mw->_lm_tab_search->_SetCmpFunc(mw->_lm_tab_search, 0, 1, (Component*)mw->_bt_search, LM_H_EXPAND | LM_V_EXPAND, m5);
     mw->_lm_tab_search->_SetCmpFunc(mw->_lm_tab_search, 0, 2, (Component*)mw->_lv_result, LM_H_EXPAND | LM_V_EXPAND, m5);
 
+    mw->_lm_tab_bible_sy->_InitFunc(mw->_lm_tab_bible_sy, 2, 1);
+    mw->_lm_tab_bible_sy->_SetRowsHeightFunc(mw->_lm_tab_bible_sy, 1.0, 37.0);
+    mw->_lm_tab_bible_sy->_SetColumnWidthFunc(mw->_lm_tab_bible_sy, 1.0);
+
+    Margin m6 = { 5, 5, 5, 0 };
+    mw->_lm_tab_bible_sy->_SetCmpFunc(mw->_lm_tab_bible_sy, 0, 0, (Component*)mw->_richEdit_sy, LM_H_EXPAND | LM_V_EXPAND, m6);
+    mw->_lm_tab_bible_sy->_SetCmpFunc(mw->_lm_tab_bible, 1, 0, (Component*)mw->_lm_tab_bible_bottom, LM_H_EXPAND | LM_V_EXPAND, m6);
+
     OnCreate_TreeView(mw);
     OnCreate_TabControl(mw);
 
     LoadPart(mw, OldTestament[0].table_english);
     LoadChapter(mw, "genesis", 1);
+    LoadChapter_sy(mw, "genesis_sy", 1);
 }
 
 static void OnSize(MainWindow* mw, int width, int height)
@@ -410,6 +437,9 @@ static void OnSize(MainWindow* mw, int width, int height)
         rc.right - rc.left, rc.bottom - rc.top - iHeight, TRUE, NULL);
 
     mw->_lm_tab_search->_DoLayoutFunc(mw->_lm_tab_search, rc.left, rc.top + iHeight,
+        rc.right - rc.left, rc.bottom - rc.top - iHeight, TRUE, NULL);
+
+    mw->_lm_tab_bible_sy->_DoLayoutFunc(mw->_lm_tab_bible_sy, rc.left, rc.top + iHeight,
         rc.right - rc.left, rc.bottom - rc.top - iHeight, TRUE, NULL);
 }
 
@@ -433,6 +463,8 @@ static void OnNotify_tabControl(MainWindow* mw, WPARAM wParam, LPARAM lParam)
             ShowWindow(mw->_tx_search->_baseWindow._hWnd, SW_HIDE);
             ShowWindow(mw->_bt_search->_baseWindow._hWnd, SW_HIDE);
             ShowWindow(mw->_lv_result->_baseWindow._hWnd, SW_HIDE);
+
+            ShowWindow(mw->_richEdit_sy->_baseWindow._hWnd, SW_HIDE);
         }
         else if (iPage == 1)
         {
@@ -446,6 +478,23 @@ static void OnNotify_tabControl(MainWindow* mw, WPARAM wParam, LPARAM lParam)
             ShowWindow(mw->_tx_search->_baseWindow._hWnd, SW_SHOW);
             ShowWindow(mw->_bt_search->_baseWindow._hWnd, SW_SHOW);
             ShowWindow(mw->_lv_result->_baseWindow._hWnd, SW_SHOW);
+
+            ShowWindow(mw->_richEdit_sy->_baseWindow._hWnd, SW_HIDE);
+        }
+        else if (iPage == 2)
+        {
+            ShowWindow(mw->_richEdit->_baseWindow._hWnd, SW_HIDE);
+            ShowWindow(mw->_lb_chapter->_baseWindow._hWnd, SW_SHOW);
+            ShowWindow(mw->_tx_chapter_idx->_baseWindow._hWnd, SW_SHOW);
+            ShowWindow(mw->_lb_chapter_count->_baseWindow._hWnd, SW_SHOW);
+            ShowWindow(mw->_bt_next_chapter->_baseWindow._hWnd, SW_SHOW);
+            ShowWindow(mw->_bt_prev_chapter->_baseWindow._hWnd, SW_SHOW);
+
+            ShowWindow(mw->_tx_search->_baseWindow._hWnd, SW_HIDE);
+            ShowWindow(mw->_bt_search->_baseWindow._hWnd, SW_HIDE);
+            ShowWindow(mw->_lv_result->_baseWindow._hWnd, SW_HIDE);
+
+            ShowWindow(mw->_richEdit_sy->_baseWindow._hWnd, SW_SHOW);
         }
         break;
     }

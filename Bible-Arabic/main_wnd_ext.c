@@ -83,11 +83,13 @@ struct Testament NewTestament[NT_COUNT] =
 #define DB_URL "..\\data\\bible.db"
 //#define DB_URL "bible.db"
 char g_part_name[100];
+char g_part_name_sy[100];
 int g_chapter_idx = 0;
 int g_chapter_count = 0;
 
 void LoadPart(MainWindow* mw, const char* part_name);
 void LoadChapter(MainWindow* mw, const char* part_name, int idx);
+void LoadChapter_sy(MainWindow* mw, const char* part_name, int idx);
 
 void remove_marks(sqlite3_context* context, int argc, sqlite3_value** argv);
 
@@ -130,6 +132,7 @@ void OnDBClick_treeView(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 			{
 				LoadPart(mw, OldTestament[ix].table_english);
 				LoadChapter(mw, g_part_name, 1);
+				LoadChapter_sy(mw, g_part_name_sy, 1);
 				return;
 			}
 		}
@@ -140,6 +143,7 @@ void OnDBClick_treeView(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 			{
 				LoadPart(mw, NewTestament[ix].table_english);
 				LoadChapter(mw, g_part_name, 1);
+				LoadChapter_sy(mw, g_part_name_sy, 1);
 				return;
 			}
 		}
@@ -154,9 +158,11 @@ void LoadPart(MainWindow* mw, const char* part_name)
 	int rc;
 	char sql[255];
 	wchar_t nmbr[20];
-	HWND richTextHWND = mw->_richEdit->_baseWindow._hWnd;
+	//HWND richTextHWND = mw->_richEdit->_baseWindow._hWnd;
 
 	strcpy(g_part_name, part_name);
+	strcpy(g_part_name_sy, part_name);
+	strcat(g_part_name_sy, "_sy");
 	g_chapter_idx = 0;
 	g_chapter_count = 0;
 
@@ -238,6 +244,46 @@ static void write_header(MainWindow* mw, CHARRANGE* pcr)
 			pcr->cpMin = 0;
 			SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)pcr);
 			
+			PARAFORMAT pf;
+			pf.cbSize = sizeof(PARAFORMAT);
+			pf.dwMask = PFM_ALIGNMENT;
+			pf.wAlignment = PFA_CENTER;
+			SendMessage(richTextHWND, EM_SETPARAFORMAT, 0, (LPARAM)&pf);
+
+			CHARFORMATA cf;
+			cf.cbSize = sizeof(CHARFORMATA);
+			cf.dwMask = CFM_BOLD | CFM_SIZE;
+			cf.dwEffects = CFE_BOLD;
+			cf.yHeight = 600;
+			SendMessage(richTextHWND, EM_SETCHARFORMAT, SCF_SELECTION, (LPARAM)&cf);
+		}
+	}
+}
+
+static void write_header_sy(MainWindow* mw, CHARRANGE* pcr)
+{
+	HWND richTextHWND = mw->_richEdit_sy->_baseWindow._hWnd;
+
+	if (g_chapter_idx == 1)
+	{
+		wchar_t* title = get_title(g_part_name);
+
+		if (title)
+		{
+			pcr->cpMin = 0;
+			pcr->cpMax = -1;
+			SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)pcr);
+			SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)title);
+
+
+			pcr->cpMin = -1;
+			pcr->cpMax = -1;
+			SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"\r\n");
+			SendMessage(richTextHWND, EM_EXGETSEL, 0, (LPARAM)pcr);
+
+			pcr->cpMin = 0;
+			SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)pcr);
+
 			PARAFORMAT pf;
 			pf.cbSize = sizeof(PARAFORMAT);
 			pf.dwMask = PFM_ALIGNMENT;
@@ -374,11 +420,132 @@ void LoadChapter(MainWindow* mw, const char* part_name, int idx)
 	sqlite3_close(bible_db);
 }
 
+void LoadChapter_sy(MainWindow* mw, const char* part_name, int idx)
+{
+	HWND richTextHWND = mw->_richEdit_sy->_baseWindow._hWnd;
+	sqlite3* bible_db;
+	char buff[20];
+	char* err_msg = 0;
+	sqlite3_stmt* res;
+	int rc;
+	char sql[255];
+	CHARRANGE cr;
+	wchar_t nmbr[20];
+
+	g_chapter_idx = idx;
+
+	_itow(g_chapter_idx, nmbr, 10);
+	SetWindowText(mw->_tx_chapter_idx->_baseWindow._hWnd, HindiNumbers(nmbr));
+
+	cr.cpMin = 0;
+	cr.cpMax = -1;
+	SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
+	SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L"");
+
+	PARAFORMAT pf;
+	pf.cbSize = sizeof(PARAFORMAT);
+	pf.dwMask = PFM_ALIGNMENT;
+	pf.wAlignment = PFA_RIGHT;
+	SendMessage(richTextHWND, EM_SETPARAFORMAT, 0, (LPARAM)&pf);
+
+	CHARFORMATA cf;
+	cf.cbSize = sizeof(CHARFORMATA);
+	cf.dwMask = CFM_BOLD | CFM_SIZE | CFM_FACE | CFM_COLOR;
+	cf.dwEffects = 0;
+	cf.yHeight = 400;
+	strcpy(cf.szFaceName, "Arial");
+	cf.crTextColor = RGB(0, 0, 0);
+	SendMessage(richTextHWND, EM_SETCHARFORMAT, SCF_ALL, (LPARAM)&cf);
+
+	//write_header_sy(mw, &cr);
+
+	strcpy(sql, "SELECT * FROM ");
+	strcat(sql, part_name);
+	strcat(sql, " WHERE chapter = ");
+	strcat(sql, _itoa(g_chapter_idx, buff, 10));
+
+	rc = sqlite3_open_v2(DB_URL, &bible_db, SQLITE_OPEN_READONLY, NULL);
+
+	if (rc != SQLITE_OK) {
+		ShowError(L"Can't open database file!");
+		sqlite3_close(bible_db);
+		return;
+	}
+
+	rc = sqlite3_prepare_v2(bible_db, sql, -1, &res, 0);
+
+	if (rc != SQLITE_OK)
+	{
+		//ShowError(L"Unable to select data!");
+		sqlite3_finalize(res);
+		sqlite3_close(bible_db);
+		return;
+	}
+
+	while (sqlite3_step(res) == SQLITE_ROW)
+	{
+		const wchar_t* prefix = sqlite3_column_text16(res, 2);
+		const wchar_t* suffix = sqlite3_column_text16(res, 3);
+		const wchar_t* verse = sqlite3_column_text16(res, 1);
+		const wchar_t* body = sqlite3_column_text16(res, 4);
+		wchar_t number[20];
+
+		wcscpy(number, verse);
+
+		cr.cpMin = -1;
+		cr.cpMax = -1;
+		SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
+
+		if (prefix)
+		{
+			SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
+			SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)prefix);
+		}
+
+		CHARFORMATA cf;
+		cf.cbSize = sizeof(CHARFORMATA);
+		cf.dwMask = CFM_BOLD | CFM_COLOR;
+		cf.dwEffects = CFE_BOLD;
+		cf.crTextColor = RGB(255, 0, 0);
+		SendMessage(richTextHWND, EM_SETCHARFORMAT, SCF_SELECTION, (LPARAM)&cf);
+
+		SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
+		SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)number);
+
+		cr.cpMin = -1;
+		cr.cpMax = -1;
+		SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
+
+		CHARFORMATA cf2;
+		cf2.cbSize = sizeof(CHARFORMATA);
+		cf2.dwMask = CFM_BOLD | CFM_COLOR;
+		cf2.dwEffects = 0;
+		cf2.crTextColor = RGB(0, 0, 0);
+		SendMessage(richTextHWND, EM_SETCHARFORMAT, SCF_SELECTION, (LPARAM)&cf2);
+
+		SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
+		SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)L" ");
+
+		SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
+		SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)body);
+
+		if (suffix)
+		{
+			SendMessage(richTextHWND, EM_EXSETSEL, 0, (LPARAM)&cr);
+			SendMessage(richTextHWND, EM_REPLACESEL, 0, (LPARAM)suffix);
+		}
+	}
+
+	sqlite3_finalize(res);
+	sqlite3_close(bible_db);
+}
+
 void OnBtnClicked_next_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 {
 	if (g_chapter_idx < g_chapter_count)
 	{
 		LoadChapter(mw, g_part_name, ++g_chapter_idx);
+		LoadChapter_sy(mw, g_part_name_sy, g_chapter_idx);
 	}
 }
 
@@ -387,6 +554,7 @@ void OnBtnClicked_prev_chapter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 	if (g_chapter_idx > 1)
 	{
 		LoadChapter(mw, g_part_name, --g_chapter_idx);
+		LoadChapter_sy(mw, g_part_name_sy, g_chapter_idx);
 	}
 }
 
@@ -537,6 +705,7 @@ void OnTXChaper_enter(MainWindow* mw, WPARAM wParam, LPARAM lParam)
 	if (g_chapter_count && idx && idx <= g_chapter_count)
 	{
 		LoadChapter(mw, g_part_name, idx);
+		LoadChapter_sy(mw, g_part_name_sy, idx);
 	}
 }
 

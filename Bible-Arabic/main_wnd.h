@@ -21,11 +21,13 @@ typedef struct
 	LayoutManager* _lm_tab_bible;
 	LayoutManager* _lm_tab_bible_bottom;
 	LayoutManager* _lm_tab_search;
+	LayoutManager* _lm_tab_bible_sy;
 
 	StatusBar* _statusBar;
 	TreeView* _treeView;
 	TabControl* _tabControl;
 	RichEdit* _richEdit;
+	RichEdit* _richEdit_sy;
 	Label* _lb_chapter;
 	TextEdit* _tx_chapter_idx;
 	Label* _lb_chapter_count;

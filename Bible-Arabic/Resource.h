@@ -15,15 +15,16 @@
 #define ID_TREEVIEW                     1010
 #define ID_TABCONTROL                   1011
 #define ID_RICHEDIT						1012
-#define ID_LABELCHAPTER					1013
-#define ID_LABELCHAPTER_COUNT1			1014
-#define ID_LABELCHAPTER_COUNT2			1015
-#define ID_TEXTEDIT_SEARCH				1016
-#define ID_LISTVIW_RESULT				1017
-#define ID_BUTTON_PREV_CHAPTER			1018
-#define ID_BUTTON_NEXT_CHAPTER			1019
-#define ID_BUTTON_READ					1020
-#define ID_BUTTON_SEARCH				1021
+#define ID_RICHEDIT_SY					1013
+#define ID_LABELCHAPTER					1014
+#define ID_LABELCHAPTER_COUNT1			1015
+#define ID_LABELCHAPTER_COUNT2			1016
+#define ID_TEXTEDIT_SEARCH				1017
+#define ID_LISTVIW_RESULT				1018
+#define ID_BUTTON_PREV_CHAPTER			1019
+#define ID_BUTTON_NEXT_CHAPTER			1020
+#define ID_BUTTON_READ					1021
+#define ID_BUTTON_SEARCH				1022
 #define IDC_STATIC                      -1
 
 // Next default values for new objects
