@@ -4,14 +4,14 @@ CREATE VIRTUAL TABLE matthew_sy USING FTS5(chapter, verse, prefix, suffix, body)
 .read matthew/matthew_1.sql
 .read matthew/matthew_2.sql
 .read matthew/matthew_3.sql
-/*.read matthew/matthew_4.sql
+.read matthew/matthew_4.sql
 .read matthew/matthew_5.sql
 .read matthew/matthew_6.sql
 .read matthew/matthew_7.sql
 .read matthew/matthew_8.sql
 .read matthew/matthew_9.sql
 .read matthew/matthew_10.sql
-.read matthew/matthew_11.sql
+/*.read matthew/matthew_11.sql
 .read matthew/matthew_12.sql
 .read matthew/matthew_13.sql
 .read matthew/matthew_14.sql
